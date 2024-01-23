@@ -58,6 +58,10 @@ List of currently planned features:
 | :---: |:---:|
 | [![Ericklis](https://github.com/EricklisCruz.png)](https://github.com/EricklisCruz)   | [![Wanderson](https://github.com/eidersin.png)](https://github.com/eidersin)
 
+<a href="https://github.com/alanvargas04" target="_blank">**Alan Vargas Silva**</a>
+
+[![Wanderson](https://github.com/alanvargas04.png)](https://github.com/alanvargas04)
+
 ---
 
 ## Contact 💼
@@ -93,4 +97,13 @@ LinkedIn: [Wanderson Teixeira](https://www.linkedin.com/in/kauã-steliano-107620
 E-mail: dersonts@gmail.com
 
 Github: [Wanderson Teixeira](https://github.com/eidersin)
+
+
+### collaborator 5
+
+LinkedIn: [Alan Vargas Silva](https://www.linkedin.com/in/alan-vargas-37b09b297/)
+
+E-mail: alanvargasenf@gmail.com
+
+Github: [Alan Vargas Silva](https://github.com/alanvargas04)
 
