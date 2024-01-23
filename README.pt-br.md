@@ -7,48 +7,51 @@
 
 </p>
 
-## Technologies 🚀
+## Tecnologias 🚀
 
-### This project was developed with the following technologies
+### Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-We decided against using a framework like react, since not all of us had experience with it.
+Já que alguns membros do grupo não tinham experiência com frameworks como React ou Next, optamos 
+por utilizar apenas essas ferramentas.
 
 - HTML
 - CSS
 - JS
 
-## Table of Contents 🛰
+## Sumário 🛰
 
-- [About 📖](#About)
-- [Features 🛠✨](#Features)
-- [Team 👨‍💻](#Team)
-- [Contact 💼](#Contact)
+- [Sobre 📖](#Sobre)
+- [Funcionalidades 🛠✨](#Funcionalidades)
+- [Equipe 👨‍💻](#Equipe)
+- [Contato 💼](#Contato)
 
 
-## About 📖
+## Sobre 📖
 
-### Description
+### Descrição
 
-The Orange Portfolio is a web app that allows users to share their projects online and see other people's projects as well.
+O orange portfolio é um web app que permite que seus usuários compartilhem seus projetos online, assim como visualizar projetos de outras pessoas.
 
 ### Objective
 
 This project was developed as a challenge in the FCAMARA's recruitment process hackathon, which occurred between 01/22/2024 and 02/05/2024.  
 
+Esse projeto foi desenvolvido no hackathon da última etapa do processo seletivo da FCamara, que ocorreu entre 22/01/2024 e 05/02/2024
 
-## Features 🛠✨
+## Funcionalidades 🛠✨
 
-List of currently planned features: 
+Lista de funcionalidades planejadas: 
 
-- Users can authenticate with Google or by signing up with our API.
-- Users can post, edit and delete their projects.
-- Users can see other people's projects.
-- Users can search projects by filtering them by name or tags.
-- Fully responsive UI
-- Acessibility features area also available
+- Usuários podem se autenticar utilizando google ou a nossa API
+- Usuários podem postar, editar ou deletar seus projetos
+- Usuários podem visualizar projetos de outras pessoas.
+- Usuários podem buscar por projetos específicos utilizando um filtro de nome ou tag
+- Interface completamente responsiva.
+- Funcionalides de acessibilidade disponíveis.
+
 ---
 
-## Team 👨‍💻
+## Equipe 👨‍💻
 
 | <a href="https://github.com/stelianok" target="_blank">**Kauã Steliano**</a> | <a href="https://github.com/stelianok" target="_blank">**Thiago Oliveira**</a>
 | :---: |:---:|
@@ -60,9 +63,9 @@ List of currently planned features:
 
 ---
 
-## Contact 💼
+## Contato 💼
 
-### collaborator 1
+### Colaborador 1
 
 LinkedIn: [Kauã Alexandro Steliano](https://www.linkedin.com/in/kauã-steliano-107620181/)
 
@@ -70,7 +73,7 @@ E-mail: stelianok@gmail.com
 
 Github: [Stelianok](https://github.com/stelianok)
 
-### collaborator 2
+### Colaborador 2
 
 LinkedIn: [Thiago Oliveira](https://www.linkedin.com/in/thiago-oliveira-tmo/)
 
@@ -78,7 +81,7 @@ E-mail: thimachal@gmail.com
 
 Github: [Thiago Oliveira](https://github.com/Thimachal)
 
-### collaborator 3
+### Colaborador 3
 
 LinkedIn: [Ericklis Cruz](https://www.linkedin.com/in/ericklis-cruz/)
 
@@ -86,7 +89,7 @@ E-mail: erickliscruz@gmail.com
 
 Github: [Ericklis Cruz](erickliscruz@gmail.com)
 
-### collaborator 4
+### Colaborador 4
 
 LinkedIn: [Wanderson Teixeira](https://www.linkedin.com/in/kauã-steliano-107620181/)
 
