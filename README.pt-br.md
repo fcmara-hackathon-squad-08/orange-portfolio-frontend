@@ -20,10 +20,10 @@ por utilizar apenas essas ferramentas.
 
 ## Sumário 🛰
 
-- [Sobre 📖](#Sobre)
-- [Funcionalidades 🛠✨](#Funcionalidades)
-- [Equipe 👨‍💻](#Equipe)
-- [Contato 💼](#Contato)
+- [Sobre 📖](#sobre-)
+- [Funcionalidades 🛠✨](#funcionalidades-)
+- [Equipe 👨‍💻](#equipe-)
+- [Contato 💼](#contato-)
 
 
 ## Sobre 📖

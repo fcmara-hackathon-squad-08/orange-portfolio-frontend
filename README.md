@@ -19,10 +19,10 @@ We decided against using a framework like react, since not all of us had experie
 
 ## Table of Contents 🛰
 
-- [About 📖](#About)
-- [Features 🛠✨](#Features)
-- [Team 👨‍💻](#Team)
-- [Contact 💼](#Contact)
+- [About 📖](#about-)
+- [Features 🛠✨](#features-)
+- [Team 👨‍💻](#team-)
+- [Contact 💼](#contact-)
 
 
 ## About 📖
