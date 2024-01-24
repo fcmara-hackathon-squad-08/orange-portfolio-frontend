@@ -60,12 +60,11 @@
           <div class="form-control">
             <input type="password" id="password" class="input-box" required>
             <label for="password" class="label-input">Password</label>
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <span></span>
+            <div id="icon" onclick="showHide()"></div>
           </div>
 
                          
-          <input type="button" class="button-login" value="Entrar">
+          <input type="submit" class="button-login" value="Entrar" onclick="login()">
 
           <a href="register.html"><p>Cadastre-se</p></a>
       </form>
@@ -73,9 +72,8 @@
 </div>
 
 
-
-
-  <script src="../index.js"></script>
+<script src="login.js"></script>
+<script src="../index.js"></script>
 </body>
 
 </html>
