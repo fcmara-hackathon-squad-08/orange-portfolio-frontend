@@ -1,0 +1,70 @@
+:root {
+  /* Primary Color Palette */
+  --color-principal-70: #EDEFF2;
+  --color-principal-80: #444466;
+  --color-principal-90: #222244;
+  --color-principal-100: #111133;
+
+  /* Secondary Color Palette */
+  --color-secondary-60: #FFEECC;
+  --color-secondary-70: #FFCC99;
+  --color-secondary-80: #FFAA66;
+  --color-secondary-90: #FF8833;
+  --color-secondary-100: #FF5522;
+  --color-secondary-110: #CC4400;
+  --color-secondary-120: #993300;
+  --color-secondary-130: #662200;
+
+  /* Neutral Color Palette */
+  --color-neutral-60: #FCFDFF;
+  --color-neutral-70: #E6E9F2;
+  --color-neutral-80: #C2C4CC;
+  --color-neutral-90: #A1A3AA;
+  --color-neutral-100: #818388;
+  --color-neutral-110: #515255;
+  --color-neutral-120: #303133;
+  --color-neutral-130: #0B0C0D;
+
+  /* Support Colors */
+
+  /* Success Color pallete */
+  --color-success-60: #EEFFBB;
+  --color-success-70: #BBEE88;
+  --color-success-80: #88CC66;
+  --color-success-90: #55BB44;
+  --color-success-100: #229922;
+  --color-success-110: #118822;
+  --color-success-120: #006622;
+  --color-success-130: #004422;
+
+  /* Alert Color Palette */
+  --color-alert-60: #FFFFCC;
+  --color-alert-70: #FFEE99;
+  --color-alert-80: #FFEE66;
+  --color-alert-90: #FFDD33;
+  --color-alert-100: #FFCC00;
+  --color-alert-110: #CC9900;
+  --color-alert-120: #997700;
+  --color-alert-130: #664400;
+
+  /* Error Color Palete */
+  --color-error-60: #FFDDCC;
+  --color-error-70: #FFAA99;
+  --color-error-80: #FF7766;
+  --color-error-90: #FF4433;
+  --color-error-100: #DD0000;
+  --color-error-110: #BB0000;
+  --color-error-120: #880000;
+  --color-error-130: #660000;
+
+  /* Info Color Palette */
+  --color-error-60: #ADCBFA;
+  --color-error-70: #82A9F0;
+  --color-error-80: #608AE1;
+  --color-error-90: #315FCE;
+  --color-error-100: #2348B1;
+  --color-error-110: #183594;
+  --color-error-120: #0F2477;
+  --color-error-130: #091862;
+
+}
