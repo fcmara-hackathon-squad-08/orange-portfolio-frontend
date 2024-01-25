@@ -1,4 +1,4 @@
-//Vizibilidade da senha
+//Visibilidade da senha
 const password = document.getElementById('password');
 const passwordVisibilityIcon = document.getElementById ('passwordVisibilityIcon');
 
