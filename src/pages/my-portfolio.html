@@ -11,8 +11,7 @@
 
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="../themes.css">
-  <link rel="stylesheet" href="../my-portfolio.css">
-
+  <link rel="stylesheet" href="my-portfolio.css">
 
   <!-- Navigation Header stylization -->
   <link rel="stylesheet" href="../components/navigation-header.css">
@@ -23,7 +22,31 @@
 
 <body>
   <navigation-header></navigation-header>
-
+  <main class="container">
+    <div class="profile-card">
+      <img src="../../imgs/avatar.png">
+      <section class="profile-info">
+        <h5>Camila Soares</h5>
+        <p>Brasil</p>
+        <button type="button">Adicionar projeto</button>
+      </section>
+    </div>
+    <article class="projects-container">
+      <h6>Meus projetos</h6>
+      <input type="text" placeholder="Buscar tags">
+      <div class="projects-grid">
+        <div class="item project-card">
+          <img src="../../imgs/filter.svg" class="filter-icon">
+          <div>
+            <p class="title">Adicione seu primeiro projeto</p>
+            <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+          </div>
+        </div>
+        <div class="item project-skeleton"></div>
+        <div class="item project-skeleton"></div>
+      </div>
+    </article>
+  </main>
   <script src="../components/NavigationHeader.js"></script>
 </body>
 
