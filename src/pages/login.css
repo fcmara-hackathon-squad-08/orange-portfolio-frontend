@@ -205,20 +205,20 @@ margin: 30px;
     background-color: var(--color-neutral-60);
 }
 
-#icon {
+#passwordVisibilityIcon {
   position: absolute;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  background: url(../../imgs/show.png);
+  background: url(../../imgs/show.svg);
   background-size: cover;
   width: 25px;
   height: 25px;
   cursor: pointer;
 }
 
-#icon.hide{
-  background: url(../../imgs/hide.png);
+#passwordVisibilityIcon.hide {
+  background: url(../../imgs/hide.svg);
   background-size: cover;
 }
 
