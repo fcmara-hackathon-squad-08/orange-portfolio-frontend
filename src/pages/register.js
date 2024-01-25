@@ -1,14 +1,14 @@
-//ìcone de vizibilidade da senha
+//Vizibilidade da senha
 const password = document.getElementById('password');
-const icon = document.getElementById ('icon');
+const passwordVisibilityIcon = document.getElementById ('passwordVisibilityIcon');
 
-function showHide(){
+function TogglePasswordVisibility(){
     if(password.type === 'password'){
         password.setAttribute('type', 'text');
-        icon.classList.add('hide');
+        passwordVisibilityIcon.classList.add('hide');
     }else{
         password.setAttribute('type', 'password');
-        icon.classList.remove('hide')
+        passwordVisibilityIcon.classList.remove('hide')
     }
 }
 
