@@ -24,7 +24,7 @@
 
     <div class="card">
 
-      <div class="success"> <img src="../../imgs/confirm.png" alt=""><p>Cadastro feito com sucesso</p></div>
+      <div class="success" id="success"> <img src="../../imgs/confirm.png" alt=""><p>Cadastro feito com sucesso</p></div>
 
 
       <form action="" id="form-register" class="form">
@@ -34,28 +34,28 @@
 
         <div class="names">
           <div class="form-control">
-          <input type="text" name="username" id="username" class="input-box" required>
-          <label for="username" class="label-input">Nome *</label>
+          <input type="text" id="firstname" class="input-box" required>
+          <label for="firstname" class="label-input" id="labelFirstname">Nome *</label>
           </div>
 
           <div class="form-control">
-          <input type="text" name="lastname" id="lastname" class="input-box" required>
-          <label for="lastname" class="label-input">Sobrenome *</label>
+          <input type="text" id="lastname" class="input-box" required>
+          <label for="lastname" class="label-input" id="labelLastname">Sobrenome *</label>
           </div>
          </div>
 
         <div class="form-control">
           <input type="email" id="email-add" class="input-box" required>
-          <label for="email-add" class="label-input">Email address</label>
+          <label for="email-add" class="label-input" id="labelEmail">Email address</label>
         </div>
 
         <div class="form-control">
           <input type="password" id="password" class="input-box" required>
-          <label for="password" class="label-input">Password</label>
+          <label for="password" class="label-input" id="labelPassword">Password</label>
           <div id="passwordVisibilityIcon" onclick="TogglePasswordVisibility()"></div>
         </div>
 
-        <input type="submit" class="button-register" value="Cadastrar">
+        <input type="submit" class="button-register" value="Cadastrar" onclick="register()">
       </form>
     
     </div>
@@ -63,7 +63,7 @@
 
 
 <script src="register.js"></script>
-<script src="../index.js"></script>
+
 </body>
 
 </html>
