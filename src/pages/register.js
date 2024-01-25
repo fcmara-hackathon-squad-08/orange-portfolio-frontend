@@ -96,9 +96,9 @@ function register(){
 
         success.setAttribute('style', 'visibility: visible');
         
-        setTimeout(function () {
+        setTimeout(() => {
             window.location.href = 'login.html'
-        }, 5000)
+        }, 2000)
         
         
     }else{
