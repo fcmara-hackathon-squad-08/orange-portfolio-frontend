@@ -11,8 +11,8 @@ class NavigationHeader extends HTMLElement {
       </div>
       <div class="menu">
         <div class="navigation">
-          <a href="">Meus projetos</a>
-          <a href="">Descobrir</a>
+          <a href="../pages/my-portfolio.html">Meus projetos</a>
+          <a href="../pages/discover.html">Descobrir</a>
         </div>
         <div class="avatarAndNotificationBox">
           <img src="../../imgs/avatar.png" class="avatar">
