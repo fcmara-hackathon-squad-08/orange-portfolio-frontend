@@ -26,12 +26,14 @@
 
       <div class="success"> <img src="../../imgs/confirm.png" alt=""><p>Cadastro feito com sucesso</p></div>
 
-      <div class="header">
-        <h3>Cadastre-se</h3>
-      </div>
 
-      <div class="names">
-        <div class="form-control">
+      <form action="" id="form-register" class="form">
+        <div class="header">
+          <h3>Cadastre-se</h3>
+        </div>
+
+        <div class="names">
+          <div class="form-control">
           <input type="text" name="username" id="username" class="input-box" required>
           <label for="username" class="label-input">Nome *</label>
           </div>
@@ -39,20 +41,23 @@
           <div class="form-control">
           <input type="text" name="lastname" id="lastname" class="input-box" required>
           <label for="lastname" class="label-input">Sobrenome *</label>
+          </div>
+         </div>
+
+        <div class="form-control">
+          <input type="email" id="email-add" class="input-box" required>
+          <label for="email-add" class="label-input">Email address</label>
         </div>
-      </div>
 
-      <div class="form-control">
-        <input type="email" id="email-add" class="input-box" required>
-        <label for="email-add" class="label-input">Email address</label>
-      </div>
+        <div class="form-control">
+          <input type="password" id="password" class="input-box" required>
+          <label for="password" class="label-input">Password</label>
+          <div id="icon" onclick="showHide()"></div>
+        </div>
 
-      <div class="form-control">
-        <input type="password" id="password" class="input-box" required>
-        <label for="password" class="label-input">Password</label>
-        <div id="icon" onclick="showHide()"></div>
-      </div>
-      <input type="submit" class="button-register" value="Cadastrar">
+        <input type="submit" class="button-register" value="Cadastrar">
+      </form>
+    
     </div>
 </div>
 
