@@ -1,6 +1,4 @@
-const openModalButton = document.getElementById("add-project-button");
 const modalContainer = document.getElementById("add-project-modal");
-const closeModalButton = document.getElementById("cancel-add-project-button");
 
 let selectedImage = document.getElementById("selected-image");
 const submitImageCardContent = document.getElementById("submit-image-card-content");
@@ -32,12 +30,11 @@ function showSubmitImageCardContent() {
   submitImageCardContent.classList.remove('hidden');
 }
 
-
-openModalButton.addEventListener('click', () => {
+function openAddProjectModal() {
   modalContainer.classList.add('show');
-});
+}
 
-closeModalButton.addEventListener('click', () => {
+function closeAddProjectModal() {
   modalContainer.classList.remove('show');
-})
 
+}
