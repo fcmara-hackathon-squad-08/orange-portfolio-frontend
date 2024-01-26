@@ -54,12 +54,20 @@
 
       <p class="subtitle">Selecione o conteúdo que você deseja fazer upload</p>
       <main>
-        <button type="button" class="submit-image-button">
+        <button type="button" onclick="chooseFile()" class="submit-image-button">
+          <div style="height:0px;overflow:hidden">
+            <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
+              onchange="uploadImage(this)" />
+          </div>
           <div class="submit-image-card">
-            <img src="../../static/images/filter.svg" class="filter-icon">
-            <div>
-              <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+            <div id="submit-image-card-content" class="submit-image-card-content">
+              <img src="../../static/images/filter.svg" class="filter-icon">
+              <div>
+                <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+              </div>
             </div>
+            <img src="" id="selected-image" class="selected-image" />
+
           </div>
         </button>
         <div class="input-container">
