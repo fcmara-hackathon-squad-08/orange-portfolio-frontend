@@ -6,7 +6,7 @@
   justify-content: space-around;
   align-items: space-between;
 
-  height: 100vh;
+  height: calc(100vh - 73px);
 }
 
 .profile-card {
@@ -382,7 +382,7 @@
 }
 
 .submit-image-card-content.hidden {
-  display: none;
+  display: auto;
 }
 
 .selected-image {
