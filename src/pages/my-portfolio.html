@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../themes.css">
   <link rel="stylesheet" href="my-portfolio.css">
 
@@ -22,13 +22,14 @@
 
 <body>
   <navigation-header></navigation-header>
+
   <main class="container">
     <div class="profile-card">
       <img src="../../imgs/avatar.png">
       <section class="profile-info">
         <h5>Camila Soares</h5>
         <p>Brasil</p>
-        <button type="button">Adicionar projeto</button>
+        <button id="add-project-button">Adicionar projeto</button>
       </section>
     </div>
     <article class="projects-container">
@@ -47,6 +48,37 @@
       </div>
     </article>
   </main>
+  <div id="add-project-modal" class="add-project-card-container show">
+    <section class="add-project-card">
+      <h5>Adicionar projeto</h5>
+
+      <p class="subtitle">Selecione o conteúdo que você deseja fazer upload</p>
+      <main>
+        <button type="button" class="submit-image-button">
+          <div class="submit-image-card">
+            <img src="../../imgs/filter.svg" class="filter-icon">
+            <div>
+              <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+            </div>
+          </div>
+        </button>
+        <div class="input-container">
+          <input type="text" placeholder="Titulo" />
+          <input type="text" placeholder="Tags" />
+          <input type="text" placeholder="Link" />
+          <textarea rows="5" cols="60" placeholder="Descrição"></textarea>
+        </div>
+      </main>
+      <footer>
+        <label>Visualizar publicação</label>
+        <div class="buttons-container">
+          <button type="button" class="save-button">Salvar</button>
+          <button id="cancel-add-project-button" type="button" class="cancel-button">Cancelar</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+  <script src="./my-portfolio.js"></script>
   <script src="../components/NavigationHeader.js"></script>
 </body>
 
