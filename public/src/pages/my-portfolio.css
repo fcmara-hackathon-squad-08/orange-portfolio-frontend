@@ -378,26 +378,16 @@
 }
 
 .submit-image-card-content {
-  opacity: 1;
-  pointer-events: auto;
+  display: auto;
 }
 
 .submit-image-card-content.hidden {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 .selected-image {
   max-width: 100%;
-  min-width: 100%;
-
-  /* opacity: 0;
-  pointer-events: none; */
-}
-
-.selected-image.show {
-  opacity: 1;
-  pointer-events: show;
+  max-height: 100%;
 }
 
 .add-project-card footer {
