@@ -1,0 +1,307 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: var(--color-alert-130);
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.figure {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  padding: 1rem;
+}
+
+.figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  color: var(--color-principal-90);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 40px;
+  margin-bottom: 40px;
+  width: auto;
+}
+
+.button-google{
+margin: 30px;
+}
+
+
+.gsi-material-button {
+  background-color: WHITE;
+  background-image: none;
+  border: 1px solid #747775;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 14px;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: auto;
+  max-width: 400px;
+  min-width: min-content;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  margin-right: 12px;
+  min-width: 20px;
+  width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  -webkit-align-items: center;
+  align-items: center;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.gsi-material-button .gsi-material-button-state {
+  -webkit-transition: opacity .218s;
+  transition: opacity .218s;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.gsi-material-button:disabled {
+  cursor: default;
+  background-color: #ffffff61;
+  border-color: #1f1f1f1f;
+}
+
+.gsi-material-button:disabled .gsi-material-button-contents {
+  opacity: 38%;
+}
+
+.gsi-material-button:disabled .gsi-material-button-icon {
+  opacity: 38%;
+}
+
+.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
+.gsi-material-button:not(:disabled):focus .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 12%;
+}
+
+.gsi-material-button:not(:disabled):hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+
+.gsi-material-button:not(:disabled):hover .gsi-material-button-state {
+  background-color: #303030;
+  opacity: 8%;
+}
+
+.form-control{
+  position: relative;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.subtitle {
+  color: var(--color-neutral-100);
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-left: 30px;
+}
+
+.form-control input {
+  width: 517px;
+  height: 56px;
+  margin-top:2px;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 4px;
+  padding: 0px 12px 0px 12px ;
+  border: 1px solid hsla(0, 0%, 0%, 0.230);
+}
+
+.label-input{
+  font-size: 18px;
+  line-height: 16px;
+  letter-spacing: 0.4;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: none;
+  color: var(--color-neutral-100);
+}
+
+.input-box:focus + .label-input,
+.input-box:valid + .label-input{
+    top: -5px;
+    font-size: 10px;
+    transition: .5s;
+    background-color: var(--color-neutral-60);
+}
+
+#passwordVisibilityIcon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: url(../../imgs/show.svg);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#passwordVisibilityIcon.hide {
+  background: url(../../imgs/hide.svg);
+  background-size: cover;
+}
+
+.button-login {
+    border-radius: 4px;
+    width: 517px;
+    height: 42px;
+    top: 10px;
+    padding: 8px 22px 8px 22px;
+    background-color: var(--color-secondary-100);
+    text-transform: uppercase;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    color:var(--color-neutral-60);
+    font-size: 15px;
+    line-height: 26px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .200);
+    letter-spacing: 0.46px;
+}
+
+.button-login:hover {
+    background-color: var(--color-secondary-110);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.500);
+}
+
+a{
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.15;   
+    color: var(--color-neutral-100);
+    text-decoration: none;
+}
+
+a > p {
+    margin-top: 10px;
+}
+
+a:hover{
+    color: var(--color-neutral-90);
+    text-decoration: underline overline;
+}
+
+@media screen and (max-width: 1100px) {
+    .figure{
+        display: none;
+    }
+    .container{
+        width: 100%;
+    }
+    .header{
+        font-size: 38px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    .header{
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .card{
+        width: 312px;
+    }
+    .subtitle{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .form-control input{
+        width: 312px;
+        height: 42px;        
+    }
+    .button-login{
+        width: 312px;
+        height: 42px;
+    }
+    a{
+        font-size: 16px;
+    }
+    .label-input{
+        font-size: 14px;
+        top: 15px;
+    }
+}
