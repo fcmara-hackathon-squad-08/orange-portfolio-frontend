@@ -3,6 +3,8 @@ const addProjectModal = document.getElementById("add-project-modal");
 let selectedImage = document.getElementById("selected-image");
 const submitImageCardContent = document.getElementById("submit-image-card-content");
 
+const previewModal = document.getElementById("project-preview-modal");
+
 function uploadImage(input) {
   hideSubmitImageCardContent()
   if (input.files && input.files[0]) {
@@ -37,4 +39,12 @@ function openAddProjectModal() {
 function closeAddProjectModal() {
   addProjectModal.classList.remove('show');
 
+}
+
+function openPreviewModal() {
+  previewModal.classList.add('show');
+}
+
+function closePreviewModal() {
+  previewModal.classList.remove('show');
 }

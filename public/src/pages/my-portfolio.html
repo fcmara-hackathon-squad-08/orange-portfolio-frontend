@@ -80,7 +80,7 @@
         </div>
       </main>
       <footer>
-        <label>Visualizar publicação</label>
+        <label onclick="openPreviewModal()">Visualizar publicação</label>
         <div class="buttons-container">
           <button type="button" class="save-button">Salvar</button>
           <button onclick="closeAddProjectModal()" type="button" class="cancel-button">Cancelar</button>
@@ -88,9 +88,9 @@
       </footer>
     </section>
   </div>
-  <div id="project-preview-modal" class="modal-container show">
+  <div id="project-preview-modal" class="modal-container">
     <div class="project-preview">
-      <button class="close-button">
+      <button onclick="closePreviewModal()" class="close-button">
         <span class="material-symbols-outlined">
           close
         </span>

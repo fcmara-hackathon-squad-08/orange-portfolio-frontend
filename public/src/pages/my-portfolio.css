@@ -408,6 +408,9 @@
   letter-spacing: 0.15px;
 
   margin-bottom: 16px;
+
+  cursor: pointer;
+
 }
 
 .buttons-container {
