@@ -1,7 +1,9 @@
-const modalContainer = document.getElementById("add-project-modal");
+const addProjectModal = document.getElementById("add-project-modal");
 
 let selectedImage = document.getElementById("selected-image");
 const submitImageCardContent = document.getElementById("submit-image-card-content");
+
+const previewModal = document.getElementById("project-preview-modal");
 
 function uploadImage(input) {
   hideSubmitImageCardContent()
@@ -31,10 +33,18 @@ function showSubmitImageCardContent() {
 }
 
 function openAddProjectModal() {
-  modalContainer.classList.add('show');
+  addProjectModal.classList.add('show');
 }
 
 function closeAddProjectModal() {
-  modalContainer.classList.remove('show');
+  addProjectModal.classList.remove('show');
 
+}
+
+function openPreviewModal() {
+  previewModal.classList.add('show');
+}
+
+function closePreviewModal() {
+  previewModal.classList.remove('show');
 }

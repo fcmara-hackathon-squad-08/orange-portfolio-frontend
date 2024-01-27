@@ -58,14 +58,14 @@
   --color-error-130: #660000;
 
   /* Info Color Palette */
-  --color-error-60: #ADCBFA;
-  --color-error-70: #82A9F0;
-  --color-error-80: #608AE1;
-  --color-error-90: #315FCE;
-  --color-error-100: #2348B1;
-  --color-error-110: #183594;
-  --color-error-120: #0F2477;
-  --color-error-130: #091862;
+  --color-info-60: #ADCBFA;
+  --color-info-70: #82A9F0;
+  --color-info-80: #608AE1;
+  --color-info-90: #315FCE;
+  --color-info-100: #2348B1;
+  --color-info-110: #183594;
+  --color-info-120: #0F2477;
+  --color-info-130: #091862;
 
   /* Button properties */
   --action-disabledBackground: rgba(0, 0, 0, 0.12);
