@@ -220,7 +220,7 @@
   background-color: #E6E9F233;
 }
 
-.add-project-card-container {
+.modal-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,7 +240,7 @@
   transition: opacity 0.3s ease;
 }
 
-.add-project-card-container.show {
+.modal-container.show {
   pointer-events: auto;
   opacity: 1;
 }
