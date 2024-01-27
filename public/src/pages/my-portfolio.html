@@ -82,7 +82,7 @@
       <footer>
         <label onclick="openPreviewModal()">Visualizar publicação</label>
         <div class="buttons-container">
-          <button type="button" class="save-button">Salvar</button>
+          <button onclick="submitProject()" type="button" class="save-button">Salvar</button>
           <button onclick="closeAddProjectModal()" type="button" class="cancel-button">Cancelar</button>
         </div>
       </footer>
@@ -130,6 +130,19 @@
         </article>
       </div class="project-preview-content">
     </div>
+  </div>
+  <div id="success-modal" class="modal-container">
+    <section>
+      <h5>Projeto adicionado com sucesso!</h5>
+      <div class="done-icon-container">
+        <span class="material-symbols-outlined">
+          done
+        </span>
+      </div>
+      <button class="save-button" onclick="closeSuccessModal()">
+        Voltar para projetos
+      </button>
+    </section>
   </div>
   <script src="./my-portfolio.js"></script>
   <script src="../components/NavigationHeader.js"></script>
