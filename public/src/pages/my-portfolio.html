@@ -90,32 +90,47 @@
   </div>
   <div id="project-preview-modal" class="modal-container show">
     <div class="project-preview">
-      <button>X</button>
-      <header>
-        <section class="user-info-container">
-          <img src="../../static/images/avatar.png">
-          <h1>Camila Soares</h1>
-          <p>12/12</p>
-        </section>
-        <h1>Ecommerce One Page</h1>
-        <div class="tags-container">
-          <ul>
-            <li>UX</li>
-            <li>Web</li>
-          </ul>
-        </div>
-      </header>
-      <img src="../components/" class="banner" />
-      <article>
-        <p>
-          Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
-          modelo
-          de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
-          primeiro template de e-commerce.
-        </p>
-        <p>Download</p>
-        <a href="https://gumroad.com/products/wxCSL"></a>
-      </article>
+      <button class="close-button">
+        <span class="material-symbols-outlined">
+          close
+        </span>
+      </button>
+      <div class="project-preview-content">
+        <header>
+          <div class="user-info-container">
+            <img class="avatar" src="../../static/images/avatar.png">
+            <section>
+              <h6>Camila Soares</h6>
+              <p>12/12</p>
+            </section>
+          </div>
+          <h5>Ecommerce One Page</h5>
+          <div class="tags-container">
+            <ul>
+              <li><a class="active" href="#">UX</a></li>
+              <li><a class="active" href="#">Web</a></li>
+            </ul>
+          </div>
+        </header>
+        <img src="../../static/images/img_landingpage.png" class="banner" />
+        <article>
+          <p>
+            Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
+            modelo
+            de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
+            primeiro template de e-commerce.
+          </p>
+          <br />
+          <p class="subtitle">
+            Download<br />
+            <a href="https://gumroad.com/products/wxCSL">
+              https://gumroad.com/products/wxCSL
+            </a>
+          </p>
+
+
+        </article>
+      </div class="project-preview-content">
     </div>
   </div>
   <script src="./my-portfolio.js"></script>
