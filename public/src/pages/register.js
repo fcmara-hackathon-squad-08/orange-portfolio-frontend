@@ -45,9 +45,9 @@ firstname.addEventListener('keyup', () =>{
 });
 
 lastname.addEventListener('keyup', () =>{
-    if(lastname.value.length <= 4){
+    if(lastname.value.length <= 3){
         labelLastname.setAttribute('style', 'color: red');
-        labelLastname.innerHTML = ('Sobrenome * Insira no mínimo 5 caracteres');
+        labelLastname.innerHTML = ('Sobrenome * Insira no mínimo 4 caracteres');
         lastname.setAttribute('style', 'border-color: red');
         validLastname = false;
     }else{
