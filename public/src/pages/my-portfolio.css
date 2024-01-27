@@ -382,7 +382,7 @@
 }
 
 .submit-image-card-content.hidden {
-  display: auto;
+  display: none;
 }
 
 .selected-image {
