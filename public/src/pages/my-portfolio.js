@@ -5,6 +5,8 @@ const submitImageCardContent = document.getElementById("submit-image-card-conten
 
 const previewModal = document.getElementById("project-preview-modal");
 
+const successModal = document.getElementById("success-modal");
+
 function uploadImage(input) {
   hideSubmitImageCardContent()
   if (input.files && input.files[0]) {
@@ -47,4 +49,17 @@ function openPreviewModal() {
 
 function closePreviewModal() {
   previewModal.classList.remove('show');
+}
+
+function openSuccessModal() {
+  successModal.classList.add('show');
+}
+
+function closeSuccessModal() {
+  successModal.classList.remove('show');
+}
+
+function submitProject() {
+  closeAddProjectModal()
+  openSuccessModal()
 }
