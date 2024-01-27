@@ -144,9 +144,16 @@
   gap: 100px;
 }
 
-.project-card {
-  display: flex;
+.projects-grid button {
+  display: auto;
+}
 
+.projects-grid button.hidden {
+  display: none;
+}
+
+.project-card-placeholder {
+  display: flex;
   flex-direction: column;
 
   width: 389px;
