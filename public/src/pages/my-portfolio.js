@@ -1,4 +1,4 @@
-const modalContainer = document.getElementById("add-project-modal");
+const addProjectModal = document.getElementById("add-project-modal");
 
 let selectedImage = document.getElementById("selected-image");
 const submitImageCardContent = document.getElementById("submit-image-card-content");
@@ -31,10 +31,10 @@ function showSubmitImageCardContent() {
 }
 
 function openAddProjectModal() {
-  modalContainer.classList.add('show');
+  addProjectModal.classList.add('show');
 }
 
 function closeAddProjectModal() {
-  modalContainer.classList.remove('show');
+  addProjectModal.classList.remove('show');
 
 }
