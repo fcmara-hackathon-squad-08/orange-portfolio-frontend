@@ -486,6 +486,7 @@
 }
 
 .project-preview .close-button {
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -494,20 +495,25 @@
   width: 24px;
   height: 24px;
 
-  padding: 4px;
-
   margin-top: 16px;
   margin-right: 20px;
 
   border-radius: 100%;
+
+  padding: 4px;
+
   background-color: transparent;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.close-button:hover {
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 .close-button span {
   border-radius: 100%;
   color: #323232;
-
-  align-self: center;
 }
 
 material-symbols-outlined {
@@ -525,8 +531,6 @@ material-symbols-outlined {
   margin: 0px 102px;
 
   width: 838px;
-
-
 }
 
 .project-preview header {
@@ -538,10 +542,6 @@ material-symbols-outlined {
   gap: 175px;
 
   background-color: transparent;
-
-
-
-
 }
 
 .project-preview header h5 {
@@ -555,13 +555,11 @@ material-symbols-outlined {
   line-height: 24px;
 
   white-space: nowrap;
-
 }
 
 .project-preview header .user-info-container {
   display: flex;
   flex-direction: row;
-
 }
 
 /* .project preview header .user-info-container img {} */
@@ -650,7 +648,6 @@ a:hover {
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0.5px;
-
 }
 
 .project-preview-content article .subtitle {
