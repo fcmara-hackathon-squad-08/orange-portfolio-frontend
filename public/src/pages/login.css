@@ -210,7 +210,7 @@ margin: 30px;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
-  background: url(../../imgs/show.svg);
+  background: url(../../static/images/show.svg);
   background-size: cover;
   width: 25px;
   height: 25px;
@@ -218,7 +218,7 @@ margin: 30px;
 }
 
 #passwordVisibilityIcon.hide {
-  background: url(../../imgs/hide.svg);
+  background: url(../../static/images/hide.svg);
   background-size: cover;
 }
 
