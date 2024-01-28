@@ -102,7 +102,6 @@ h2 {
 h3 {
   color: var(--color-neutral-130, #0B0C0D);
 
-  font-family: Roboto;
   font-size: 48px;
   font-style: normal;
   font-weight: 400;
@@ -113,7 +112,6 @@ h3 {
 h4 {
   color: var(--color-neutral-130, #0B0C0D);
 
-  font-family: Roboto;
   font-size: 34px;
   font-style: normal;
   font-weight: 400;
