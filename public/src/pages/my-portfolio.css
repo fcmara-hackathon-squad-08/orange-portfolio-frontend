@@ -144,9 +144,121 @@
   gap: 100px;
 }
 
+/* <PROJECT_CARD> */
 .project-card {
   display: flex;
+  flex-direction: column;
 
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 389px;
+  height: 258px;
+
+  border-radius: var(--bordeRadius);
+
+  margin-bottom: 8px;
+}
+
+.project-card .edit-project-button {
+  align-self: flex-end;
+  position: relative;
+
+  top: 36px;
+  right: 8px;
+
+  border-radius: 100%;
+  background-color: var(--color-secondary-70);
+
+  width: 28px;
+  height: 28px;
+
+}
+
+.edit-project-button img {
+  width: 24px;
+  height: 24px;
+
+  align-self: center;
+}
+
+.project-card .open-project-button {
+  background: url("./../static/images/img_landingpage.png") lightgray 50% no-repeat;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.project-card footer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+
+.project-card footer .user-info-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info-container img {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 100%;
+
+  margin-right: 8px;
+}
+
+.user-info-container p {
+  color: var(--color-neutral-110, #515255);
+
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.15px;
+
+  text-align: center;
+
+}
+
+.project-card .user-info-container footer img {
+  margin-right: 15px;
+
+}
+
+/* <PROJECT_CARD/> */
+
+.projects-grid button {
+  display: auto;
+}
+
+.projects-grid button.hidden {
+  display: none;
+}
+
+.project-card-placeholder {
+  display: flex;
   flex-direction: column;
 
   width: 389px;
@@ -600,7 +712,7 @@ material-symbols-outlined {
   flex-direction: row;
 }
 
-.tags-container ul {
+.tags-container .tag-list {
   display: flex;
   flex-direction: row;
   list-style-type: none;
