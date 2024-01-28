@@ -7,7 +7,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../themes.css">
@@ -28,13 +27,13 @@
       <img src="../../static/images/avatar.png">
       <section class="profile-info">
         <h5>Camila Soares</h5>
-        <p>Brasil</p>
-        <button onclick="openAddProjectModal()">Adicionar projeto</button>
+        <p class="subtitle1">Brasil</p>
+        <button class="button-text" onclick="openAddProjectModal()">Adicionar projeto</button>
       </section>
     </div>
     <article class="projects-container">
       <h6>Meus projetos</h6>
-      <input type="text" placeholder="Buscar tags">
+      <input type="text" placeholder="Buscar tags" class="label">
       <div class="projects-grid">
         <!-- <button id="project-card-placeholder" onclick="openAddProjectModal()" class="hidden">
           <div class="item project-card-placeholder">
@@ -56,47 +55,7 @@
             <footer>
               <div class="user-info-container">
                 <img src="../../static/images/avatar.png" class="avatar" />
-                <p>Camila Soares • 12/23</p>
-              </div>
-              <div class="tags-container">
-                <ul class="tag-list">
-                  <li><a class="active">UX</a></li>
-                  <li><a class="active">Web</a></li>
-                </ul>
-              </div>
-            </footer>
-          </button>
-        </div>
-        <div id="project-card" class="project-card">
-          <button class="edit-project-button">
-            <img src="../../static/images/mode.svg" />
-          </button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
-            <img src="../../static/images/img_landingpage.png" class="project-banner" />
-            <footer>
-              <div class="user-info-container">
-                <img src="../../static/images/avatar.png" class="avatar" />
-                <p>Camila Soares • 12/23</p>
-              </div>
-              <div class="tags-container">
-                <ul class="tag-list">
-                  <li><a class="active">UX</a></li>
-                  <li><a class="active">Web</a></li>
-                </ul>
-              </div>
-            </footer>
-          </button>
-        </div>
-        <div id="project-card" class="project-card">
-          <button class="edit-project-button">
-            <img src="../../static/images/mode.svg" />
-          </button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
-            <img src="../../static/images/img_landingpage.png" class="project-banner" />
-            <footer>
-              <div class="user-info-container">
-                <img src="../../static/images/avatar.png" class="avatar" />
-                <p>Camila Soares • 12/23</p>
+                <p class="subtitle1">Camila Soares • 12/23</p>
               </div>
               <div class="tags-container">
                 <ul class="tag-list">
@@ -114,7 +73,7 @@
     <section class="add-project-card">
       <h5>Adicionar projeto</h5>
 
-      <p class="subtitle">Selecione o conteúdo que você deseja fazer upload</p>
+      <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
       <main>
         <button type="button" onclick="chooseFile()" class="submit-image-button">
           <div style="height:0px;overflow:hidden">
@@ -125,7 +84,7 @@
             <div id="submit-image-card-content" class="submit-image-card-content">
               <img src="../../static/images/filter.svg" class="filter-icon">
               <div>
-                <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+                <p class="body-text2">Compartilhe seu talento com milhares de pessoas</p>
               </div>
             </div>
             <img src="" id="selected-image" class="selected-image" />
@@ -133,17 +92,17 @@
           </div>
         </button>
         <div class="input-container">
-          <input type="text" placeholder="Titulo" />
-          <input type="text" placeholder="Tags" />
-          <input type="text" placeholder="Link" />
-          <textarea rows="5" cols="60" placeholder="Descrição"></textarea>
+          <input type="text" placeholder="Titulo" class="label" />
+          <input type="text" placeholder="Tags" class="label" />
+          <input type="text" placeholder="Link" class="label" />
+          <textarea rows="5" cols="60" placeholder="Descrição" class="label"></textarea>
         </div>
       </main>
       <footer>
-        <label onclick="openPreviewModal()">Visualizar publicação</label>
+        <label class="subtitle1" onclick="openPreviewModal()">Visualizar publicação</label>
         <div class="buttons-container">
-          <button onclick="submitProject()" type="button" class="save-button">Salvar</button>
-          <button onclick="closeAddProjectModal()" type="button" class="cancel-button">Cancelar</button>
+          <button onclick="submitProject()" type="button" class="button-text save-button">Salvar</button>
+          <button onclick="closeAddProjectModal()" type="button" class="button-text cancel-button">Cancelar</button>
         </div>
       </footer>
     </section>
@@ -158,32 +117,32 @@
       <div class="project-preview-content">
         <header>
           <div class="user-info-container">
-            <img class="avatar" src="../../static/images/avatar.png">
+            <img src="../../static/images/avatar.png">
             <section>
-              <h6>Camila Soares</h6>
-              <p>12/12</p>
+              <p class="subtitle1">Camila Soares</h6>
+              <p class="body-text1">12/12</p>
             </section>
           </div>
           <h5>Ecommerce One Page</h5>
           <div class="tags-container">
             <ul class="tag-list">
-              <li><a class="active" href="#">UX</a></li>
-              <li><a class="active" href="#">Web</a></li>
+              <li><a class="" href="">UX</a></li>
+              <li><a class="" href="">Web</a></li>
             </ul>
           </div>
         </header>
         <img src="../../static/images/img_landingpage.png" class="banner" />
         <article>
-          <p>
+          <p class="body-text1">
             Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
             modelo
             de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
             primeiro template de e-commerce.
           </p>
           <br />
-          <p class="subtitle">
+          <p class="subtitle1">
             Download<br />
-            <a href="https://gumroad.com/products/wxCSL">
+            <a class="body-text2" href="https://gumroad.com/products/wxCSL">
               https://gumroad.com/products/wxCSL
             </a>
           </p>
@@ -199,7 +158,7 @@
           done
         </span>
       </div>
-      <button class="save-button" onclick="closeSuccessModal()">
+      <button class="button-text save-button" onclick="closeSuccessModal()">
         Voltar para projetos
       </button>
     </section>
