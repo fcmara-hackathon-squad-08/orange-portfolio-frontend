@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-  }
+}
   
 .header h4{
   font-family: 'Roboto';
@@ -84,15 +84,14 @@
 }
 
 .card-project{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 0;
     position: absolute;
     gap: 8px;
     left: 32px;
     top: 503px;     
     cursor: pointer;
+    list-style: none;
+    margin: 0 auto;
 }
 
 .card-project img{
@@ -101,13 +100,20 @@
     border-radius: 4px;
 }
 
+.card-project li{
+    margin: 0 15px 60px 0px;
+    float: left;
+    width: 389px;
+    height: 258px;
+}
+
 .container-card{
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 8px;
-    width: 190px;
+    width: 250px;
     height: 24px;
 }
 
@@ -118,7 +124,7 @@
 }
 
 .container-card p{
-    width: 158px;
+    width: 250px;
     height: 16px;
     font-family: 'Roboto';
     font-style: normal;
@@ -334,3 +340,4 @@
    line-height: 14px;
    letter-spacing: 0.25px;
 }
+

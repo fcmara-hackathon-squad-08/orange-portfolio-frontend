@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="discover.css">
 
 
-  <!-- Navigation Header stylization -->
   <link rel="stylesheet" href="../components/navigation-header.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -35,13 +34,39 @@
     <label for="tags" class="label-input" id="labelTags">Buscar tags</label>
   </div>
 
-  <div onclick="openModal()" class="card-project" >
-    <img src="../../static/images/project_01.png" alt="My Project" />
+  <ul class="card-project" >
+    <li onclick="openModal()" >
+      <img src="../../static/images/project_01.png" alt="My Project" />
+
+      <div class="container-card">
+        <img class="avatar2" src="../../static/images/avatar_02.svg"><p>Bianca Martin • 02/24</p>
+      </div>  
+    </li>
+
+    <li onclick="openModal2()">
+    <img src="../../static/images/project_02.png" alt="My Project" />
 
     <div class="container-card">
-      <img class="avatar2" src="../../static/images/avatar2.svg"><p>Bianca Martin • 02/24</p>
-    </div>
-  </div>
+      <img class="avatar2" src="../../static/images/avatar_03.svg"><p>Enzo Gabriel • 12/23</p>
+    </div>  
+  </li>
+
+  <li onclick="openModal3()">
+    <img src="../../static/images/project_03.png" alt="My Project" />
+
+    <div class="container-card">
+      <img class="avatar2" src="../../static/images/avatar_04.svg"><p>Alice Alexandra • 12/23</p>
+    </div>  
+  </li>
+
+  <li onclick="openModal4()">
+    <img src="../../static/images/project_04.png" alt="My Project" />
+
+    <div class="container-card">
+      <img class="avatar2" src="../../static/images/avatar_05.svg"><p>Carolina Valentim • 12/23</p>
+    </div>  
+  </li>
+  </ul>
 
   <div class="modal-window" id="modal-window">
     <div class="modal-view">
@@ -49,7 +74,7 @@
       <div class="project-preview-content">
        <header>
          <div class="user-info-container">
-           <img class="avatar" src="../../static/images/avatar2.svg">
+           <img class="avatar" src="../../static/images/avatar_02.svg">
           
            <section>
              <h6>Bianca Martin</h6>
@@ -86,10 +111,145 @@
       </div>
     </div>
   </div>
+
+  <div class="modal-window" id="modal-window-02">
+    <div class="modal-view">
+      <button class="close-modal" id="close-modal">X</button>
+      <div class="project-preview-content">
+       <header>
+         <div class="user-info-container">
+           <img class="avatar" src="../../static/images/avatar_03.svg">
+          
+           <section>
+             <h6>Enzo Gabriel</h6>
+              <p>12/23</p>
+            </section>
+          </div>
+
+          <h5>Ecommerce One Page</h5>
+
+          <div class="tags-container">
+            <ul>
+              <li><a class="active" href="#">UX</a></li>
+              <li><a class="active" href="#">Web</a></li>
+            </ul>
+          </div>
+       </header>
+
+       <img src="../../static/images/project_02.png" class="banner" />
+
+       <article>
+        <p>
+          Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
+          modelo
+          de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
+          primeiro template de e-commerce.
+        </p>
+        <br />
+        <p class="subtitle">Download
+          <br />
+
+          <a href="https://gumroad.com/products/wxCSL">
+            https://gumroad.com/products/wxCSL
+          </a>
+        </p>  
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-window" id="modal-window-03">
+    <div class="modal-view">
+      <button class="close-modal" id="close-modal">X</button>
+      <div class="project-preview-content">
+       <header>
+         <div class="user-info-container">
+           <img class="avatar" src="../../static/images/avatar_04.svg">
+          
+           <section>
+             <h6>Alice Alexandra</h6>
+              <p>12/23</p>
+            </section>
+          </div>
+
+          <h5>Ecommerce One Page</h5>
+
+          <div class="tags-container">
+            <ul>
+              <li><a class="active" href="#">UX</a></li>
+              <li><a class="active" href="#">Web</a></li>
+            </ul>
+          </div>
+       </header>
+
+       <img src="../../static/images/project_03.png" class="banner" />
+
+       <article>
+        <p>
+          Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
+          modelo
+          de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
+          primeiro template de e-commerce.
+        </p>
+        <br />
+        <p class="subtitle">Download
+          <br />
+
+          <a href="https://gumroad.com/products/wxCSL">
+            https://gumroad.com/products/wxCSL
+          </a>
+        </p>  
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-window" id="modal-window-04">
+    <div class="modal-view">
+      <button class="close-modal" id="close-modal">X</button>
+      <div class="project-preview-content">
+       <header>
+         <div class="user-info-container">
+           <img class="avatar" src="../../static/images/avatar_05.svg">
+          
+           <section>
+             <h6>Carolina Valentim</h6>
+              <p>12/23</p>
+            </section>
+          </div>
+
+          <h5>Ecommerce One Page</h5>
+
+          <div class="tags-container">
+            <ul>
+              <li><a class="active" href="#">UX</a></li>
+              <li><a class="active" href="#">Web</a></li>
+            </ul>
+          </div>
+       </header>
+
+       <img src="../../static/images/project_04.png" class="banner" />
+
+       <article>
+        <p>
+          Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
+          modelo
+          de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
+          primeiro template de e-commerce.
+        </p>
+        <br />
+        <p class="subtitle">Download
+          <br />
+
+          <a href="https://gumroad.com/products/wxCSL">
+            https://gumroad.com/products/wxCSL
+          </a>
+        </p>  
+      </div>
+    </div>
+  </div>
       
 
  
-    </div>
+  </div>
 
   </div>
   
