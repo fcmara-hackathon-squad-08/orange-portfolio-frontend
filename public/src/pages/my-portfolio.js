@@ -44,6 +44,7 @@ function closeAddProjectModal() {
 }
 
 function openPreviewModal() {
+  console.warn("Clicked");
   previewModal.classList.add('show');
 }
 
