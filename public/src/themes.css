@@ -168,9 +168,8 @@ h6 {
 }
 
 /* [Orange P] Style Guide/Label */
-label {
+.label {
   color: var(--color-neutral-130, #0B0C0D);
-
   font-feature-settings: 'clig' off, 'liga' off;
 
   font-size: 16px;
@@ -231,7 +230,7 @@ label {
 }
 
 /* [Orange P] Style Guide/Button */
-.button {
+.button-text {
   color: var(--color-neutral-130, #0B0C0D);
 
   font-feature-settings: 'clig' off, 'liga' off;
