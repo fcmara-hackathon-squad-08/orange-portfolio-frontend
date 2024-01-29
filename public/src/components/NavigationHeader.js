@@ -1,7 +1,6 @@
 class NavigationHeader extends HTMLElement {
   constructor() {
     super()
-
   }
   connectedCallback() {
     this.innerHTML = `
@@ -12,7 +11,7 @@ class NavigationHeader extends HTMLElement {
       <div class="menu">
         <div class="navigation">
           <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
-          <a href="../../pages/discover.html">Descobrir</a>
+          <a href="../../pages/discover/index.html">Descobrir</a>
         </div>
         <div class="avatarAndNotificationBox">
           <img src="../../../static/images/avatar.png" class="avatar">
