@@ -1,29 +1,14 @@
-const addProjectModal = document.getElementById("add-project-modal");
+const addProjectModal = document.getElementById('add-project-modal');
 
-let selectedImage = document.getElementById("selected-image");
-const submitImageCardContent = document.getElementById("submit-image-card-content");
+const selectedImage = document.getElementById('selected-image');
+const submitImageCardContent = document.getElementById('submit-image-card-content');
 
-const previewModal = document.getElementById("project-preview-modal");
+const previewModal = document.getElementById('project-preview-modal');
 
-const successModal = document.getElementById("success-modal");
-
-function uploadImage(input) {
-  hideSubmitImageCardContent()
-  if (input.files && input.files[0]) {
-    let reader = new FileReader();
-
-
-    reader.onload = function (e) {
-      selectedImage.src = e.target.result
-    }
-
-    reader.readAsDataURL(input.files[0]);
-
-  }
-}
+const successModal = document.getElementById('success-modal');
 
 function chooseFile() {
-  document.getElementById("fileInput").click();
+  document.getElementById('fileInput').click();
 }
 
 function hideSubmitImageCardContent() {
@@ -40,11 +25,9 @@ function openAddProjectModal() {
 
 function closeAddProjectModal() {
   addProjectModal.classList.remove('show');
-
 }
 
 function openPreviewModal() {
-  console.warn("Clicked");
   previewModal.classList.add('show');
 }
 
@@ -61,6 +44,19 @@ function closeSuccessModal() {
 }
 
 function submitProject() {
-  closeAddProjectModal()
-  openSuccessModal()
+  closeAddProjectModal();
+  openSuccessModal();
+}
+
+function uploadImage(input) {
+  hideSubmitImageCardContent();
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      selectedImage.src = e.target.result;
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
 }
