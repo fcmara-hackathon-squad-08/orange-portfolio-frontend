@@ -28,12 +28,14 @@
       <section class="profile-info">
         <h5>Camila Soares</h5>
         <p class="subtitle1">Brasil</p>
-        <button class="button-text" onclick="openAddProjectModal()">Adicionar projeto</button>
+        <md-filled-button aria-label="Adiciona um novo projeto" onclick="openAddProjectModal()">
+          ADICIONAR PROJETO
+        </md-filled-button>
       </section>
     </div>
     <article class="projects-container">
       <h6>Meus projetos</h6>
-      <input type="text" placeholder="Buscar tags" class="label">
+      <md-outlined-text-field placeholder="Buscar tags" class="label"></md-outlined-text-field>
       <div class="projects-grid">
         <!-- <button id="project-card-placeholder" onclick="openAddProjectModal()" class="hidden">
           <div class="item project-card-placeholder">
@@ -47,9 +49,9 @@
         <div class="item project-skeleton"></div>
         <div class="item project-skeleton"></div> -->
         <div id="project-card" class="project-card">
-          <button class="edit-project-button">
+          <md-filled-button class="edit-project-button">
             <img src="../../static/images/mode.svg" />
-          </button>
+          </md-filled-button>
           <button type="button" onclick="openPreviewModal()" class="open-project-button">
             <img src="../../static/images/img_landingpage.png" class="project-banner" />
             <footer>
@@ -75,7 +77,7 @@
 
       <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
       <main>
-        <button type="button" onclick="chooseFile()" class="submit-image-button">
+        <button type="button" onclick="chooseFile()">
           <div style="height:0px;overflow:hidden">
             <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
               onchange="uploadImage(this)" />
@@ -92,28 +94,30 @@
           </div>
         </button>
         <div class="input-container">
-          <input type="text" placeholder="Titulo" class="label" />
-          <input type="text" placeholder="Tags" class="label" />
-          <input type="text" placeholder="Link" class="label" />
-          <textarea rows="5" cols="60" placeholder="Descrição" class="label"></textarea>
+          <md-outlined-text-field placeholder="Titulo" class="label"></md-outlined-text-field>
+          <md-outlined-text-field placeholder="Tags" class="label"></md-outlined-text-field>
+          <md-outlined-text-field placeholder="Link" class="label"></md-outlined-text-field>
+          <md-outlined-text-field type="textarea" rows="2" placeholder="Descrição"
+            class="label"></md-outlined-text-field>
         </div>
       </main>
       <footer>
         <label class="subtitle1" onclick="openPreviewModal()">Visualizar publicação</label>
         <div class="buttons-container">
-          <button onclick="submitProject()" type="button" class="button-text save-button">Salvar</button>
-          <button onclick="closeAddProjectModal()" type="button" class="button-text cancel-button">Cancelar</button>
+          <md-filled-button onclick="submitProject()" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="closeAddProjectModal()" type="button"
+            class="disabled-button">CANCELAR</md-filled-button>
         </div>
       </footer>
     </section>
   </div>
   <div id="project-preview-modal" class="modal-container">
     <div class="project-preview">
-      <button onclick="closePreviewModal()" class="close-button">
+      <md-filled-button onclick="closePreviewModal()" class="close-button">
         <span class="material-symbols-outlined">
           close
         </span>
-      </button>
+      </md-filled-button>
       <div class="project-preview-content">
         <header>
           <div class="user-info-container">
@@ -150,7 +154,7 @@
       </div class="project-preview-content">
     </div>
   </div>
-  <div id="success-modal" class="modal-container">
+  <div id="success-modal" class="modal-container show">
     <section>
       <h5>Projeto adicionado com sucesso!</h5>
       <div class="done-icon-container">
@@ -158,13 +162,17 @@
           done
         </span>
       </div>
-      <button class="button-text save-button" onclick="closeSuccessModal()">
-        Voltar para projetos
-      </button>
+      <md-filled-button class="submit-button" aria-label="Voltar para projetos" onclick="closeSuccessModal()">
+        VOLTAR PARA PROJETOS
+      </md-filled-button>
     </section>
   </div>
   <script src="./my-portfolio.js"></script>
   <script src="../components/NavigationHeader.js"></script>
+
+  <!-- Material design imports -->
+  <script src="../../../index.js"></script>
+  <script src="../../../bundle.js"></script>
 </body>
 
 </html>
