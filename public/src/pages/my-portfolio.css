@@ -91,6 +91,20 @@
   margin-bottom: 8px;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+md-icon {
+  color: #000;
+  --md-icon-size: 24px;
+  --md-icon-font: 'Material Symbols Outlined';
+}
+
 .project-card .edit-project-button {
   align-self: flex-end;
   position: relative;
@@ -98,19 +112,12 @@
   top: 36px;
   right: 8px;
 
-  border-radius: 100%;
-  background-color: var(--color-secondary-70);
+  --md-filled-icon-button-container-width: 28px;
+  --md-filled-icon-button-container-height: 28px;
+  --md-filled-icon-button-icon-size: 40px;
+  --md-filled-icon-button-container-shape: 100px;
+  --md-sys-color-primary: var(--color-secondary-70);
 
-  width: 28px;
-  height: 28px;
-
-}
-
-.edit-project-button img {
-  width: 24px;
-  height: 24px;
-
-  align-self: center;
 }
 
 .project-card .open-project-button {
