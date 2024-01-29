@@ -23,5 +23,5 @@ function login() {
   // } else {
   //     alert("Usuário ou senha não encontrado, caso não tenha cadastro, clique em Cadastre-se!")
   // }
-  window.location.replace('./my-portfolio.html');
+  window.location.replace('../my-portfolio/index.html');
 }
