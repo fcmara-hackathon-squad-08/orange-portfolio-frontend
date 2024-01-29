@@ -44,18 +44,18 @@ firstname.addEventListener('keyup', () => {
   }
 });
 
-lastname.addEventListener('keyup', () => {
-  if (lastname.value.length <= 4) {
-    labelLastname.setAttribute('style', 'color: red');
-    labelLastname.innerHTML = ('Sobrenome * Insira no mínimo 5 caracteres');
-    lastname.setAttribute('style', 'border-color: red');
-    validLastname = false;
-  } else {
-    labelLastname.setAttribute('style', 'color: green');
-    labelLastname.innerHTML = ('Sobrenome *');
-    lastname.setAttribute('style', 'border-color: green');
-    validLastname = true;
-  }
+lastname.addEventListener('keyup', () =>{
+    if(lastname.value.length <= 3){
+        labelLastname.setAttribute('style', 'color: red');
+        labelLastname.innerHTML = ('Sobrenome * Insira no mínimo 4 caracteres');
+        lastname.setAttribute('style', 'border-color: red');
+        validLastname = false;
+    }else{
+        labelLastname.setAttribute('style', 'color: green');
+        labelLastname.innerHTML = ('Sobrenome *');
+        lastname.setAttribute('style', 'border-color: green');
+        validLastname = true;
+    }
 });
 
 emailAdd.addEventListener('keyup', () => {

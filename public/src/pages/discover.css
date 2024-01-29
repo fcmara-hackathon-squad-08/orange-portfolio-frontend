@@ -1,4 +1,421 @@
-* {
-  padding: 0;
-  margin: 0;
-}
+.header h4{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.25px;
+    position: absolute;
+    width: 744px;
+    height: 102px;
+    left: calc(50% - 744px/2);
+    top: 185px;
+    color: var(--color-principal-90);
+   
+  }
+  
+  .input-tags {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      
+      position: absolute;
+      width: 723px;
+      height: 56px;
+      left: 32px;
+      top: 407px;
+  }
+  
+  .input-tags input{
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px 12px;
+  
+  
+      width: 723px;
+      height: 56px;
+  
+      border: 1px solid rgba(0, 0, 0, 0.23);
+      border-radius: 4px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+      color: rgba(0, 0, 0, 0.38);
+  }
+  
+  .input-tags label{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px 4px;
+      gap: 10px;
+      position: absolute;
+      width: 74px;
+      height: 2px;
+      left: 12px;
+      top: 0px;
+      background: #FFFFFF;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      z-index: 1;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      color: var(--color-neutral-100);
+      font-size: 12px;
+      line-height: 12px;
+      align-items: center;
+      letter-spacing: 0.15px;
+  }
+  
+  .card-project{
+      padding: 0;
+      position: absolute;
+      gap: 8px;
+      left: 32px;
+      top: 503px;     
+      cursor: pointer;
+      list-style: none;
+      margin: 0 auto;
+  }
+  
+  .card-project img{
+      width: 389px;
+      height: 258px;
+      border-radius: 4px;
+  }
+  
+  .card-project li{
+      margin: 0 15px 60px 0px;
+      float: left;
+      width: 389px;
+      height: 258px;
+  }
+  
+  .container-card{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      gap: 8px;
+      width: 250px;
+      height: 24px;
+  }
+  
+  .container-card img{
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+  }
+  
+  .container-card p{
+      width: 250px;
+      height: 16px;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 16px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.15px;
+      color: #515255;
+  }
+  
+  .modal-window{
+      width: 100vw;
+      height: 200vh;
+      position: relative;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      background-color: rgba(0, 0, 0, 0.3);
+      top: -100px;
+      
+  
+  }
+  
+  .modal-view{
+      width: 1042px;
+      height: 980.82px;
+      top: 176px;
+      background: #ffffff;
+      backdrop-filter: blur(10px);
+      padding: 50px 0 50px 0;
+  }
+  
+  .close-modal{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 30px;
+      height: 30px;
+      border: 0;
+      color: #323232;
+      background-color: #ffffff ;
+      font-size: 20px;
+      cursor: pointer;
+  }
+  
+  .modal-window.open-modal {
+      display: flex;
+  }
+  
+  @keyframes openModal{
+      from{
+          opacity: 0;
+          transform: translate3d(0, -20px, -5px);
+      }to {
+          opacity: 1;
+          transform: translate3d(0,0,0);
+      }
+  }
+  
+  .open-modal .modal-view{
+      animation: openModal 0.2s;
+  }
+  
+  .project-preview-content {
+      display: flex;
+      flex-direction: column;
+    
+      margin: 0px 102px;
+    
+      width: 838px;
+  }
+    
+  .project-preview-content header {
+      display: flex;
+    
+      justify-content: center;
+      align-items: center;
+    
+      gap: 175px;
+    
+      background-color: transparent;
+  
+      margin-bottom: 35px;
+  }
+  
+  .project-preview-content header h5 {
+      color: var(--color-neutral-120, #303133);
+      text-align: center;
+      
+      font-family: Roboto;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    
+      white-space: nowrap;
+    }
+  
+  .project-preview-content header .user-info-container {
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .user-info-container section {
+      margin-left: 8px;
+  }
+  
+  .user-info-container h6 {
+      color: var(--color-neutral-120 #303133);
+    
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    
+      white-space: nowrap;
+    
+      margin-bottom: 8px;
+  }
+  
+  .user-info-container p {
+      color: var(--color-neutral-110, #515255);
+    
+      font-family: Roboto;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+  }
+  
+  .tags-container {
+      display: flex;
+      flex-direction: row;
+  }
+    
+  .tags-container ul {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+  }
+    
+  .tags-container ul li a {
+      background-color: rgba(0, 0, 0, 0.08);
+    
+      margin: 4px;
+      padding: 4px 6px;
+      border-radius: 100%;
+    
+      color: rgba(0, 0, 0, 0.87);
+      font-feature-settings: 'clig' off, 'liga' off;
+    
+    
+      font-family: Roboto;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+    
+      letter-spacing: 0.16px;
+    
+      text-decoration: none;
+  }
+  
+  .tags-container a:hover {
+      background: #0000001F;
+      transition: .5s;
+  }
+  
+  .banner {
+      width: 838px;
+      height: 585px;
+    
+      align-self: center;
+    
+      margin-bottom: 64.18px;
+  }
+  
+  .project-preview-content article p {
+      color: var(--color-neutral-120, #303133);
+    
+     font-family: Roboto;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 16px;
+     letter-spacing: 0.5px;
+  }
+  
+  .project-preview-content article .subtitle {
+     color: var(--color-neutral-130, #0B0C0D);
+    
+     font-family: Roboto;
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 16px;
+     letter-spacing: 0.15px;
+     margin-top: 20px;
+  }
+  
+  .project-preview-content article a {
+     color: var(--color-info-80, #608AE1);
+    
+     font-family: Roboto;
+     font-size: 14px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 14px;
+     letter-spacing: 0.25px;
+  }
+  
+  @media(max-width: 767px) {
+      .header h4{
+          width: 90%;
+          min-width: 312px;
+          height: 120px;
+          font-size: 24px;
+          line-height: 24px;
+          left: 26px;
+          top: 128px;
+      }
+  
+  
+  
+      .input-tags{
+          width: 90%;
+          min-width: 312px;
+          height: 56px;
+          top: 288px;
+          left: 50px;
+      }
+  
+      .input-tags input {
+          width: 90%;
+          min-width: 312px;
+          height: 56px;
+          left: 24px;
+      }
+  
+      .card-project img{
+          width: 312px;
+          height: auto;
+      }
+  
+      .container-card{
+          width: 312px;
+          height: 32px;
+          gap: 28px;
+      }
+  
+      .container-card img {
+          width: 24px;
+          height: 24px;
+      }
+  
+      .modal-window{
+          width: 360px;
+          height: auto;
+          margin: auto;
+          top: 100px;
+      }
+  
+      .modal-view{
+          width: 360px;
+          height: auto;
+          margin: auto;
+      }
+  
+      .project-preview-content{ 
+      width: 360px;
+      margin: auto;
+      padding: 10px;
+      }
+  
+      .project-preview-content header{
+        display: none;
+      }
+  
+      .user-info-container{
+          width: 312px;
+          height: auto;
+          margin: auto;
+      }
+      
+      .banner {
+          width: 312px;
+          height: auto;
+      }
+      article{
+          width: 308px;
+          margin: auto;
+          font-size: 14px;
+      }
+  }
