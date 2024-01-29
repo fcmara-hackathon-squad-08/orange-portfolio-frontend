@@ -90,3 +90,8 @@ md-suggestion-chip {
   --md-sys-color-on-surface: none;
 
 }
+
+md-icon {
+  --md-icon-font: 'Material Symbols Outlined';
+  font-family: 'Material Symbols Rounded';
+}
