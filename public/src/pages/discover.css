@@ -364,7 +364,8 @@
 
     .card-project img{
         width: 312px;
-        height: 258px;
+        height: auto;
+        left: 50px;
     }
 
     .container-card{
@@ -378,5 +379,42 @@
         height: 24px;
     }
 
+    .modal-window{
+        width: 360px;
+        height: auto;
+        margin: auto;
+        top: 100px;
+    }
+
+    .modal-view{
+        width: 360px;
+        height: auto;
+        margin: auto;
+    }
+
+    .project-preview-content{ 
+    width: 360px;
+    margin: auto;
+    padding: 10px;
+    }
+
+    .project-preview-content header{
+      display: none;
+    }
+
+    .user-info-container{
+        width: 312px;
+        height: auto;
+        margin: auto;
+    }
     
+    .banner {
+        width: 312px;
+        height: auto;
+    }
+    article{
+        width: 308px;
+        margin: auto;
+        font-size: 14px;
+    }
 }
