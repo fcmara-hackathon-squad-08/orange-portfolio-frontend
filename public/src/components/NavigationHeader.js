@@ -7,15 +7,15 @@ class NavigationHeader extends HTMLElement {
     this.innerHTML = `
       <header>
       <div class="logoContainer">
-        <img src="../../static/images/logo_orange.png" class="logo">
+        <img src="../../../static/images/logo_orange.png" class="logo">
       </div>
       <div class="menu">
         <div class="navigation">
-          <a href="../pages/my-portfolio.html">Meus projetos</a>
-          <a href="../pages/discover.html">Descobrir</a>
+          <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
+          <a href="../../pages/discover.html">Descobrir</a>
         </div>
         <div class="avatarAndNotificationBox">
-          <img src="../../static/images/avatar.png" class="avatar">
+          <img src="../../../static/images/avatar.png" class="avatar">
           <span class="material-symbols-outlined">
             notifications
           </span>
