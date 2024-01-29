@@ -6,3 +6,78 @@
 
   font-family: Roboto, sans-serif;
 }
+
+/* [Orange P] Style Guide/H1 */
+h1 {
+  color: var(--color-neutral-130, #0B0C0D);
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-family: Roboto;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 40px;
+  letter-spacing: -1.5px;
+}
+
+/* [Orange P] Style Guide/H2 */
+h2 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-family: Roboto;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 50px;
+
+  letter-spacing: -0.5px;
+}
+
+/* [Orange P] Style Guide/H3 */
+h3 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+/* [Orange P] Style Guide/H4 */
+h4 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 34px;
+
+  letter-spacing: 0.25px;
+}
+
+/* [Orange P] Style Guide/H5 */
+h5 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* [Orange P] Style Guide/H6 */
+h6 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+
+  letter-spacing: 0.15px;
+}
+
+md-outlined-text-field {
+  --md-filled-text-field-input-text-color: var(--color-neutral-100);
+  --md-outlined-text-field-focus-outline-color: var(--color-info-100);
+}
