@@ -91,13 +91,6 @@
   margin-bottom: 8px;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
 
 md-icon {
   color: #000;
@@ -470,36 +463,14 @@ material-symbols-outlined {
   line-height: normal;
 }
 
-.tags-container {
+.tag-list {
   display: flex;
   flex-direction: row;
+
 }
 
-.tags-container .tag-list {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-}
-
-.tags-container ul li a {
-  background-color: rgba(0, 0, 0, 0.08);
-
-  margin: 4px;
-  padding: 4px 6px;
-  border-radius: 100%;
-
-  color: rgba(0, 0, 0, 0.87);
-  font-feature-settings: 'clig' off, 'liga' off;
-
-  font-family: Roboto;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-
-  letter-spacing: 0.16px;
-
-  text-decoration: none;
+.tag-list md-suggestion-chip+md-suggestion-chip {
+  margin-left: 8px;
 }
 
 a:hover {

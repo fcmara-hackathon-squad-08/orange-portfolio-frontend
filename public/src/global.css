@@ -81,3 +81,12 @@ md-outlined-text-field {
   --md-filled-text-field-input-text-color: var(--color-neutral-100);
   --md-outlined-text-field-focus-outline-color: var(--color-info-100);
 }
+
+md-suggestion-chip {
+  background-color: rgba(0, 0, 0, 0.08);
+
+  --md-suggestion-chip-container-shape: 100px;
+  --md-sys-color-outline: none;
+  --md-sys-color-on-surface: none;
+
+}
