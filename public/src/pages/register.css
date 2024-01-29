@@ -1,11 +1,11 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 
-body{
+body {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -13,27 +13,27 @@ body{
   align-items: center;
 }
 
-.container{
+.container {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
 }
 
-.figure{
+.figure {
   width: 40%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   padding: 1rem;
 }
 
-.figure img{
+.figure img {
   width: 100%;
   height: 100%;
 }
 
-.card{
+.card {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@ body{
   flex-direction: column;
 }
 
-#success{
+#success {
   background-color: #2e7d32;
   width: 320px;
   height: 52px;
@@ -53,18 +53,19 @@ body{
   visibility: hidden;
 }
 
-.success img{
+.success img {
   position: absolute;
   width: 34px;
   height: 36px;
   color: #FFFFFF;
 }
-.success p{
+
+.success p {
   text-align: center;
   padding: 10px;
 }
 
-.header{
+.header {
   color: var(--color-principal-90);
   font-weight: 400;
   font-size: 48px;
@@ -74,7 +75,7 @@ body{
   text-align: center;
 }
 
-.form-control{
+.form-control {
   position: relative;
   padding-bottom: 10px;
 }
@@ -82,28 +83,28 @@ body{
 .form-control input {
   width: 517px;
   height: 56px;
-  margin-top:2px;
+  margin-top: 2px;
   outline: none;
   letter-spacing: 1px;
   font-size: 16px;
   line-height: 24px;
   border-radius: 4px;
-  padding: 0px 12px 0px 12px ;
+  padding: 0px 12px 0px 12px;
   border: 1px solid hsla(0, 0%, 0%, 0.230);
 }
 
 
-.names{
+.names {
   display: flex;
   column-gap: 17px;
 }
 
-.names input{
+.names input {
   width: 250px;
 }
 
 
-.label-input{
+.label-input {
   font-size: 18px;
   line-height: 16px;
   letter-spacing: 0.4;
@@ -114,12 +115,12 @@ body{
   color: var(--color-neutral-100);
 }
 
-.input-box:focus + .label-input,
-.input-box:valid + .label-input{
-    top: -5px;
-    font-size: 10px;
-    transition: .5s;
-    background-color: var(--color-neutral-60);
+.input-box:focus+.label-input,
+.input-box:valid+.label-input {
+  top: -5px;
+  font-size: 10px;
+  transition: .5s;
+  background-color: var(--color-neutral-60);
 }
 
 #passwordVisibilityIcon {
@@ -134,7 +135,7 @@ body{
   cursor: pointer;
 }
 
-#passwordVisibilityIcon.hide{
+#passwordVisibilityIcon.hide {
   background: url(../../static/images/hide.svg);
   background-size: cover;
 }
@@ -150,7 +151,7 @@ body{
   border: none;
   text-transform: uppercase;
   cursor: pointer;
-  color:var(--color-neutral-60);
+  color: var(--color-neutral-60);
   font-size: 15px;
   line-height: 26px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, .200);
@@ -163,51 +164,61 @@ body{
 }
 
 @media screen and (max-width: 1100px) {
-  .figure{
-      display: none;
+  .figure {
+    display: none;
   }
-  .container{
-      width: 100%;
+
+  .container {
+    width: 100%;
   }
-  .header{
-      font-size: 38px;
-      line-height: 24px;
-      text-align: center;
+
+  .header {
+    font-size: 38px;
+    line-height: 24px;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 870px) {
-  .header{
-      font-size: 20px;
-      line-height: 24px;
-      text-align: center;
+  .header {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
   }
-  .card{
-      width: 312px;
+
+  .card {
+    width: 312px;
   }
-  .subtitle{
-      font-size: 16px;
-      line-height: 16px;
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 16px;
   }
-  .form-control input{
-      width: 312px;
-      height: 42px;        
+
+  .form-control input {
+    width: 312px;
+    height: 42px;
   }
-  .button-register{
-      width: 312px;
-      height: 42px;
+
+  .button-register {
+    width: 312px;
+    height: 42px;
   }
-  a{
-      font-size: 16px;
+
+  a {
+    font-size: 16px;
   }
-  .label-input{
-      font-size: 14px;
-      top: 15px;
+
+  .label-input {
+    font-size: 14px;
+    top: 15px;
   }
-  .names{
-  display: block;
+
+  .names {
+    display: block;
   }
-  .success{
+
+  .success {
     width: 312px;
     height: 52px;
     top: 49px;
