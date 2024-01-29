@@ -342,9 +342,7 @@
         height: 120px;
         font-size: 24px;
         line-height: 24px;
-        align-items: center;
-        text-align: center;
-        left: 24px;
+        left: 50px;
         top: 128px;
     }
 
@@ -352,7 +350,7 @@
         width: 312px;
         height: 56px;
         top: 288px;
-        left: 24px;
+        left: 50px;
     }
 
     .input-tags input {
@@ -365,7 +363,6 @@
     .card-project img{
         width: 312px;
         height: auto;
-        left: 50px;
     }
 
     .container-card{
