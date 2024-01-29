@@ -1,0 +1,141 @@
+.container {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: space-between;
+
+  height: calc(100vh - 73px);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+  justify-content: center;
+
+}
+
+.profile-card img {
+  border-radius: 100%;
+  width: 122px;
+  height: 122px;
+
+  margin-right: 42px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile-info h5 {
+  color: var(--color-neutral-120)
+}
+
+.profile-info p {
+  color: var(--color-neutral-130);
+  opacity: 0.5;
+}
+
+.profile-info md-filled-button {
+  border-radius: var(--borderRadius);
+  --md-sys-color-primary: var(--action-disabledBackground);
+  --md-sys-color-on-primary: var(--color-neutral-130);
+  padding: 8px 22px;
+  opacity: 0.5;
+}
+
+.projects-container {
+  align-self: flex-start;
+  margin-left: 32px;
+}
+
+.projects-container h6 {
+  opacity: 0.6;
+
+  margin-bottom: 16px;
+}
+
+.projects-container md-outlined-text-field {
+  width: 513px;
+
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  gap: 100px;
+}
+
+.projects-grid button {
+  display: auto;
+}
+
+.projects-grid button.hidden {
+  display: none;
+}
+
+.submit-image-card-content div p {
+  color: var(--color-neutral-120);
+
+  opacity: 0.6;
+
+  text-align: left;
+
+  margin-top: 16px;
+}
+
+.project-skeleton {
+  display: flex;
+  width: 389px;
+  height: 258px;
+  padding: 68px 59px 68px 60px;
+
+  flex-shrink: 0;
+
+  border-radius: var(--borderRadius);
+  background-color: #E6E9F233;
+}
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 1;
+
+  height: 100vh;
+  width: 100vw;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.tag-list {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.tag-list md-suggestion-chip+md-suggestion-chip {
+  margin-left: 8px;
+}
