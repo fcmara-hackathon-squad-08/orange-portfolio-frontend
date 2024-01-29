@@ -1,0 +1,89 @@
+.add-project-card {
+  background-color: #fefefe;
+
+  width: 890px;
+  height: 522px;
+
+  flex-shrink: 0;
+
+  border-radius: 0px;
+
+  padding: 24px 34px;
+
+}
+
+.add-project-card h5 {
+  color: var(--color-neutral-110);
+
+  margin-bottom: 24px;
+}
+
+.add-project-card p {
+  margin-bottom: 16px;
+}
+
+.add-project-card main {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 16px;
+}
+
+.input-container md-outlined-text-field+md-outlined-text-field {
+  margin: 16px 0px;
+
+}
+
+.input-container md-outlined-text-field {
+  width: 424px;
+}
+
+.submit-image-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: var(--bordeRadius);
+  background-color: var(--color-neutral-70);
+
+  width: 389px;
+  height: 304px;
+
+}
+
+.submit-image-card-content {
+  display: auto;
+}
+
+.submit-image-card-content.hidden {
+  display: none;
+}
+
+.selected-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.add-project-card footer {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 16px;
+}
+
+.add-project-card footer label {
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+
+  margin-bottom: 16px;
+
+  cursor: pointer;
+
+}

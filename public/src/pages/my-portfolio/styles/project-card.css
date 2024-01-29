@@ -1,0 +1,96 @@
+/* <PROJECT_CARD> */
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 389px;
+  height: 258px;
+
+  border-radius: var(--bordeRadius);
+
+  margin-bottom: 8px;
+}
+
+.project-card .edit-project-button {
+  align-self: flex-end;
+  position: relative;
+
+  top: 36px;
+  right: 8px;
+
+  --md-filled-icon-button-container-width: 28px;
+  --md-filled-icon-button-container-height: 28px;
+  --md-filled-icon-button-icon-size: 24px;
+  --md-filled-icon-button-container-shape: 100px;
+  --md-sys-color-primary: var(--color-secondary-70);
+
+}
+
+.project-card .edit-project-button md-icon {
+  color: var(--color-neutral-120);
+  font-variation-settings: 'FILL' 1;
+
+}
+
+
+.project-card .open-project-button {
+  background: url("./../static/images/img_landingpage.png") lightgray 50% no-repeat;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  cursor: pointer;
+}
+
+.project-card footer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 12px;
+}
+
+
+.project-card footer .user-info-container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info-container img {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 100%;
+
+}
+
+.user-info-container p {
+  color: var(--color-neutral-110, #515255);
+
+  text-align: left;
+
+}
+
+.project-card .user-info-container footer img {
+  margin-right: 15px;
+
+}
+
+/* <PROJECT_CARD/> */
