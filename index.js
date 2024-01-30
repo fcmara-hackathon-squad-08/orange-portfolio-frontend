@@ -17,4 +17,7 @@ import '@material/web/menu/menu.js';
 import '@material/web/menu/menu-item.js';
 
 import '@material/web/dialog/dialog.js';
-import '@material/web/dialog/harness.js';
+
+import '@material/web/divider/divider.js';
+
+
