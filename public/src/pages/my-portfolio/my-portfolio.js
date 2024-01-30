@@ -12,35 +12,35 @@ function chooseFile() {
 }
 
 function hideSubmitImageCardContent() {
-  submitImageCardContent.classList.add('hidden');
+  submitImageCardContent.setAttribute("open", true);
 }
 
 function showSubmitImageCardContent() {
-  submitImageCardContent.classList.remove('hidden');
+  submitImageCardContent.removeAttribute("open");
 }
 
 function openAddProjectModal() {
-  addProjectModal.classList.add('show');
+  addProjectModal.setAttribute("open", true);
 }
 
 function closeAddProjectModal() {
-  addProjectModal.classList.remove('show');
+  addProjectModal.removeAttribute("open");
 }
 
 function openPreviewModal() {
-  previewModal.classList.add('show');
+  previewModal.setAttribute("open", true);
 }
 
 function closePreviewModal() {
-  previewModal.classList.remove('show');
+  previewModal.removeAttribute("open");
 }
 
 function openSuccessModal() {
-  successModal.classList.add('show');
+  successModal.setAttribute("open", true);
 }
 
 function closeSuccessModal() {
-  successModal.classList.remove('show');
+  successModal.removeAttribute("open");
 }
 
 function submitProject() {
