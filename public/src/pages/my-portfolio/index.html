@@ -30,7 +30,57 @@
 </head>
 
 <body>
-  <navigation-header></navigation-header>
+  <header>
+    <md-icon-button id="mobile-nav-menu">
+      <md-icon>menu</md-icon>
+      <nav id="usage-anchor">
+        <md-menu id="usage-menu" anchor="usage-anchor">
+          <md-menu-item class="menu-header">
+            <div slot="headline">
+              <p>Camila</p>
+              <p>Camila.ux@gmail.com</p>
+            </div>
+          </md-menu-item>
+          <md-menu-item>
+            <div slot="">
+              <div slot="headline">
+                Meus projetos
+              </div>
+            </div>
+          </md-menu-item>
+          <md-menu-item>
+            <div slot="">
+              <div slot="headline">
+                Meus projetos
+              </div>
+            </div>
+          </md-menu-item>
+          <md-menu-item>
+            <div slot="">
+              <div slot="headline">
+                Sair
+              </div>
+            </div>
+          </md-menu-item>
+        </md-menu>
+      </nav>
+    </md-icon-button>
+    <div class="logoContainer">
+      <img src="../../../static/images/logo_orange.png" class="logo">
+    </div>
+    <div id="web-nav-menu" class="menu">
+      <nav class="navigation">
+        <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
+        <a href="../../pages/discover/index.html">Descobrir</a>
+      </nav>
+      <div class="avatarAndNotificationBox">
+        <img src="../../../static/images/avatar.png" class="avatar">
+        <span class="material-symbols-outlined">
+          notifications
+        </span>
+      </div>
+    </div>
+  </header>
   <main class="container">
 
     <div class="profile-card">
@@ -163,7 +213,7 @@
   </md-dialog>
 
   <!-- Success Modal -->
-  <md-dialog id="success-modal" open>
+  <md-dialog id="success-modal">
     <section slot="content">
       <h5>Projeto adicionado com sucesso!</h5>
       <div class="done-icon-container" aria-label="done icon">

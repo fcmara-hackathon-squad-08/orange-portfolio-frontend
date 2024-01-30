@@ -84,3 +84,30 @@ header .navigation a:hover {
     'GRAD' 0,
     'opsz' 24
 }
+
+#mobile-nav-menu {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 100%;
+}
+
+#mobile-nav-menu md-icon {
+  color: var(--color-neutral-60);
+  font-size: 40px;
+
+  width: fit-content;
+  height: fit-content;
+}
+
+#mobile-nav-menu nav {
+  position: relative;
+}
+
+#mobile-nav-menu md-menu {}
+
+#mobile-nav-menu .menu-header {}
+
+#mobile-nav-menu md-menu-item {}
