@@ -105,31 +105,6 @@
   background-color: #E6E9F233;
 }
 
-.modal-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  top: 0;
-  left: 1;
-
-  height: 100vh;
-  width: 100vw;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition: opacity 0.3s ease;
-}
-
-.modal-container.show {
-  pointer-events: auto;
-  opacity: 1;
-}
-
 .tag-list {
   display: flex;
   flex-direction: row;
