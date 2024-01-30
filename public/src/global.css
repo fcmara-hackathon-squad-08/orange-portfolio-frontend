@@ -103,7 +103,9 @@ md-dialog {
   /* Component tokens */
   --md-dialog-container-shape: 4px;
 
-  max-height: 100%;
+  /* maximum height takes NavBar into consideration */
+  max-height: calc(100% - 73px);
+
   max-width: 100%;
 
 }
