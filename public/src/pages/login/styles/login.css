@@ -174,35 +174,11 @@ body {
 }
 
 .form-control input {
-  width: 517px;
-  height: 56px;
-  margin-top: 2px;
-  outline: none;
-  letter-spacing: 1px;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 4px;
-  padding: 0px 12px 0px 12px;
-  border: 1px solid hsla(0, 0%, 0%, 0.230);
+
 }
 
 .label-input {
-  font-size: 18px;
-  line-height: 16px;
-  letter-spacing: 0.4;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  pointer-events: none;
-  color: var(--color-neutral-100);
-}
 
-.input-box:focus+.label-input,
-.input-box:valid+.label-input {
-  top: -5px;
-  font-size: 10px;
-  transition: .5s;
-  background-color: var(--color-neutral-60);
 }
 
 #passwordVisibilityIcon {
@@ -312,4 +288,10 @@ a:hover {
     font-size: 14px;
     top: 15px;
   }
+}
+
+
+
+.md-icon{
+  --md-icon-font: 'Material Symbols Rounded';
 }
