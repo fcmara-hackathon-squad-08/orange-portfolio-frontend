@@ -95,3 +95,17 @@ md-icon {
   --md-icon-font: 'Material Symbols Outlined';
   font-family: 'Material Symbols Rounded';
 }
+
+md-dialog {
+  margin: auto auto;
+  --md-dialog-container-color: #fefefe;
+
+  /* Component tokens */
+  --md-dialog-container-shape: 4px;
+
+  /* maximum height takes NavBar into consideration */
+  max-height: calc(100% - 73px);
+
+  max-width: 100%;
+
+}

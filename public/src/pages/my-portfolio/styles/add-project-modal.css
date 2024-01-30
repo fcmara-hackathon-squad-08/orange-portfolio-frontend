@@ -4,18 +4,15 @@
   width: 890px;
   height: 522px;
 
-  flex-shrink: 0;
-
-  border-radius: 0px;
-
   padding: 24px 34px;
 
 }
 
-.add-project-card h5 {
+md-dialog h5 {
   color: var(--color-neutral-110);
 
-  margin-bottom: 24px;
+  margin-left: 34px;
+  margin-top: 24px;
 }
 
 .add-project-card p {
