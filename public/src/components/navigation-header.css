@@ -85,6 +85,7 @@ header .navigation a:hover {
     'opsz' 24
 }
 
+/* Mobile Menu  */
 #mobile-nav-menu {
   position: relative;
 
@@ -92,6 +93,8 @@ header .navigation a:hover {
   height: 40px;
 
   border-radius: 100%;
+
+  display: none;
 }
 
 #mobile-nav-menu md-icon {
@@ -108,14 +111,11 @@ header .navigation a:hover {
 
 #mobile-nav-menu md-menu {
   --md-menu-container-color: #fff;
-  /* --md-sys-color-on-surface: #161d1d; */
 }
 
 #mobile-nav-menu p {
   margin-bottom: 8px;
 }
-
-#mobile-nav-menu md-menu-item {}
 
 #mobile-nav-menu md-menu-item a {
   text-decoration: none;
@@ -130,15 +130,6 @@ header .navigation a:hover {
   line-height: 150%;
   letter-spacing: 0.15px;
 
-}
-
-#mobile-nav-menu {
-  position: relative;
-
-  width: 40px;
-  height: 40px;
-
-  border-radius: 100%;
 }
 
 #mobile-nav-menu md-button {
@@ -166,4 +157,45 @@ header .navigation a:hover {
   font-size: 24px;
 
   align-self: center;
+}
+
+@media screen and (max-width: 653px) {
+  .header {
+    width: 100vh;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .avatarAndNotificationBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  #mobile-nav-menu {
+    display: block;
+  }
+
+  #web-nav-menu nav {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 561px) {
+
+  .avatarAndNotificationBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 120px;
+    height: fit-content;
+  }
+
+
 }
