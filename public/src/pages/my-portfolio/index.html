@@ -119,12 +119,12 @@
     </section>
   </md-dialog>
 
-  <div id="project-preview-modal" class="modal-container">
-    <div class="project-preview">
+  <md-dialog id="project-preview-modal" open>
+    <div slot="content" class="project-preview">
       <md-filled-icon-button onclick="closePreviewModal()" class="close-button">
         <md-icon>close</md-icon>
       </md-filled-icon-button>
-      <div slot="content" class="project-preview-content">
+      <div class="project-preview-content">
         <header>
           <div class="user-info-container">
             <img src="../../../static/images/avatar.png">
@@ -157,7 +157,7 @@
         </article>
       </div class="project-preview-content">
     </div>
-  </div>
+  </md-dialog>
   <div id="success-modal" class="modal-container">
     <section>
       <h5>Projeto adicionado com sucesso!</h5>

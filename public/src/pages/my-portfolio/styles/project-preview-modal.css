@@ -1,25 +1,15 @@
-.buttons-container {
-  display: flex;
-  flex-direction: row;
-
-}
-
-.buttons-container .disabled-button {
-  margin-left: 16px;
-
-}
-
 .project-preview {
   display: flex;
   flex-direction: column;
+
+  align-items: center;
 
   background-color: #fff;
 
   width: 1042px;
   /* Calculation accounts for header size. (73px) */
-  height: calc(980.815px - 73px);
+  height: 980.815px;
 
-  flex-shrink: 0;
 }
 
 .project-preview .close-button {
@@ -62,23 +52,27 @@
   width: 838px;
 }
 
-.project-preview header {
+.project-preview-content header {
   display: flex;
 
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
-  gap: 175px;
-
-  background-color: transparent;
-}
-
-.project-preview header h5 {
-  color: var(--color-neutral-120, #303133);
+  gap: 145px;
+  padding: 0px 102px;
 
   text-align: center;
 
+  background-color: transparent;
+
+  padding-bottom: 32.82px;
+}
+
+.project-preview-content header h5 {
+  color: var(--color-neutral-120, #303133);
+
   white-space: nowrap;
+
 }
 
 .project-preview header .user-info-container {
@@ -127,4 +121,13 @@ a:hover {
 
 .project-preview-content article .body-text2 {
   color: var(--color-info-80, #608AE1);
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons-container .disabled-button {
+  margin-left: 16px;
 }
