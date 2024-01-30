@@ -131,6 +131,7 @@
   line-height: 14px;
 
   letter-spacing: 0.25px;
+
 }
 
 /* [Orange P] Style Guide/Caption */
@@ -187,4 +188,8 @@
 
   padding: 8px 22px;
 
+}
+
+.low-opacity {
+  opacity: 0.6;
 }
