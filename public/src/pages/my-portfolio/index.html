@@ -79,6 +79,8 @@
       </div>
     </article>
   </main>
+
+  <!-- Add Project Modal -->
   <md-dialog id="add-project-modal">
     <h5 slot="headline">Adicionar projeto</h5>
     <section slot="content" id="form-id" method="dialog" class="add-project-card">
@@ -119,7 +121,8 @@
     </section>
   </md-dialog>
 
-  <md-dialog id="project-preview-modal" open>
+  <!-- Projet Preview Modal -->
+  <md-dialog id="project-preview-modal">
     <div slot="content" class="project-preview">
       <md-filled-icon-button onclick="closePreviewModal()" class="close-button">
         <md-icon>close</md-icon>
@@ -158,6 +161,8 @@
       </div class="project-preview-content">
     </div>
   </md-dialog>
+
+  <!-- Success Modal -->
   <div id="success-modal" class="modal-container">
     <section>
       <h5>Projeto adicionado com sucesso!</h5>
