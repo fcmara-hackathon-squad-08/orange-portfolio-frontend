@@ -163,19 +163,20 @@
   </md-dialog>
 
   <!-- Success Modal -->
-  <div id="success-modal" class="modal-container">
-    <section>
+  <md-dialog id="success-modal" open>
+    <section slot="content">
       <h5>Projeto adicionado com sucesso!</h5>
-      <div class="done-icon-container">
-        <span class="material-symbols-outlined">
+      <div class="done-icon-container" aria-label="done icon">
+        <md-icon>
           done
-        </span>
+        </md-icon>
       </div>
       <md-filled-button class="submit-button" aria-label="Voltar para projetos" onclick="closeSuccessModal()">
         VOLTAR PARA PROJETOS
       </md-filled-button>
     </section>
-  </div>
+  </md-dialog>
+
   <script src="./my-portfolio.js"></script>
 
   <!-- NavBar -->
