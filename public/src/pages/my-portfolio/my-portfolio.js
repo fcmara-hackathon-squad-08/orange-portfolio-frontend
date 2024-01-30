@@ -7,6 +7,12 @@ const previewModal = document.getElementById('project-preview-modal');
 
 const successModal = document.getElementById('success-modal');
 
+
+const anchorEl = document.body.querySelector('#mobile-nav-menu');
+const menuEl = document.body.querySelector('#usage-menu');
+
+anchorEl.addEventListener('click', () => {menuEl.open = !menuEl.open;});
+
 function chooseFile() {
   document.getElementById('fileInput').click();
 }
