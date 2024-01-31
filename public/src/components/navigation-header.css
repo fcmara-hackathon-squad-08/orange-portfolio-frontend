@@ -160,13 +160,6 @@ header .navigation a:hover {
 }
 
 @media screen and (max-width: 653px) {
-  .avatarAndNotificationBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-  }
-
   #mobile-nav-menu {
     display: block;
   }
@@ -174,18 +167,4 @@ header .navigation a:hover {
   #web-nav-menu nav {
     display: none;
   }
-}
-
-@media screen and (max-width: 561px) {
-
-  .avatarAndNotificationBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 120px;
-    height: fit-content;
-  }
-
-
 }
