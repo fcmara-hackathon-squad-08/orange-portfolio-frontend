@@ -69,10 +69,12 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(389px, 1fr));
 
-  gap: 100px;
+  grid-gap: 50px;
+
+  width: 100vw;
+  height: 50vh;
 }
 
 .projects-grid button {
@@ -114,3 +116,5 @@
 .tag-list md-suggestion-chip+md-suggestion-chip {
   margin-left: 8px;
 }
+
+@media screen and(max-width: 653px) {}
