@@ -19,33 +19,25 @@ function showSubmitImageCardContent() {
   submitImageCardContent.removeAttribute("open");
 }
 
-function openAddProjectModal() {
-  addProjectModal.setAttribute("open", true);
-}
-
-function closeAddProjectModal() {
-  addProjectModal.removeAttribute("open");
-}
-
-function openPreviewModal() {
-  previewModal.setAttribute("open", true);
-}
-
-function closePreviewModal() {
-  previewModal.removeAttribute("open");
-}
-
-function openSuccessModal() {
-  successModal.setAttribute("open", true);
-}
-
-function closeSuccessModal() {
-  successModal.removeAttribute("open");
-}
-
 function submitProject() {
-  closeAddProjectModal();
-  openSuccessModal();
+  toggleModal('add-project-modal', false)
+  toggleModal('success-modal', true)
+}
+
+function toggleModal(modalId, state){
+  const modal = document.getElementById(modalId);
+
+  if(!modal){
+    console.error(`Couldn't find modal with id ${modalId}`);
+    return;
+  }
+
+  if(state){
+    modal.setAttribute('open', true);
+  }
+  else {
+    modal.removeAttribute('open');
+  }
 }
 
 function uploadImage(input) {

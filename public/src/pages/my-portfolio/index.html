@@ -33,7 +33,7 @@
       <section class="profile-info">
         <h5>Camila Soares</h5>
         <p class="subtitle1">Brasil</p>
-        <md-filled-button aria-label="Adiciona um novo projeto" onclick="openAddProjectModal()">
+        <md-filled-button aria-label="Adiciona um novo projeto" onclick="toggleModal('add-project-modal', true)">
           ADICIONAR PROJETO
         </md-filled-button>
       </section>
@@ -42,7 +42,7 @@
       <h6>Meus projetos</h6>
       <md-outlined-text-field placeholder="Buscar tags" class="label"></md-outlined-text-field>
       <div class="projects-grid">
-        <!-- <button id="project-card-placeholder" onclick="openAddProjectModal()" class="hidden">
+        <!-- <button id="project-card-placeholder" onclick="toggleModal('add-project-modal', true)" class="hidden">
           <div class="item project-card-placeholder">
             <img src="../../../static/images/filter.svg" class="filter-icon">
             <div>
@@ -57,7 +57,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -75,7 +75,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -93,7 +93,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -111,7 +111,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -129,7 +129,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -147,7 +147,7 @@
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
             <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
@@ -171,7 +171,7 @@
     <section slot="content" id="form-id" method="dialog" class="add-project-card">
       <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
       <main>
-        <button type="button" onclick="chooseFile()">
+        <button type="button" onclick="chooseFile">
           <div style="height:0px;overflow:hidden">
             <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
               onchange="uploadImage(this)" />
@@ -196,10 +196,10 @@
         </div>
       </main>
       <footer>
-        <label class="subtitle1" onclick="openPreviewModal()">Visualizar publicação</label>
+        <label class="subtitle1" onclick="toggleModal('project-preview-modal', true)">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
-          <md-filled-button onclick="submitProject()" type="button" class="submit-button">SALVAR</md-filled-button>
-          <md-filled-button onclick="closeAddProjectModal()" type="button"
+          <md-filled-button onclick="submitProject" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
       </footer>
@@ -209,7 +209,7 @@
   <!-- Projet Preview Modal -->
   <md-dialog id="project-preview-modal">
     <div slot="content" class="project-preview">
-      <md-filled-icon-button onclick="closePreviewModal()" class="close-button">
+      <md-filled-icon-button onclick="toggleModal('project-preview-modal', false)" class="close-button">
         <md-icon>close</md-icon>
       </md-filled-icon-button>
       <div class="project-preview-content">
@@ -256,7 +256,8 @@
           done
         </md-icon>
       </div>
-      <md-filled-button class="submit-button" aria-label="Voltar para projetos" onclick="closeSuccessModal()">
+      <md-filled-button class="submit-button" aria-label="Voltar para projetos"
+        onclick="toggleModal('success-modal', false)">
         VOLTAR PARA PROJETOS
       </md-filled-button>
     </section>
