@@ -50,7 +50,7 @@ body {
   padding: 6px 16px 6px 16px;
   margin-bottom: 70px;
   color: #FFFFFF;
-  visibility: hidden;
+  display: none;
 }
 
 .success img {
@@ -80,19 +80,9 @@ body {
   padding-bottom: 10px;
 }
 
-.form-control input {
-  width: 517px;
-  height: 56px;
-  margin-top: 2px;
-  outline: none;
-  letter-spacing: 1px;
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 4px;
-  padding: 0px 12px 0px 12px;
-  border: 1px solid hsla(0, 0%, 0%, 0.230);
+.form-control md-icon {
+  cursor: pointer;
 }
-
 
 .names {
   display: flex;
@@ -110,49 +100,20 @@ body {
 }
 
 
-
-.label-input {
-  font-size: 18px;
-  line-height: 16px;
-  letter-spacing: 0.4;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  pointer-events: none;
-  color: var(--color-neutral-100);
-}
-
-.input-box:focus+.label-input,
-.input-box:valid+.label-input {
-  top: -5px;
-  font-size: 10px;
-  transition: .5s;
-  background-color: var(--color-neutral-60);
-}
-
-
 .button-register {
   border-radius: 4px;
   width: 517px;
   height: 42px;
   top: 10px;
-  padding: 8px 22px 8px 22px;
-  background-color: var(--color-secondary-100);
-  text-transform: uppercase;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: var(--color-neutral-60);
-  font-size: 15px;
-  line-height: 26px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, .200);
-  letter-spacing: 0.46px;
+  font-size: 20px;
+  font-weight: 400;
+
+  --md-filled-button-container-shape: 0px;
+  --md-sys-color-primary: var(--color-secondary-100);
+  --md-sys-color-on-primary: #ffffff;
 }
 
-.button-register:hover {
-  background-color: var(--color-secondary-110);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.500);
-}
+
 
 @media screen and (max-width: 1100px) {
   .figure {

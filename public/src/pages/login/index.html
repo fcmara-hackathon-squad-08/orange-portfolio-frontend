@@ -71,15 +71,15 @@
           </div>
 
           <div class="form-control">
-            <md-outlined-text-field label="Password" type="password" required>
+            <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
               <md-icon-button toggle slot="trailing-icon">
-                <md-icon>visibility</md-icon>
-                <md-icon slot="selected">visibility_off</md-icon>
+                <md-icon id="eye">visibility</md-icon>
+                <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
               </md-icon-button>
             </md-outlined-text-field>
           </div>
 
-          <input type="submit" class="button-login" value="Entrar" onclick="login()">
+          <md-filled-button type="submit" class="button-login" value="Entrar" onclick="login()">ENTRAR</md-filled-button>
 
           <a href="../register/index.html">
             <p>Cadastre-se</p>

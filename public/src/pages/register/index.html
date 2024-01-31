@@ -40,31 +40,31 @@
 
         <div class="names">
           <div class="form-control">
-            <md-outlined-text-field label="Nome" required>
+            <md-outlined-text-field label="Nome" name="fristname" id="fristname" required>
             </md-outlined-text-field>
           </div>
 
           
           <div class="form-control">
-            <md-outlined-text-field label="Sobrenome" required>
+            <md-outlined-text-field label="Sobrenome" name="lastname" id="lastname" required>
             </md-outlined-text-field>
           </div>
         </div>
 
         <div class="form-control">
-          <md-outlined-text-field class="user" label="Email adress" type="email" name="email" required></md-outlined-text-field>
+          <md-outlined-text-field class="user" label="Email adress" type="email" name="email" id="email" required></md-outlined-text-field>
         </div>
 
         <div class="form-control">
-          <md-outlined-text-field class="user" label="Password" type="password" required>
+          <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
             <md-icon-button toggle slot="trailing-icon">
-              <md-icon>visibility</md-icon>
-              <md-icon slot="selected">visibility_off</md-icon>
+              <md-icon id="eye">visibility</md-icon>
+              <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
             </md-icon-button>
           </md-outlined-text-field>
         </div>
-
-        <md-outlined-button class="button-register" value="Cadastrar" onclick="register()">Cadastrar</md-outlined-button>
+        
+        <md-filled-button class="button-register" value="Cadastrar" onclick="register(event)">CADASTRAR</md-filled-button>
       </form> 
 
     </div>
