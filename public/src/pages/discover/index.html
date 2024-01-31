@@ -25,60 +25,7 @@
 </head>
 
 <body>
-  <header>
-    <md-icon-button id="mobile-nav-menu">
-      <md-icon>menu</md-icon>
-      <nav id="usage-anchor">
-        <md-menu id="usage-menu" anchor="usage-anchor">
-          <md-menu-item>
-            <div slot="headline">
-              <p class="body-text1">Camila</p>
-              <p class="body-text2 low-opacity">Camila.ux@gmail.com</p>
-            </div>
-          </md-menu-item>
-          <md-divider inset></md-divider>
-          <md-menu-item>
-            <div slot="headline">
-              <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
-            </div>
-          </md-menu-item>
-          <md-menu-item>
-            <div slot="headline">
-              <a href="../../pages/discover/index.html">Descobrir</a>
-            </div>
-          </md-menu-item>
-          <md-divider inset></md-divider>
-          <md-menu-item>
-            <div class="logout-container" slot="headline">
-              <md-button>
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
-                  <path
-                    d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
-                </svg>
-                Sair
-              </md-button>
-            </div>
-          </md-menu-item>
-        </md-menu>
-      </nav>
-    </md-icon-button>
-    <div class="logoContainer">
-      <img src="../../../static/images/logo_orange.png" class="logo">
-    </div>
-    <div id="web-nav-menu" class="menu">
-      <nav class="navigation">
-        <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
-        <a href="../../pages/discover/index.html">Descobrir</a>
-      </nav>
-      <div class="avatarAndNotificationBox">
-        <img src="../../../static/images/avatar.png" class="avatar">
-        <span class="material-symbols-outlined">
-          notifications
-        </span>
-      </div>
-    </div>
-  </header>
-
+  <navigation-header></navigation-header>
   <div class="container">
     <div class="header">
       <h4>Junte-se à comunidade de inovação, inspiração e descobertas, transformando experiências em conexões
@@ -89,77 +36,77 @@
       <md-outlined-text-field label="Buscar tags" class="label"></md-outlined-text-field>
     </div>
 
-    
+
 
     <div class="card-project">
       <button type="button" onclick="openModal('modal-window')">
         <img src="../../../static/images/project_01.png" alt="My Project" />
 
         <footer>
-        <div class="container-card">
-          <img class="avatar2" src="../../../static/images/avatar_02.svg">
-          <p>Bianca Martin • 02/24</p>
-        </div>
+          <div class="container-card">
+            <img class="avatar2" src="../../../static/images/avatar_02.svg">
+            <p>Bianca Martin • 02/24</p>
+          </div>
           <chip-set class="tag-list">
-             <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-             <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
           </chip-set>
         </footer>
       </button>
 
       <button type="button" onclick="openModal('modal-window-02')">
         <img src="../../../static/images/project_02.png" alt="My Project" />
-      
-        <footer>      
+
+        <footer>
           <div class="container-card">
-          <img class="avatar2" src="../../../static/images/avatar_03.svg">
-          <p>Enzo Gabriel • 12/23</p>
+            <img class="avatar2" src="../../../static/images/avatar_03.svg">
+            <p>Enzo Gabriel • 12/23</p>
           </div>
           <chip-set class="tag-list">
-          <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-          <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-         </chip-set>
-       </footer>
+            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+          </chip-set>
+        </footer>
       </button>
 
       <button type="button" onclick="openModal('modal-window-03')">
         <img src="../../../static/images/project_03.png" alt="My Project" />
-        <footer> 
-        <div class="container-card">
-          <img class="avatar2" src="../../../static/images/avatar_04.svg">
-          <p>Alice Alexandra • 12/23</p>
-        </div>
-        <chip-set class="tag-list">
-          <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-          <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-       </chip-set>
-     </footer>
-   </button>
+        <footer>
+          <div class="container-card">
+            <img class="avatar2" src="../../../static/images/avatar_04.svg">
+            <p>Alice Alexandra • 12/23</p>
+          </div>
+          <chip-set class="tag-list">
+            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+          </chip-set>
+        </footer>
       </button>
-      
+      </button>
+
       <button type="button" onclick="openModal('modal-window-04')">
         <img src="../../../static/images/project_04.png" alt="My Project" />
-        <footer> 
-        <div class="container-card">
-          <img class="avatar2" src="../../../static/images/avatar_05.svg">
-          <p>Carolina Valentim • 12/23</p>
-        </div>
-        <chip-set class="tag-list">
-          <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-          <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-       </chip-set>
-     </footer>
-   </button>
+        <footer>
+          <div class="container-card">
+            <img class="avatar2" src="../../../static/images/avatar_05.svg">
+            <p>Carolina Valentim • 12/23</p>
+          </div>
+          <chip-set class="tag-list">
+            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+          </chip-set>
+        </footer>
+      </button>
       </button>
     </div>
 
     <div class="modal-window" id="modal-window">
       <div slot="content" class="modal-view">
-        
+
         <md-filled-icon-button class="close-modal" id="close-modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
-        
+
         <div class="project-preview-content">
 
           <header>
@@ -183,7 +130,7 @@
             </div>
           </header>
 
-          <img src="../../../static/images/project_01.png" class="banner"/>
+          <img src="../../../static/images/project_01.png" class="banner" />
 
           <article>
             <p>
@@ -209,7 +156,7 @@
         <md-filled-icon-button class="close-modal" id="close-modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
-        
+
         <div class="project-preview-content">
 
           <header>
@@ -349,11 +296,11 @@
   </div>
   </div>
 
-  
+
   <script src="./discover.js"></script>
 
-    <!-- NavBar -->
-    <script src="../../components/NavigationHeader.js"></script>
+  <!-- NavBar -->
+  <script src="../../components/NavigationHeader.js"></script>
 
   <!-- Material design imports -->
   <script src="../../../../index.js"></script>
