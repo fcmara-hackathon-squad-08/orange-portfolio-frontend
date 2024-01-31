@@ -1,29 +1,39 @@
 class NavigationHeader extends HTMLElement {
   constructor() {
     super()
+       
   }
   connectedCallback() {
-    this.innerHTML = `
-      <header>
-      <div class="logoContainer">
-        <img src="../../../static/images/logo_orange.png" class="logo">
-      </div>
-      <div class="menu">
-        <div class="navigation">
-          <a href="../../pages/my-portfolio/index.html">Meus projetos</a>
-          <a href="../../pages/discover/index.html">Descobrir</a>
-        </div>
-        <div class="avatarAndNotificationBox">
-          <img src="../../../static/images/avatar.png" class="avatar">
-          <span class="material-symbols-outlined">
-            notifications
-          </span>
-        </div>
-      </div>
-    </header>
-      `
-  }
+    const shadow = this.attachShadow({mode: 'open'});
 
+     const fetchNavigationHeaderTemplate = async () => {
+
+      var templates = document.createElement( 'template' )
+      templates.innerHTML = await ( await fetch( '../../components/navigation-header-template.html' ) ).text()
+    
+      var template = templates.content.querySelector( '#navigation-header-template' );
+      
+      return template;
+    }
+
+    fetchNavigationHeaderTemplate().then((template) => {
+      let navigationHeaderTemplate = template;
+
+      shadow.appendChild(navigationHeaderTemplate.content.cloneNode(true)); 
+
+      customElements.whenDefined('navigation-header').then(() => {
+        const navBar = document.querySelector("navigation-header").shadowRoot;
+      
+        const anchorEl = navBar.querySelector('#mobile-nav-menu');
+        
+        const menuEl = navBar.querySelector('#usage-menu');
+        
+        anchorEl.addEventListener('click', () => {
+          menuEl.open = !menuEl.open;
+        });
+      })
+    });
+  }
 }
 
 customElements.define('navigation-header', NavigationHeader);

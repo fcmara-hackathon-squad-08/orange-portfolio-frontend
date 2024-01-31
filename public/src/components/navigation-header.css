@@ -160,42 +160,11 @@ header .navigation a:hover {
 }
 
 @media screen and (max-width: 653px) {
-  .header {
-    width: 100vh;
-  }
-
-  .menu {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .avatarAndNotificationBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-  }
-
   #mobile-nav-menu {
     display: block;
   }
 
   #web-nav-menu nav {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
-}
-
-@media screen and (max-width: 561px) {
-
-  .avatarAndNotificationBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 120px;
-    height: fit-content;
-  }
-
-
 }
