@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="../../global.css">
   <link rel="stylesheet" href="../../themes.css">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
   <title>Cadastre-se</title>
 </head>
 
@@ -37,31 +40,32 @@
 
         <div class="names">
           <div class="form-control">
-            <input type="text" id="firstname" class="input-box" required>
-            <label for="firstname" class="label-input" id="labelFirstname">Nome *</label>
+            <md-outlined-text-field label="Nome" name="fristname" id="fristname" required>
+            </md-outlined-text-field>
           </div>
 
+          
           <div class="form-control">
-            <input type="text" id="lastname" class="input-box" required>
-            <label for="lastname" class="label-input" id="labelLastname">Sobrenome *</label>
+            <md-outlined-text-field label="Sobrenome" name="lastname" id="lastname" required>
+            </md-outlined-text-field>
           </div>
         </div>
 
         <div class="form-control">
-          <input type="email" id="email-add" class="input-box" required>
-          <label for="email-add" class="label-input" id="labelEmail">Email address</label>
+          <md-outlined-text-field class="user" label="Email adress" type="email" name="email" id="email" required></md-outlined-text-field>
         </div>
 
         <div class="form-control">
-          <input type="password" id="password" class="input-box" required>
-          <label for="password" class="label-input" id="labelPassword">Password</label>
-          <div id="passwordVisibilityIcon" onclick="TogglePasswordVisibility()"></div>
+          <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
+            <md-icon-button toggle slot="trailing-icon">
+              <md-icon id="eye">visibility</md-icon>
+              <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
+            </md-icon-button>
+          </md-outlined-text-field>
         </div>
-      </form>
-
-
-      <input type="submit" class="button-register" value="Cadastrar" onclick="register()">
-
+        
+        <md-filled-button class="button-register" value="Cadastrar" onclick="register(event)">CADASTRAR</md-filled-button>
+      </form> 
 
     </div>
   </div>
@@ -69,6 +73,9 @@
 
   <script src="./register.js"></script>
 
+  <!-- Material design imports -->
+  <script src="../../../../index.js"></script>
+  <script src="../../../../bundle.js"></script>
 </body>
 
 </html>

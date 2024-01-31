@@ -1,16 +1,18 @@
-// Visibilidade da senha
-const password = document.getElementById('password');
-const passwordVisibilityIcon = document.getElementById('passwordVisibilityIcon');
-
-function TogglePasswordVisibility() {
-  if (password.type === 'password') {
-    password.setAttribute('type', 'text');
-    passwordVisibilityIcon.classList.add('hide');
+// Vizibilidade da senha
+document.querySelector('md-icon-button').addEventListener('click', function() {
+  var input = document.querySelector('#password');
+  var eye = document.querySelector('#eye');
+  var eyeOff = document.querySelector('#eyeOff');
+  if (input.type === "password") {
+    input.type = "text";
+    eye.style.display = "none";
+    eyeOff.style.display = "block";
   } else {
-    password.setAttribute('type', 'password');
-    passwordVisibilityIcon.classList.remove('hide');
+    input.type = "password";
+    eye.style.display = "block";
+    eyeOff.style.display = "none";
   }
-}
+});
 
 // Validação do Login
 
