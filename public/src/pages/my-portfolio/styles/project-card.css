@@ -5,8 +5,14 @@
   justify-content: center;
   align-items: flex-start;
 
-  width: 389px;
-  height: 258px;
+  width: 80vw;
+  height: 80vh;
+
+  max-width: 389px;
+  max-height: 258px;
+
+  min-width: 312px;
+  min-height: 258px;
 
   border-radius: var(--bordeRadius);
 
