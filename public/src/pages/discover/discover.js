@@ -10,6 +10,7 @@ function openModal(){
     })
 }
 
+
 // Modal 02
 function openModal2(){
     const modal = document.getElementById('modal-window-02');

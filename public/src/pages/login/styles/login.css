@@ -48,8 +48,7 @@ body {
 .header {
   color: var(--color-principal-90);
   font-weight: 400;
-  font-size: 48px;
-  line-height: 40px;
+  font-size: 1em;
   margin-bottom: 40px;
   width: auto;
 }
@@ -167,19 +166,19 @@ body {
 
 .subtitle {
   color: var(--color-neutral-100);
-  font-size: 24px;
+  font-size: 1rem;
   line-height: 24px;
   font-weight: 400;
-  margin-left: 30px;
-}
-
-.form-control input {
+  margin-bottom: 20px;
 
 }
 
-.label-input {
-
+.form-control md-outlined-text-field  {
+  width: 100%;
+  max-width: 517px;
+  min-width: 312px;
 }
+
 
 #passwordVisibilityIcon {
   position: absolute;
@@ -247,11 +246,7 @@ a:hover {
     width: 100%;
   }
 
-  .header {
-    font-size: 38px;
-    line-height: 24px;
-    text-align: center;
-  }
+  
 }
 
 @media screen and (max-width: 870px) {
@@ -261,18 +256,10 @@ a:hover {
     text-align: center;
   }
 
-  .card {
-    width: 312px;
-  }
-
+ 
   .subtitle {
     font-size: 16px;
     line-height: 16px;
-  }
-
-  .form-control input {
-    width: 312px;
-    height: 42px;
   }
 
   .button-login {
@@ -283,15 +270,5 @@ a:hover {
   a {
     font-size: 16px;
   }
-
-  .label-input {
-    font-size: 14px;
-    top: 15px;
-  }
 }
 
-
-
-.md-icon{
-  --md-icon-font: 'Material Symbols Rounded';
-}

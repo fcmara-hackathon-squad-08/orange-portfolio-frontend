@@ -99,9 +99,16 @@ body {
   column-gap: 17px;
 }
 
-.names input {
+.names md-outlined-text-field {
   width: 250px;
 }
+
+.user{
+  width: 100%;
+  max-width: 517px;
+  min-width: 312px;
+}
+
 
 
 .label-input {
@@ -123,22 +130,6 @@ body {
   background-color: var(--color-neutral-60);
 }
 
-#passwordVisibilityIcon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  background: url(../../static/images/show.svg);
-  background-size: cover;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-}
-
-#passwordVisibilityIcon.hide {
-  background: url(../../static/images/hide.svg);
-  background-size: cover;
-}
 
 .button-register {
   border-radius: 4px;
@@ -195,7 +186,7 @@ body {
     line-height: 16px;
   }
 
-  .form-control input {
+  .form-control md-outlined-text-field {
     width: 312px;
     height: 42px;
   }
