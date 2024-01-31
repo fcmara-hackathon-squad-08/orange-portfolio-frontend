@@ -160,15 +160,6 @@ header .navigation a:hover {
 }
 
 @media screen and (max-width: 653px) {
-  .header {
-    width: 100vh;
-  }
-
-  .menu {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
   .avatarAndNotificationBox {
     display: flex;
     align-items: center;
@@ -181,8 +172,7 @@ header .navigation a:hover {
   }
 
   #web-nav-menu nav {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
   }
 }
 
