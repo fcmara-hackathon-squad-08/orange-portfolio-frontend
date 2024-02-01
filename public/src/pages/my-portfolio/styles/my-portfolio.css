@@ -53,6 +53,8 @@
 .projects-container {
   align-self: flex-start;
   margin-left: 32px;
+
+  width: 100vw;
 }
 
 .projects-container h6 {
