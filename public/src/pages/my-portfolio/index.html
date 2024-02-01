@@ -214,27 +214,31 @@
   </md-dialog>
 
   <!-- Projet Preview Modal -->
-  <md-dialog id="project-preview-modal">
+  <md-dialog id="project-preview-modal" open>
     <div slot="content" class="project-preview">
       <md-filled-icon-button onclick="toggleModal('project-preview-modal', false)" class="close-button">
         <md-icon>close</md-icon>
       </md-filled-icon-button>
       <div class="project-preview-content">
-        <header>
-          <div class="user-info-container">
-            <img src="../../../static/images/avatar.png">
-            <section>
-              <p class="subtitle1">Camila Soares</h6>
-              <p class="body-text1">12/12</p>
-            </section>
+        <div>
+          <header>
+            <div class="user-info-container">
+              <img src="../../../static/images/avatar.png">
+              <section>
+                <p class="subtitle1">Camila Soares</h6>
+                <p class="body-text1">12/12</p>
+              </section>
+            </div>
+            <h5>Ecommerce One Page</h5>
+            <chip-set class="tag-list">
+              <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+              <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+            </chip-set>
+          </header>
+          <div class="banner-container">
+            <img src="../../../static/images/img_landingpage.png" class="banner" />
           </div>
-          <h5>Ecommerce One Page</h5>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </header>
-        <img src="../../../static/images/img_landingpage.png" class="banner" />
+        </div>
         <article>
           <p class="body-text1">
             Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
