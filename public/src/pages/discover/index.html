@@ -39,12 +39,12 @@
 
 
     <div class="card-project">
-      <button type="button" onclick="openModal('modal-window')">
-        <img src="../../../static/images/project_01.png" alt="My Project" />
+      <button type="button" aria-label="Abrir Projeto 1" onclick="openModal('modal-window')">
+        <img src="../../../static/images/project_01.png" alt="Projeto 1 - Descrição do projeto" />
 
         <footer>
           <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_02.svg">
+            <img class="avatar2" src="../../../static/images/avatar_02.svg" alt="Avatar de Bianca Martin">
             <p>Bianca Martin • 02/24</p>
           </div>
           <chip-set class="tag-list">
@@ -54,12 +54,12 @@
         </footer>
       </button>
 
-      <button type="button" onclick="openModal('modal-window-02')">
-        <img src="../../../static/images/project_02.png" alt="My Project" />
+      <button type="button" aria-label="Abrir Projeto 2"  onclick="openModal('modal-window-02')">
+        <img src="../../../static/images/project_02.png" alt="My Project" alt="Projeto 2 - Descrição do projeto" />
 
         <footer>
           <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_03.svg">
+            <img class="avatar2" src="../../../static/images/avatar_03.svg" alt="Avatar de Enzo Gabriel">
             <p>Enzo Gabriel • 12/23</p>
           </div>
           <chip-set class="tag-list">
@@ -69,11 +69,11 @@
         </footer>
       </button>
 
-      <button type="button" onclick="openModal('modal-window-03')">
-        <img src="../../../static/images/project_03.png" alt="My Project" />
+      <button type="button" aria-label="Abrir Projeto 3"  onclick="openModal('modal-window-03')">
+        <img src="../../../static/images/project_03.png" alt="My Project" alt="Projeto 3 - Descrição do projeto" />
         <footer>
           <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_04.svg">
+            <img class="avatar2" src="../../../static/images/avatar_04.svg" alt="Avatar de Alice Alexandra">
             <p>Alice Alexandra • 12/23</p>
           </div>
           <chip-set class="tag-list">
@@ -84,11 +84,11 @@
       </button>
       </button>
 
-      <button type="button" onclick="openModal('modal-window-04')">
-        <img src="../../../static/images/project_04.png" alt="My Project" />
+      <button type="button" aria-label="Abrir Projeto 4"  onclick="openModal('modal-window-04')">
+        <img src="../../../static/images/project_04.png" alt="My Project" alt="Projeto 4 - Descrição do projeto" />
         <footer>
           <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_05.svg">
+            <img class="avatar2" src="../../../static/images/avatar_05.svg" alt="Avatar de Carolina Valentim">
             <p>Carolina Valentim • 12/23</p>
           </div>
           <chip-set class="tag-list">
@@ -103,7 +103,7 @@
     <div class="modal-window" id="modal-window">
       <div slot="content" class="modal-view">
 
-        <md-filled-icon-button class="close-modal" id="close-modal">
+        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
 
@@ -111,7 +111,7 @@
 
           <header>
             <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_02.svg">
+              <img class="avatar" src="../../../static/images/avatar_02.svg" alt="Avatar de Bianca Martin">
 
               <section>
                 <h6>Bianca Martin</h6>
@@ -130,7 +130,7 @@
             </div>
           </header>
 
-          <img src="../../../static/images/project_01.png" class="banner" />
+          <img src="../../../static/images/project_01.png" class="banner" alt="Projeto 1 - Descrição do projeto" />
 
           <article>
             <p>
@@ -153,7 +153,7 @@
 
     <div class="modal-window" id="modal-window-02">
       <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal">
+        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
 
@@ -161,7 +161,7 @@
 
           <header>
             <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_03.svg">
+              <img class="avatar" src="../../../static/images/avatar_03.svg" alt="Avatar de Enzo Gabriel">
 
               <section>
                 <h6>Enzo Gabriel</h6>
@@ -179,7 +179,7 @@
             </div>
           </header>
 
-          <img src="../../../static/images/project_02.png" class="banner" />
+          <img src="../../../static/images/project_02.png" class="banner" alt="Projeto 2 - Descrição do projeto" />
 
           <article>
             <p>
@@ -200,15 +200,15 @@
       </div>
     </div>
 
-    <div class="modal-window" id="modal-window-03">
+    <div class="modal-window" id="modal-window-03" >
       <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal">
+        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
         <div class="project-preview-content">
           <header>
             <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_04.svg">
+              <img class="avatar" src="../../../static/images/avatar_04.svg" alt="Avatar de Alice Alexandra">
 
               <section>
                 <h6>Alice Alexandra</h6>
@@ -226,7 +226,7 @@
             </div>
           </header>
 
-          <img src="../../../static/images/project_03.png" class="banner" />
+          <img src="../../../static/images/project_03.png" class="banner" alt="Projeto 3 - Descrição do projeto" />
 
           <article>
             <p>
@@ -249,13 +249,13 @@
 
     <div class="modal-window" id="modal-window-04">
       <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal">
+        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
           <md-icon>close</md-icon>
         </md-filled-icon-button>
         <div class="project-preview-content">
           <header>
             <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_05.svg">
+              <img class="avatar" src="../../../static/images/avatar_05.svg" alt="Avatar de Carolina Valentim">
 
               <section>
                 <h6>Carolina Valentim</h6>
@@ -273,7 +273,7 @@
             </div>
           </header>
 
-          <img src="../../../static/images/project_04.png" class="banner" />
+          <img src="../../../static/images/project_04.png" class="banner" alt="Projeto 4 - Descrição do projeto" />
 
           <article>
             <p>
