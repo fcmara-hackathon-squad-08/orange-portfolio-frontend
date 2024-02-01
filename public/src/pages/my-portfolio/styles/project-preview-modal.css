@@ -2,14 +2,19 @@
   display: flex;
   flex-direction: column;
 
+  justify-content: flex-start;
   align-items: center;
 
   background-color: #fff;
 
-  width: 1042px;
-  /* Calculation accounts for header size. (73px) */
-  height: 980.815px;
+  width: 100vw;
+  height: 100vh;
 
+  max-width: 1042px;
+  max-height: 980.815px;
+
+  min-width: 360px;
+  min-height: 698px;
 }
 
 .project-preview .close-button {
@@ -49,7 +54,8 @@
 
   margin: 0px 102px;
 
-  width: 838px;
+  width: 100%;
+  max-width: 838px;
 }
 
 .project-preview-content header {
@@ -68,7 +74,7 @@
   padding-bottom: 32.82px;
 }
 
-.project-preview-content header h5 {
+.project-preview-content h5 {
   color: var(--color-neutral-120, #303133);
 
   white-space: nowrap;
@@ -106,13 +112,28 @@ a:hover {
   transition: .5s;
 }
 
-.banner {
-  width: 838px;
-  height: 585px;
+.banner-container {
+  min-width: 312px;
+  min-height: 258px;
+
+  max-width: 838px;
+  max-height: 585px;
 
   align-self: center;
 
   margin-bottom: 64.18px;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+
+  align-self: center;
+
+}
+
+.mobile-title {
+  display: none;
 }
 
 .project-preview-content article .body-text1 {
@@ -130,4 +151,53 @@ a:hover {
 
 .buttons-container .disabled-button {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 653px) {
+  #project-preview-modal {
+    margin: 120px 0px;
+
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+
+  }
+
+  .reverse-column-in-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .web-title {
+    display: none;
+  }
+
+  .mobile-title {
+    display: flex;
+    align-self: center;
+
+    margin-bottom: 32px;
+
+  }
+
+  .project-preview-content header {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 60px;
+
+    text-align: center;
+
+    background-color: transparent;
+
+    padding-bottom: 32.82px;
+  }
+
+  .project-preview-content article {
+    margin: 0px 12px;
+  }
+
+
+
 }
