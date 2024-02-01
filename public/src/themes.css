@@ -58,16 +58,138 @@
   --color-error-130: #660000;
 
   /* Info Color Palette */
-  --color-error-60: #ADCBFA;
-  --color-error-70: #82A9F0;
-  --color-error-80: #608AE1;
-  --color-error-90: #315FCE;
-  --color-error-100: #2348B1;
-  --color-error-110: #183594;
-  --color-error-120: #0F2477;
-  --color-error-130: #091862;
+  --color-info-60: #ADCBFA;
+  --color-info-70: #82A9F0;
+  --color-info-80: #608AE1;
+  --color-info-90: #315FCE;
+  --color-info-100: #2348B1;
+  --color-info-110: #183594;
+  --color-info-120: #0F2477;
+  --color-info-130: #091862;
 
   /* Button properties */
   --action-disabledBackground: rgba(0, 0, 0, 0.12);
   --borderRadius: 4px;
+}
+
+.subtitle1 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+
+  letter-spacing: 0.15px;
+}
+
+/* [Orange P] Style Guide/Subtitle 2 */
+.subtitle2 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+
+  letter-spacing: 0.1px;
+}
+
+/* [Orange P] Style Guide/Label */
+.label {
+  color: var(--color-neutral-130, #0B0C0D);
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  letter-spacing: 0.15px;
+
+}
+
+/* [Orange P] Style Guide/Body 1 */
+.body-text1 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+
+  letter-spacing: 0.5px;
+}
+
+/* [Orange P] Style Guide/Body 2 */
+.body-text2 {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+
+  letter-spacing: 0.25px;
+
+}
+
+/* [Orange P] Style Guide/Caption */
+.caption {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+
+  letter-spacing: 0.4px;
+}
+
+/* [Orange P] Style Guide/Overline */
+.overline {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+
+  letter-spacing: 1.5px;
+}
+
+/* [Orange P] Style Guide/Button */
+.button-text {
+  color: var(--color-neutral-130, #0B0C0D);
+
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+
+  letter-spacing: 0.46px;
+  text-transform: uppercase;
+}
+
+.submit-button {
+  border-radius: var(--borderRadius);
+  --md-sys-color-primary: var(--color-secondary-100);
+  --md-sys-color-on-primary: var(--color-neutral-60);
+
+  padding: 8px 22px;
+}
+
+.disabled-button {
+  border-radius: var(--borderRadius);
+  --md-sys-color-primary: var(--action-disabledBackground);
+  --md-sys-color-on-primary: var(--action-disabled, rgba(0, 0, 0, 0.38));
+
+  padding: 8px 22px;
+
+}
+
+.low-opacity {
+  opacity: 0.6;
 }

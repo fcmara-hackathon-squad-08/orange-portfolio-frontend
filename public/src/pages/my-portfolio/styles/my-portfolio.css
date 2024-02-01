@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+  align-items: space-between;
+
+  height: calc(100vh - 73px);
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile-card img {
+  border-radius: 100%;
+
+  width: 122px;
+  height: 122px;
+
+  margin-right: 42px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.profile-info h5 {
+  color: var(--color-neutral-120)
+}
+
+.profile-info p {
+  color: var(--color-neutral-130);
+  opacity: 0.5;
+}
+
+.profile-info md-filled-button {
+  border-radius: var(--borderRadius);
+  --md-sys-color-primary: var(--action-disabledBackground);
+  --md-sys-color-on-primary: var(--color-neutral-130);
+  padding: 8px 22px;
+  opacity: 0.5;
+}
+
+.projects-container {
+  align-self: flex-start;
+  margin-left: 32px;
+
+  width: 80vw;
+}
+
+.projects-container h6 {
+  opacity: 0.6;
+
+  margin-bottom: 16px;
+}
+
+.projects-container md-outlined-text-field {
+  width: 80vw;
+
+  max-width: 513px;
+  min-width: 314px;
+
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(389px, 1fr));
+
+  grid-gap: 50px;
+
+  width: 90vw;
+  height: 50vh;
+}
+
+.projects-grid button {
+  display: auto;
+}
+
+.projects-grid button.hidden {
+  display: none;
+}
+
+.project-skeleton {
+  display: flex;
+  width: 389px;
+  height: 258px;
+  padding: 68px 59px 68px 60px;
+
+  flex-shrink: 0;
+
+  border-radius: var(--borderRadius);
+  background-color: #E6E9F233;
+}
+
+.tag-list {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.tag-list md-suggestion-chip+md-suggestion-chip {
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 653px) {
+  .container {
+    margin-top: 56px;
+  }
+
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 16px;
+
+    padding-bottom: 40px;
+  }
+
+  .profile-card img {
+    margin: 0px 119px;
+  }
+
+  .profile-card .profile-info p {
+    margin: 8px 0px;
+  }
+}

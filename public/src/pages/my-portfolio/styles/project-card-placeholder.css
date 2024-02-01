@@ -1,0 +1,28 @@
+.project-card-placeholder {
+  display: flex;
+  flex-direction: column;
+
+  width: 389px;
+  height: 258px;
+  padding: 68px 59px 68px 60px;
+
+
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: var(--borderRadius);
+  background-color: var(--color-neutral-70)
+}
+
+.filter-icon {
+  width: 46px;
+  height: 46px;
+
+  color: #323232;
+
+  flex-shrink: 0;
+
+  margin-bottom: 16px;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "orange-portfolio-frontend",
+  "version": "1.0.0",
+  "description": "The Orange Portfolio is a web app that allows users to share their projects online and see other people's projects as well.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rollup -p @rollup/plugin-node-resolve ./index.js -o ./bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcmara-hackathon-squad-08/orange-portfolio-frontend.git"
+  },
+  "keywords": [
+    "programadeformacao"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcmara-hackathon-squad-08/orange-portfolio-frontend/issues"
+  },
+  "homepage": "https://github.com/fcmara-hackathon-squad-08/orange-portfolio-frontend#readme",
+  "dependencies": {
+    "@material/web": "^1.2.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "rollup": "^4.9.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
+}

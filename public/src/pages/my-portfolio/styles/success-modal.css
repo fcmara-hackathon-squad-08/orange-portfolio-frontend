@@ -1,0 +1,47 @@
+#success-modal {
+  background-color: var(--color-neutral-60);
+
+  width: 351px;
+  height: 242px;
+}
+
+#success-modal section {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
+}
+
+#success-modal section h5 {
+  color: var(--color-neutral-110, #515255);
+  text-align: center;
+
+  margin: 0px 48px;
+}
+
+#success-modal section .submit-button {
+  width: 210px;
+}
+
+.done-icon-container {
+  display: flex;
+
+  font-variation-settings: 'FILL' 1;
+
+  border-radius: 100%;
+
+  background-color: var(--color-success-110);
+  color: var(--color-neutral-60);
+
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  font-size: 40px;
+}
+
+.done-icon md-icon {
+  --md-icon-font: 'Material Symbols Rounded';
+}

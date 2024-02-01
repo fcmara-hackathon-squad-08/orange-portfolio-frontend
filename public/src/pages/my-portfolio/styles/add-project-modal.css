@@ -1,0 +1,171 @@
+.add-project-card {
+  background-color: #fefefe;
+
+  width: 80vw;
+
+  max-width: 890px;
+  min-width: 266px;
+
+  padding: 24px 34px;
+
+}
+
+md-dialog h5 {
+  color: var(--color-neutral-110);
+
+  margin-left: 34px;
+  margin-top: 24px;
+}
+
+.add-project-card p {
+  margin-bottom: 16px;
+}
+
+.add-project-card main {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 16px;
+
+  width: 80vw;
+
+  max-width: fit-content;
+  min-width: fit-content;
+
+  max-height: fit-content;
+  min-height: fit-content;
+
+}
+
+.input-container md-outlined-text-field {
+  width: 100vw;
+
+  max-width: 424px;
+  min-width: 263px;
+
+  margin-bottom: 40px;
+
+}
+
+.submit-image-card button {
+  background-color: red;
+}
+
+.submit-image-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border-radius: var(--bordeRadius);
+  background-color: var(--color-neutral-70);
+
+  height: 100vh;
+
+  max-width: 389px;
+  max-height: 304px;
+
+  min-width: 266px;
+  min-height: 122px;
+
+}
+
+.submit-image-card-content {
+  display: auto;
+}
+
+.submit-image-card-content.hidden {
+  display: none;
+}
+
+.selected-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.add-project-card footer {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 16px;
+  width: 80vw;
+
+}
+
+.add-project-card footer label {
+  color: var(--Neutral-Colors-Neutral-110, #515255);
+
+  margin-bottom: 16px;
+
+  cursor: pointer;
+
+}
+
+@media screen and (max-width: 653px) {
+  #add-project-modal {
+    height: calc(100vh - 73px);
+  }
+
+  #form-id {
+    padding: 0px 8px;
+  }
+
+  md-dialog h5 {
+    margin-left: 16px;
+    margin-top: 16px;
+  }
+
+  .add-project-card main {
+    flex-direction: column-reverse;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-project-card p {
+    margin-bottom: 16px;
+
+    padding: 5px 25px;
+  }
+
+  .input-container {
+    margin-left: 0px;
+    margin-top: 0px;
+    justify-content: flex-start;
+  }
+
+  .submit-image-card {
+    padding: 91px 0;
+    padding: 2px;
+
+    text-align: center;
+  }
+
+  .submit-image-card-content div p {
+    color: var(--color-neutral-120);
+
+    opacity: 0.6;
+
+    margin-top: 16px;
+  }
+
+  .submit-image-card p {
+    text-align: center;
+    padding: 0px 8px;
+  }
+
+  .input-container md-outlined-text-field {
+    margin: 16px 0px;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+}

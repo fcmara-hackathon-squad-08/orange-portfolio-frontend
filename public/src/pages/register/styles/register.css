@@ -1,0 +1,179 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.figure {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#success {
+  background-color: #2e7d32;
+  width: 320px;
+  height: 52px;
+  top: 77px;
+  border-radius: 4px;
+  padding: 6px 16px 6px 16px;
+  margin-bottom: 70px;
+  color: #FFFFFF;
+  display: none;
+}
+
+.success img {
+  position: absolute;
+  width: 34px;
+  height: 36px;
+  color: #FFFFFF;
+}
+
+.success p {
+  text-align: center;
+  padding: 10px;
+}
+
+.header {
+  color: var(--color-principal-90);
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 40px;
+  margin-bottom: 40px;
+  width: auto;
+  text-align: center;
+}
+
+.form-control {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.form-control md-icon {
+  cursor: pointer;
+}
+
+.names {
+  display: flex;
+  column-gap: 17px;
+}
+
+.names md-outlined-text-field {
+  width: 250px;
+}
+
+.user{
+  width: 100%;
+  max-width: 517px;
+  min-width: 312px;
+}
+
+
+.button-register {
+  border-radius: 4px;
+  width: 517px;
+  height: 42px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: 400;
+
+  --md-filled-button-container-shape: 0px;
+  --md-sys-color-primary: var(--color-secondary-100);
+  --md-sys-color-on-primary: #ffffff;
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .figure {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    font-size: 38px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .header {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .card {
+    width: 312px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .form-control md-outlined-text-field {
+    width: 312px;
+    height: 42px;
+  }
+
+  .button-register {
+    width: 312px;
+    height: 42px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  .label-input {
+    font-size: 14px;
+    top: 15px;
+  }
+
+  .names {
+    display: block;
+  }
+
+  .success {
+    width: 312px;
+    height: 52px;
+    top: 49px;
+
+  }
+}
