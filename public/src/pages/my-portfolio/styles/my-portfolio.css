@@ -54,7 +54,7 @@
   align-self: flex-start;
   margin-left: 32px;
 
-  width: 100vw;
+  width: 80vw;
 }
 
 .projects-container h6 {
@@ -78,7 +78,7 @@
 
   grid-gap: 50px;
 
-  width: 100vw;
+  width: 90vw;
   height: 50vh;
 }
 
@@ -89,8 +89,6 @@
 .projects-grid button.hidden {
   display: none;
 }
-
-
 
 .project-skeleton {
   display: flex;
