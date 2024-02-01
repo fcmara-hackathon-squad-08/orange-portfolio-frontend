@@ -90,15 +90,7 @@
   display: none;
 }
 
-.submit-image-card-content div p {
-  color: var(--color-neutral-120);
 
-  opacity: 0.6;
-
-  text-align: left;
-
-  margin-top: 16px;
-}
 
 .project-skeleton {
   display: flex;

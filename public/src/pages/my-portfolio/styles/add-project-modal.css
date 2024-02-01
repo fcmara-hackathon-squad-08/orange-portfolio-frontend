@@ -42,8 +42,6 @@ md-dialog h5 {
 
 }
 
-.input-container md-outlined-text-field+md-outlined-text-field {}
-
 .input-container md-outlined-text-field {
   width: 100vw;
 
@@ -99,6 +97,8 @@ md-dialog h5 {
   flex-direction: column;
 
   margin-top: 16px;
+  width: 80vw;
+
 }
 
 .add-project-card footer label {
@@ -115,23 +115,26 @@ md-dialog h5 {
     height: calc(100vh - 73px);
   }
 
+  #form-id {
+    padding: 0px 8px;
+  }
+
   md-dialog h5 {
     margin-left: 16px;
     margin-top: 16px;
   }
 
   .add-project-card main {
-    padding: var(--2, 16px) var(--4, 21px) var(--2, 40px) var(--4, 25px);
     flex-direction: column-reverse;
 
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
   }
 
   .add-project-card p {
     margin-bottom: 16px;
 
-    padding: 0px;
+    padding: 5px 25px;
   }
 
   .input-container {
@@ -143,6 +146,21 @@ md-dialog h5 {
   .submit-image-card {
     padding: 91px 0;
     padding: 2px;
+
+    text-align: center;
+  }
+
+  .submit-image-card-content div p {
+    color: var(--color-neutral-120);
+
+    opacity: 0.6;
+
+    margin-top: 16px;
+  }
+
+  .submit-image-card p {
+    text-align: center;
+    padding: 0px 8px;
   }
 
   .input-container md-outlined-text-field {
@@ -150,12 +168,4 @@ md-dialog h5 {
     margin-bottom: 16px;
     width: 100%;
   }
-
-  .add-project-card footer {
-    display: flex;
-    flex-direction: column;
-
-    margin-top: 16px;
-  }
-
 }
