@@ -15,11 +15,11 @@
 
   align-items: flex-start;
   justify-content: center;
-
 }
 
 .profile-card img {
   border-radius: 100%;
+
   width: 122px;
   height: 122px;
 
@@ -53,6 +53,8 @@
 .projects-container {
   align-self: flex-start;
   margin-left: 32px;
+
+  width: 80vw;
 }
 
 .projects-container h6 {
@@ -62,17 +64,22 @@
 }
 
 .projects-container md-outlined-text-field {
-  width: 513px;
+  width: 80vw;
+
+  max-width: 513px;
+  min-width: 314px;
 
   margin-bottom: 40px;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(389px, 1fr));
 
-  gap: 100px;
+  grid-gap: 50px;
+
+  width: 90vw;
+  height: 50vh;
 }
 
 .projects-grid button {
@@ -81,16 +88,6 @@
 
 .projects-grid button.hidden {
   display: none;
-}
-
-.submit-image-card-content div p {
-  color: var(--color-neutral-120);
-
-  opacity: 0.6;
-
-  text-align: left;
-
-  margin-top: 16px;
 }
 
 .project-skeleton {
@@ -113,4 +110,30 @@
 
 .tag-list md-suggestion-chip+md-suggestion-chip {
   margin-left: 8px;
+}
+
+@media screen and (max-width: 653px) {
+  .container {
+    margin-top: 56px;
+  }
+
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 16px;
+
+    padding-bottom: 40px;
+  }
+
+  .profile-card img {
+    margin: 0px 119px;
+  }
+
+  .profile-card .profile-info p {
+    margin: 8px 0px;
+  }
 }

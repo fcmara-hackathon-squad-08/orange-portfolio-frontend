@@ -28,13 +28,12 @@
 <body>
   <navigation-header></navigation-header>
   <main class="container">
-
     <div class="profile-card">
       <img src="../../../static/images/avatar.png">
       <section class="profile-info">
         <h5>Camila Soares</h5>
         <p class="subtitle1">Brasil</p>
-        <md-filled-button aria-label="Adiciona um novo projeto" onclick="openAddProjectModal()">
+        <md-filled-button aria-label="Adiciona um novo projeto" onclick="toggleModal('add-project-modal', true)">
           ADICIONAR PROJETO
         </md-filled-button>
       </section>
@@ -43,7 +42,7 @@
       <h6>Meus projetos</h6>
       <md-outlined-text-field placeholder="Buscar tags" class="label"></md-outlined-text-field>
       <div class="projects-grid">
-        <!-- <button id="project-card-placeholder" onclick="openAddProjectModal()" class="hidden">
+        <!-- <button id="project-card-placeholder" onclick="toggleModal('add-project-modal', true)" class="hidden">
           <div class="item project-card-placeholder">
             <img src="../../../static/images/filter.svg" class="filter-icon">
             <div>
@@ -54,12 +53,102 @@
         </button>
         <div class="item project-skeleton"></div>
         <div class="item project-skeleton"></div> -->
-        <div id="project-card" class="project-card">
+        <div id="project-card" class="item project-card">
           <md-filled-icon-button class="edit-project-button">
             <md-icon>edit</md-icon>
           </md-filled-icon-button>
-          <button type="button" onclick="openPreviewModal()" class="open-project-button">
-            <img src="../../../static/images/img_landingpage.png" class="project-banner" />
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
+            <footer>
+              <div class="user-info-container">
+                <img src="../../../static/images/avatar.png" class="avatar" />
+                <p class="subtitle1">Camila Soares • 12/23</p>
+              </div>
+              <chip-set class="tag-list">
+                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+              </chip-set>
+            </footer>
+          </button>
+        </div>
+        <div id="project-card" class="item project-card">
+          <md-filled-icon-button class="edit-project-button">
+            <md-icon>edit</md-icon>
+          </md-filled-icon-button>
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
+            <footer>
+              <div class="user-info-container">
+                <img src="../../../static/images/avatar.png" class="avatar" />
+                <p class="subtitle1">Camila Soares • 12/23</p>
+              </div>
+              <chip-set class="tag-list">
+                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+              </chip-set>
+            </footer>
+          </button>
+        </div>
+        <div id="project-card" class="item project-card">
+          <md-filled-icon-button class="edit-project-button">
+            <md-icon>edit</md-icon>
+          </md-filled-icon-button>
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
+            <footer>
+              <div class="user-info-container">
+                <img src="../../../static/images/avatar.png" class="avatar" />
+                <p class="subtitle1">Camila Soares • 12/23</p>
+              </div>
+              <chip-set class="tag-list">
+                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+              </chip-set>
+            </footer>
+          </button>
+        </div>
+        <div id="project-card" class="item project-card">
+          <md-filled-icon-button class="edit-project-button">
+            <md-icon>edit</md-icon>
+          </md-filled-icon-button>
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
+            <footer>
+              <div class="user-info-container">
+                <img src="../../../static/images/avatar.png" class="avatar" />
+                <p class="subtitle1">Camila Soares • 12/23</p>
+              </div>
+              <chip-set class="tag-list">
+                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+              </chip-set>
+            </footer>
+          </button>
+        </div>
+        <div id="project-card" class="item project-card">
+          <md-filled-icon-button class="edit-project-button">
+            <md-icon>edit</md-icon>
+          </md-filled-icon-button>
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
+            <footer>
+              <div class="user-info-container">
+                <img src="../../../static/images/avatar.png" class="avatar" />
+                <p class="subtitle1">Camila Soares • 12/23</p>
+              </div>
+              <chip-set class="tag-list">
+                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+              </chip-set>
+            </footer>
+          </button>
+        </div>
+        <div id="project-card" class="item project-card">
+          <md-filled-icon-button class="edit-project-button">
+            <md-icon>edit</md-icon>
+          </md-filled-icon-button>
+          <button type="button" onclick="toggleModal('project-preview-modal', true)" class="open-project-button">
+            <img src="../../../static/images/project_01.png" class="project-banner" />
             <footer>
               <div class="user-info-container">
                 <img src="../../../static/images/avatar.png" class="avatar" />
@@ -79,25 +168,32 @@
   <!-- Add Project Modal -->
   <md-dialog id="add-project-modal">
     <h5 slot="headline">Adicionar projeto</h5>
-    <section slot="content" id="form-id" method="dialog" class="add-project-card">
-      <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
-      <main>
-        <button type="button" onclick="chooseFile()">
-          <div style="height:0px;overflow:hidden">
-            <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
-              onchange="uploadImage(this)" />
-          </div>
-          <div class="submit-image-card">
-            <div id="submit-image-card-content" class="submit-image-card-content">
-              <img src="../../../static/images/filter.svg" class="filter-icon">
-              <div>
-                <p class="body-text2">Compartilhe seu talento com milhares de pessoas</p>
-              </div>
-            </div>
-            <img src="" id="selected-image" class="selected-image" />
 
+    <section slot="content" id="form-id" method="dialog" class="add-project-card">
+      <main>
+        <div class="subtitle-button-container">
+          <div class="text-">
+            <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
           </div>
-        </button>
+
+          <button type="button" onclick="chooseFile">
+            <div style="height:0px;overflow:hidden">
+              <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
+                onchange="uploadImage(this)" />
+            </div>
+            <div class="submit-image-card">
+              <div id="submit-image-card-content" class="submit-image-card-content">
+                <img src="../../../static/images/filter.svg" class="filter-icon">
+                <div>
+                  <p class="body-text2">Compartilhe seu talento com milhares de pessoas</p>
+                </div>
+              </div>
+              <img src="" id="selected-image" class="selected-image" />
+
+            </div>
+          </button>
+        </div>
+
         <div class="input-container">
           <md-outlined-text-field placeholder="Titulo" class="label"></md-outlined-text-field>
           <md-outlined-text-field placeholder="Tags" class="label"></md-outlined-text-field>
@@ -107,10 +203,10 @@
         </div>
       </main>
       <footer>
-        <label class="subtitle1" onclick="openPreviewModal()">Visualizar publicação</label>
+        <label class="subtitle1" onclick="toggleModal('project-preview-modal', true)">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
           <md-filled-button onclick="submitProject()" type="button" class="submit-button">SALVAR</md-filled-button>
-          <md-filled-button onclick="closeAddProjectModal()" type="button"
+          <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
       </footer>
@@ -118,27 +214,31 @@
   </md-dialog>
 
   <!-- Projet Preview Modal -->
-  <md-dialog id="project-preview-modal">
+  <md-dialog id="project-preview-modal" open>
     <div slot="content" class="project-preview">
-      <md-filled-icon-button onclick="closePreviewModal()" class="close-button">
+      <md-filled-icon-button onclick="toggleModal('project-preview-modal', false)" class="close-button">
         <md-icon>close</md-icon>
       </md-filled-icon-button>
       <div class="project-preview-content">
-        <header>
-          <div class="user-info-container">
-            <img src="../../../static/images/avatar.png">
-            <section>
-              <p class="subtitle1">Camila Soares</h6>
-              <p class="body-text1">12/12</p>
-            </section>
+        <div>
+          <header>
+            <div class="user-info-container">
+              <img src="../../../static/images/avatar.png">
+              <section>
+                <p class="subtitle1">Camila Soares</h6>
+                <p class="body-text1">12/12</p>
+              </section>
+            </div>
+            <h5>Ecommerce One Page</h5>
+            <chip-set class="tag-list">
+              <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
+              <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
+            </chip-set>
+          </header>
+          <div class="banner-container">
+            <img src="../../../static/images/img_landingpage.png" class="banner" />
           </div>
-          <h5>Ecommerce One Page</h5>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </header>
-        <img src="../../../static/images/img_landingpage.png" class="banner" />
+        </div>
         <article>
           <p class="body-text1">
             Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
@@ -167,7 +267,8 @@
           done
         </md-icon>
       </div>
-      <md-filled-button class="submit-button" aria-label="Voltar para projetos" onclick="closeSuccessModal()">
+      <md-filled-button class="submit-button" aria-label="Voltar para projetos"
+        onclick="toggleModal('success-modal', false)">
         VOLTAR PARA PROJETOS
       </md-filled-button>
     </section>
