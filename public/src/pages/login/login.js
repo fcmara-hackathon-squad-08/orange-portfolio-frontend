@@ -49,46 +49,17 @@ function login() {
     password: "123456"
   };
 
-  // const response = callAPI('POST', 'auth/login', data);
+  const response = callAPI('POST', 'auth/login', data);
 
-  // if (!response) {
-  //   console.error("Response is undefined!");
-  //   return;
-  // }
+  if (!response) {
+    console.error("Response is undefined!");
+    return;
+  }
 
-  const apiUrl = 'https://sq8-orange-fcamra.onrender.com/auth/login';
+  const { token } = response.data;
 
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': "*"
-    },
-    body: JSON.stringify(data),
-  };
+  localStorage.setItem('token', token);
 
-  fetch(apiUrl, requestOptions)
-    .then(response => {
-      console.log(response);
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // outputElement.textContent = JSON.stringify(data, null, 2);
-      console.log(JSON.stringify(data, null, 2));
-    })
-    .catch(error => {
-      console.error
-
-        ('Error:', error);
-    });
-
-  // const { token } = response.data;
-
-  // localStorage.setItem('token', token);
-
-  // console.log(localStorage.getItem('token'));
+  console.log(localStorage.getItem('token'));
 
 }
