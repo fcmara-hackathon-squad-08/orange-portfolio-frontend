@@ -1,5 +1,5 @@
-// Vizibilidade da senha
-document.querySelector('md-icon-button').addEventListener('click', function() {
+//Password Visibility
+document.querySelector('md-icon-button').addEventListener('click', function () {
   var input = document.querySelector('#password');
   var eye = document.querySelector('#eye');
   var eyeOff = document.querySelector('#eyeOff');
@@ -14,16 +14,81 @@ document.querySelector('md-icon-button').addEventListener('click', function() {
   }
 });
 
-// Validação do Login
+function callAPI(method, url, data) {
+  const apiURL = `https://sq8-orange-fcamra.onrender.com/${url}`;
+
+  let requestOptions = {
+    method: method,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }
+
+  fetch(apiURL, requestOptions)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok' + response.json());
+      }
+
+      console.log(JSON.stringify(data, null, 2));
+      return response;
+
+    })
+    .catch((err) => {
+      console.error(err + response.json());
+    })
+}
 
 function login() {
-  // let email = document.getElementById('email-login').value;
-  // let password = document.getElementById('password').value;
+  let email = document.getElementById('email-login').value;
+  let password = document.getElementById('password').value;
 
-  // if (email === "admin@gmail.com" && password === "admin") {
-  //     alert('Você está logado!');
-  // } else {
-  //     alert("Usuário ou senha não encontrado, caso não tenha cadastro, clique em Cadastre-se!")
+  const data = {
+    login: "kaua@gmail.com",
+    password: "123456"
+  };
+
+  // const response = callAPI('POST', 'auth/login', data);
+
+  // if (!response) {
+  //   console.error("Response is undefined!");
+  //   return;
   // }
-  window.location.replace('../my-portfolio/index.html');
+
+  const apiUrl = 'https://sq8-orange-fcamra.onrender.com/auth/login';
+
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': "*"
+    },
+    body: JSON.stringify(data),
+  };
+
+  fetch(apiUrl, requestOptions)
+    .then(response => {
+      console.log(response);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // outputElement.textContent = JSON.stringify(data, null, 2);
+      console.log(JSON.stringify(data, null, 2));
+    })
+    .catch(error => {
+      console.error
+
+        ('Error:', error);
+    });
+
+  // const { token } = response.data;
+
+  // localStorage.setItem('token', token);
+
+  // console.log(localStorage.getItem('token'));
+
 }
