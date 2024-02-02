@@ -14,11 +14,19 @@ document.querySelector('md-icon-button').addEventListener('click', function () {
   }
 });
 
-function callAPI(method, url, data) {
-  const apiURL = `https://sq8-orange-fcamra.onrender.com/${url}`;
+function login() {
+  const apiURL = `https://sq8-orange-fcamra.onrender.com/auth/login`;
+
+  let email = document.getElementById('email-login').value;
+  let password = document.getElementById('password').value;
+
+  const data = {
+    login: email,
+    password: password
+  };
 
   let requestOptions = {
-    method: method,
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -27,39 +35,16 @@ function callAPI(method, url, data) {
 
   fetch(apiURL, requestOptions)
     .then((response) => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok' + response.json());
-      }
+      return response.json();
+    }).then((data) => {
+      const { token } = data;
 
-      console.log(JSON.stringify(data, null, 2));
-      return response;
+      localStorage.setItem('token', token);
 
+      console.log(localStorage.getItem('token'));
+    }).catch((err) => {
+      console.log(err.message);
     })
-    .catch((err) => {
-      console.error(err + response.json());
-    })
-}
 
-function login() {
-  let email = document.getElementById('email-login').value;
-  let password = document.getElementById('password').value;
-
-  const data = {
-    login: "kaua@gmail.com",
-    password: "123456"
-  };
-
-  const response = callAPI('POST', 'auth/login', data);
-
-  if (!response) {
-    console.error("Response is undefined!");
-    return;
-  }
-
-  const { token } = response.data;
-
-  localStorage.setItem('token', token);
-
-  console.log(localStorage.getItem('token'));
 
 }
