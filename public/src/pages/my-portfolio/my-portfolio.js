@@ -89,33 +89,6 @@ function addProject() {
     });
 }
 
-function addProjectToBody(project) {
-
-  const bodyOfPage = document.getElementById('body-of-page');
-
-  const newProject = document.createElement('div');
-  newProject.className = 'item project-card';
-  newProject.innerHTML = `
-    <md-filled-icon-button class="edit-project-button">
-      <md-icon>edit</md-icon>
-    </md-filled-icon-button>
-    <button type="button" onclick="showProjectDetails(${project.id})" class="open-project-button">
-      <img src="${project.imageUrl}" class="project-banner" />
-      <footer>
-        <div class="user-info-container">
-          <img src="${project.user.imageUrl}" class="avatar" />
-          <p class="subtitle1">${project.user.name} ${project.user.surname} • ${project.createdAt}</p>
-        </div>
-        <chip-set class="tag-list">
-          ${project.tags.map(tag => `<md-suggestion-chip label="${tag}" aria-label="${tag}"></md-suggestion-chip>`).join('')}
-        </chip-set>
-      </footer>
-    </button>
-  `;
-
-  bodyOfPage.appendChild(newProject);
-}
-
 function showProjectDetails(projectId) {
   console.log(`Show details for project with ID ${projectId}`);
 }
@@ -185,19 +158,20 @@ async function getProjectsData() {
 
 }
 
+function setProjectDataOnLocalStorage() {
+  getProjectsData().then((projects) => {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
 function setUserDataOnLocalStorage() {
   getUserData().then((user) => {
     localStorage.setItem("user", JSON.stringify(user));
   }).catch((err) => {
     console.error(err);
   })
-}
-
-function isUserDataOnLocalStorage() {
-  if (localStorage.getItem('user')) {
-    return true;
-  }
-  return false;
 }
 
 function setUserDataOnPage() {
@@ -214,6 +188,79 @@ function setUserDataOnPage() {
   }
 }
 
+function createProjectOnProjectGrid(project) {
+  const projectsGrid = document.getElementById('projects-grid');
+
+  const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
+    month: 'numeric',
+    year: '2-digit'
+  });
+
+  const projectDate = new Date(project.updatedAt);
+  const formattedDate = dateFormatter.format(projectDate);
+
+  const newProject = document.createElement('div');
+  newProject.id = `${project.id}-project-card`;
+  newProject.className = 'item project-card';
+  newProject.innerHTML = `
+    <md-filled-icon-button class="edit-project-button">
+      <md-icon>edit</md-icon>
+    </md-filled-icon-button>
+    <button type="button" onclick="showProjectDetails(${project.id})" class="open-project-button">
+      <img src="${project.imageUrl}" class="project-banner" />
+      <footer>
+        <div class="user-info-container">
+          <img src="${project.user.imageUrl}" class="avatar" />
+          <p class="subtitle1">${project.user.name} ${project.user.surname} • ${formattedDate}</p>
+        </div>
+        <chip-set class="tag-list">
+          ${project.tags.map(tagObject => `<md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>`).join('')}
+        </chip-set>
+      </footer>
+    </button>
+  `;
+
+  projectsGrid.appendChild(newProject);
+}
+
+function createProjectPlaceholderOnProjectGrid() {
+  const projectsGrid = document.getElementById('projects-grid');
+
+  const projectPlaceholder = document.createElement('div');
+  projectPlaceholder.id = `${project.id}-project-card`;
+  projectPlaceholder.className = 'item project-card';
+  projectPlaceholder.innerHTML = `
+    <button id="project-card-placeholder" onclick="toggleModal('add-project-modal', true)" class="hidden">
+      <div class="item project-card-placeholder">
+        <img src="../../../static/images/filter.svg" class="filter-icon">
+        <div>
+          <p class="title">Adicione seu primeiro projeto</p>
+          <p class="description">Compartilhe seu talento com milhares de pessoas</p>
+        </div>
+      </div>
+  </button>
+  `;
+
+  const projectSkeleton = `
+    <div class="item project-skeleton"></div>
+    <div class="item project-skeleton"></div>
+  `;
+
+  projectsGrid.appendChild(newProject);
+  projectsGrid.appendChild(projectSkeleton);
+}
+function setProjectDataOnPage() {
+  const projects = JSON.parse(localStorage.getItem("projects"));
+
+  if (projects.length < 1) {
+    createProjectPlaceholderOnProjectGrid()
+    return;
+  }
+
+  projects.forEach(project => {
+    createProjectOnProjectGrid(project);
+  });
+}
 function isAuthenticated() {
   // Check if the user is authenticated 
   const token = localStorage.getItem('token');
@@ -228,12 +275,19 @@ function isAuthenticated() {
    * Definir dados na página.
    */
 
-  if (!isUserDataOnLocalStorage()) {
-    console.log("User not saved on local storage, saving now");
+  if (!localStorage.getItem('user')) {
+    console.log("User not saved on local storage, saving now.");
     setUserDataOnLocalStorage();
   }
 
+  if (!localStorage.getItem("projects")) {
+    console.log("Project not saved on local storage, saving now.")
+    setProjectDataOnLocalStorage();
+  }
+
   setUserDataOnPage();
+  setProjectDataOnPage();
+
 
   console.log("User is authenticated!");
 }
