@@ -1,5 +1,5 @@
-// Vizibilidade da senha
-document.querySelector('md-icon-button').addEventListener('click', function() {
+//Password Visibility
+document.querySelector('md-icon-button').addEventListener('click', function () {
   var input = document.querySelector('#password');
   var eye = document.querySelector('#eye');
   var eyeOff = document.querySelector('#eyeOff');
@@ -14,16 +14,39 @@ document.querySelector('md-icon-button').addEventListener('click', function() {
   }
 });
 
-// Validação do Login
-
 function login() {
-  // let email = document.getElementById('email-login').value;
-  // let password = document.getElementById('password').value;
+  const apiURL = `https://sq8-orange-fcamra.onrender.com/auth/login`;
 
-  // if (email === "admin@gmail.com" && password === "admin") {
-  //     alert('Você está logado!');
-  // } else {
-  //     alert("Usuário ou senha não encontrado, caso não tenha cadastro, clique em Cadastre-se!")
-  // }
-  window.location.replace('../my-portfolio/index.html');
+  let email = document.getElementById('email-login').value;
+  let password = document.getElementById('password').value;
+
+  const data = {
+    login: email,
+    password: password
+  };
+
+  let requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }
+
+  fetch(apiURL, requestOptions)
+    .then((response) => {
+      return response.json();
+    }).then((data) => {
+      const { token } = data;
+
+      localStorage.setItem('token', token);
+
+      console.log(localStorage.getItem('token'));
+
+      window.location.href = '../my-portfolio/index.html';
+    }).catch((err) => {
+      console.log(err.message);
+    })
+
+
 }

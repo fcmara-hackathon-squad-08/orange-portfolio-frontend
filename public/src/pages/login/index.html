@@ -30,7 +30,7 @@
       <div class="header">
         <h3>Entre no Orange Portifólio</h3>
       </div>
-      
+
       <div class="button-google">
 
         <button class="gsi-material-button" style="width:181px">
@@ -60,38 +60,38 @@
         </button>
       </div>
 
-      <form action="" id="form-login" class="form">
-        <div class="subtitle">
-          <h5>Faça login com email</h5>
+      <div class="subtitle">
+        <h5>Faça login com email</h5>
+      </div>
+      <div class="form">
+
+        <div class="form-control">
+          <md-outlined-text-field label="Email Address" id="email-login" required>
+          </md-outlined-text-field>
         </div>
-        
-          <div class="form-control">
-            <md-outlined-text-field label="Email Adress" required>
-            </md-outlined-text-field>
-          </div>
 
-          <div class="form-control">
-            <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
-              <md-icon-button toggle slot="trailing-icon">
-                <md-icon id="eye">visibility</md-icon>
-                <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
-              </md-icon-button>
-            </md-outlined-text-field>
-          </div>
+        <div class="form-control">
+          <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
+            <md-icon-button toggle slot="trailing-icon">
+              <md-icon id="eye">visibility</md-icon>
+              <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
+            </md-icon-button>
+          </md-outlined-text-field>
+        </div>
 
-          <md-filled-button type="submit" class="button-login" value="Entrar" onclick="login()">ENTRAR</md-filled-button>
+        <md-filled-button type="submit" class="button-login" onclick="login()">ENTRAR</md-filled-button>
+      </div>
 
-          <a href="../register/index.html">
-            <p>Cadastre-se</p>
-          </a>
-      </form>
+      <a href="../register/index.html">
+        <p>Cadastre-se</p>
+      </a>
     </div>
   </div>
 
   <script src="./login.js"></script>
 
   <!-- Material design imports -->
-  <script src="../../../../index.js"></script>
+  <script type="module" src="../../../../index.js"></script>
   <script src="../../../../bundle.js"></script>
 </body>
 
