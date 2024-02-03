@@ -199,6 +199,21 @@ function isUserDataOnLocalStorage() {
   }
   return false;
 }
+
+function setUserDataOnPage() {
+  let userImage = document.getElementById("user-image");
+  let userName = document.getElementById("user-name");
+
+  let userData = JSON.parse(localStorage.getItem("user"));
+
+  if (userImage.src != userData.imageUrl) {
+    userImage.src = userData.imageUrl;
+  }
+  if (userName.innerText != `${userData.name} ${userData.surname}`) {
+    userName.innerText = `${userData.name} ${userData.surname}`;
+  }
+}
+
 function isAuthenticated() {
   // Check if the user is authenticated 
   const token = localStorage.getItem('token');
@@ -217,6 +232,8 @@ function isAuthenticated() {
     console.log("User not saved on local storage, saving now");
     setUserDataOnLocalStorage();
   }
+
+  setUserDataOnPage();
 
   console.log("User is authenticated!");
 }
