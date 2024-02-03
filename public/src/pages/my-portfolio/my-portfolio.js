@@ -52,6 +52,7 @@ function uploadImage(input) {
     reader.readAsDataURL(input.files[0]);
   }
 }
+
 function addProject() {
   const project = {
     title: "Ecommerce One Page",
@@ -121,13 +122,13 @@ function showProjectDetails(projectId) {
 
 
 /**
- * Verificar se o usuário está autenticado
-  * Se ele não estiver, mandar ele para /login
-  * Se ele estiver, buscar dados da rota de projects/me
+ * Verificar se o usuário está autenticado OK
+  * Se ele não estiver, mandar ele para /login OK
+  * Se ele estiver, buscar dados da rota de projects/me OK
   * 
-  * Enviar dados para a navBar
+  * Enviar dados para a navBar OK
   * 
-  * Alterar dados no Perfil
+  * Alterar dados no Perfil 
   * 
   * Se o usuário não tiver nenhum projeto renderizar placeholder
   * Se o usuário tiver projeto, renderizá-los no project-grid
