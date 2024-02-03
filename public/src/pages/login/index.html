@@ -63,22 +63,24 @@
       <div class="subtitle">
         <h5>Faça login com email</h5>
       </div>
+      <div class="form">
 
-      <div class="form-control">
-        <md-outlined-text-field label="Email Address" id="email-login" required>
-        </md-outlined-text-field>
+        <div class="form-control">
+          <md-outlined-text-field label="Email Address" id="email-login" required>
+          </md-outlined-text-field>
+        </div>
+
+        <div class="form-control">
+          <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
+            <md-icon-button toggle slot="trailing-icon">
+              <md-icon id="eye">visibility</md-icon>
+              <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
+            </md-icon-button>
+          </md-outlined-text-field>
+        </div>
+
+        <md-filled-button type="submit" class="button-login" onclick="login()">ENTRAR</md-filled-button>
       </div>
-
-      <div class="form-control">
-        <md-outlined-text-field class="user" label="Password" name="password" id="password" type="password" required>
-          <md-icon-button toggle slot="trailing-icon">
-            <md-icon id="eye">visibility</md-icon>
-            <md-icon id="eyeOff" style="display: none;">visibility_off</md-icon>
-          </md-icon-button>
-        </md-outlined-text-field>
-      </div>
-
-      <md-filled-button type="submit" class="button-login" onclick="login()">ENTRAR</md-filled-button>
 
       <a href="../register/index.html">
         <p>Cadastre-se</p>

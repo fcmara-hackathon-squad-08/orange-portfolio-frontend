@@ -42,6 +42,8 @@ function login() {
       localStorage.setItem('token', token);
 
       console.log(localStorage.getItem('token'));
+
+      window.location.href = '../my-portfolio/index.html';
     }).catch((err) => {
       console.log(err.message);
     })
