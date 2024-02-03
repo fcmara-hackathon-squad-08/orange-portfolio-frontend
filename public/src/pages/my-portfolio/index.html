@@ -47,7 +47,7 @@
   </main>
 
   <!-- Add Project Modal -->
-  <md-dialog id="add-project-modal">
+  <md-dialog id="add-project-modal" open>
     <h5 slot="headline">Adicionar projeto</h5>
 
     <section slot="content" id="form-id" method="dialog" class="add-project-card">
@@ -57,7 +57,7 @@
             <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
           </div>
 
-          <button type="button" onclick="chooseFile">
+          <button type="button" onclick="chooseFile()">
             <div style="height:0px;overflow:hidden">
               <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
                 onchange="uploadImage(this)" />

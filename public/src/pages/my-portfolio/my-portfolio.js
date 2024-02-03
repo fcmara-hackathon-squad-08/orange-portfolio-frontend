@@ -12,11 +12,11 @@ function chooseFile() {
 }
 
 function hideSubmitImageCardContent() {
-  submitImageCardContent.setAttribute("open", true);
+  submitImageCardContent.classList.add("hidden");
 }
 
 function showSubmitImageCardContent() {
-  submitImageCardContent.removeAttribute("open");
+  submitImageCardContent.classList.remove("hidden");
 }
 
 function submitProject() {
@@ -249,6 +249,7 @@ function createProjectPlaceholderOnProjectGrid() {
   projectsGrid.appendChild(newProject);
   projectsGrid.appendChild(projectSkeleton);
 }
+
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
 
@@ -261,6 +262,7 @@ function setProjectDataOnPage() {
     createProjectOnProjectGrid(project);
   });
 }
+
 function isAuthenticated() {
   // Check if the user is authenticated 
   const token = localStorage.getItem('token');
@@ -287,7 +289,6 @@ function isAuthenticated() {
 
   setUserDataOnPage();
   setProjectDataOnPage();
-
 
   console.log("User is authenticated!");
 }
