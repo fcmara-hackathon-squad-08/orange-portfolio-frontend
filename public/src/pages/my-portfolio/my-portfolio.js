@@ -3,6 +3,9 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
   year: '2-digit'
 });
 
+const selectedImage = document.getElementById('selected-image');
+const submitImageCardContent = document.getElementById('submit-image-card-content');
+
 /** Code to make search for tags bar works */
 const anchorElementTags = document.getElementById('select-tags-menu');
 
@@ -263,6 +266,46 @@ function setUserDataOnPage() {
   if (userName.innerText != `${userData.name} ${userData.surname}`) {
     userName.innerText = `${userData.name} ${userData.surname}`;
   }
+}
+
+function setProjectDataOnAddProjectPreview() {
+  const title = document.getElementById("title-input").value;
+  const tags = document.getElementById("tags-input").value;
+  const link = document.getElementById("link-input").value;
+  const description = document.getElementById("description-input").value;
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const projectPreviewAvatar = document.getElementById("project-preview-avatar");
+  const projectPreviewUsername = document.getElementById("project-preview-username");
+  const projectPreviewDate = document.getElementById("project-preview-date");
+  const projectPreviewMobileTitle = document.getElementById("project-preview-mobile-title");
+  const projectPreviewWebTitle = document.getElementById("project-preview-web-title");
+  const projectPreviewTags = document.getElementById("project-preview-tags");
+  const projectPreviewBanner = document.getElementById("project-preview-banner");
+  const projectPreviewDescription = document.getElementById("project-preview-description");
+  const projectPreviewLink = document.getElementById("project-preview-link");
+
+  projectPreviewAvatar.src = user.imageUrl;
+
+  projectPreviewUsername.innerHTML = `${user.name} ${user.surname}`;
+
+  projectPreviewDate.innerHTML = dateFormatter.format(new Date());
+
+  projectPreviewMobileTitle.innerHTML = title;
+  projectPreviewWebTitle.innerHTML = title;
+
+  projectPreviewTags.innerHTML =
+    `<md-suggestion-chip label="UX" aria-label="UX"></md-suggestion-chip>`
+    ;
+
+  projectPreviewBanner.src = selectedImage.src;
+
+  projectPreviewDescription.innerHTML = description;
+  projectPreviewLink.innerHTML = link;
+
+  toggleModal('project-preview-modal', true);
+
 }
 
 function setProjectDataOnProjectPreview(project) {
