@@ -95,8 +95,11 @@ function addProject() {
     .then(data => {
       console.log('Project added successfully:', data);
 
-      // toggleModal('add-project-modal', false)
-      // toggleModal('success-modal', true)
+      setProjectDataOnLocalStorage();
+      createProjectOnProjectGrid(data);
+      toggleModal('add-project-modal', false)
+      toggleModal('success-modal', true)
+
     })
     .catch(error => {
       console.error('Error adding project:', error);
@@ -104,9 +107,7 @@ function addProject() {
     });
 }
 
-function showProjectDetails(projectId) {
-  console.log(`Show details for project with ID ${projectId}`);
-}
+
 
 
 /**
@@ -116,14 +117,14 @@ function showProjectDetails(projectId) {
   * 
   * Enviar dados para a navBar OK
   * 
-  * Alterar dados no Perfil 
+  * Alterar dados no Perfil OK
   * 
   * Se o usuário não tiver nenhum projeto renderizar placeholder
-  * Se o usuário tiver projeto, renderizá-los no project-grid
+  * Se o usuário tiver projeto, renderizá-los no project-grid OK
   * 
   * Ao clicar no projeto, popular project-preview com dados do projeto
   * 
-  * Criar função de adicionar projetos pelo addProjectModal
+  * Criar função de adicionar projetos pelo addProjectModal OK
  */
 async function getUserData() {
   const apiURL = `https://sq8-orange-fcamra.onrender.com/user/me`;
@@ -203,6 +204,16 @@ function setUserDataOnPage() {
   }
 }
 
+function showProjectDetails(projectCard) {
+  const projectBanner = projectCard.getElementById("project-banner");
+  const projectAvatar = projectCard.getElementById("project-avatar");
+  const projectUserInfo = projectCard.getElementById("project-user-info");
+
+  console.log(projectBanner, projectAvatar, projectUserInfo);
+
+
+}
+
 function createProjectOnProjectGrid(project) {
   const projectsGrid = document.getElementById('projects-grid');
 
@@ -221,14 +232,14 @@ function createProjectOnProjectGrid(project) {
     <md-filled-icon-button class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
-    <button type="button" onclick="showProjectDetails(${project.id})" class="open-project-button">
-      <img src="${project.imageUrl}" class="project-banner" />
+    <button type="button" onclick="showProjectDetails(this)" class="open-project-button">
+      <img id="project-banner" src="${project.imageUrl}" class="project-banner" />
       <footer>
         <div class="user-info-container">
-          <img src="${project.user.imageUrl}" class="avatar" />
-          <p class="subtitle1">${project.user.name} ${project.user.surname} • ${formattedDate}</p>
+          <img id="project-avatar" src="${project.user.imageUrl}" class="avatar" />
+          <p id="project-user-info" class="subtitle1">${project.user.name} ${project.user.surname} • ${formattedDate}</p>
         </div>
-        <chip-set class="tag-list">
+        <chip-set id="project-tags" class="tag-list">
           ${project.tags.map(tagObject => `<md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>`).join('')}
         </chip-set>
       </footer>
