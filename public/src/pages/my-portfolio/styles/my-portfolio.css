@@ -72,6 +72,30 @@
   margin-bottom: 40px;
 }
 
+.projects-container .tags-search-bar-container {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 12px;
+
+
+  width: 80vw;
+  height: 56px;
+
+  max-width: 513px;
+  min-width: 314px;
+
+  margin-bottom: 40px;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.23);
+  border-style: ridge;
+}
+
+.tags-search-bar-container .select-tags-menu {}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(389px, 1fr));

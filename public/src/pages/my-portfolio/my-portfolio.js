@@ -3,6 +3,27 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
   year: '2-digit'
 });
 
+/** Code to make search for tags bar works */
+const anchorElementTags = document.getElementById('select-tags-menu');
+
+const menuElementTags = document.getElementById('usage-menu-tags');
+
+anchorElementTags.addEventListener('click', () => {
+  menuElementTags.open = !menuElementTags.open;
+});
+
+function addTagToMyProjectsSearchBar(mdMenu) {
+  const headlineDiv = mdMenu.querySelector('[slot="headline"]');
+
+  const suggestionChip = headlineDiv.querySelector('md-suggestion-chip');
+
+  const label = suggestionChip.getAttribute('label');
+
+  const selectedTagsContainer = document.getElementById("selected-tags");
+
+  selectedTagsContainer.innerHTML = `${selectedTagsContainer.innerHTML} <md-filter-chip label="${label}" removable></md-filter-chip>`
+}
+
 function chooseFile() {
   document.getElementById('fileInput').click();
 }
@@ -103,22 +124,6 @@ function addProject() {
     });
 }
 
-/**
- * Verificar se o usuário está autenticado OK
-  * Se ele não estiver, mandar ele para /login OK
-  * Se ele estiver, buscar dados da rota de projects/me OK
-  * 
-  * Enviar dados para a navBar OK
-  * 
-  * Alterar dados no Perfil OK
-  * 
-  * Se o usuário não tiver nenhum projeto renderizar placeholder
-  * Se o usuário tiver projeto, renderizá-los no project-grid OK
-  * 
-  * Ao clicar no projeto, popular project-preview com dados do projeto
-  * 
-  * Criar função de adicionar projetos pelo addProjectModal OK
- */
 async function getUserData() {
   const apiURL = `https://sq8-orange-fcamra.onrender.com/user/me`;
   const token = localStorage.getItem('token');
