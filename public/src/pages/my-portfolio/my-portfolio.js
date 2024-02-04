@@ -19,11 +19,6 @@ function showSubmitImageCardContent() {
   submitImageCardContent.classList.remove("hidden");
 }
 
-function submitProject() {
-  toggleModal('add-project-modal', false)
-  toggleModal('success-modal', true)
-}
-
 function toggleModal(modalId, state) {
   const modal = document.getElementById(modalId);
 
@@ -54,34 +49,54 @@ function uploadImage(input) {
 }
 
 function addProject() {
-  const project = {
-    title: "Ecommerce One Page",
-    link: "https://gumroad.com/products/wxCSL",
-    description: "Description of the project...",
-    imageUrl: "URL of the project image",
-    tags: ["UX", "WEB"]
+  const token = localStorage.getItem("token");
 
-  };
+  const title = document.getElementById("title-input").value;
+  // const tagsInput = document.getElementById("tags-input");
+  const link = document.getElementById("link-input").value;
+  const description = document.getElementById("description-input").value;
+
+  const tags = [
+    {
+      "id": 1,
+      "tag": "HTML"
+    },
+    {
+      "id": 3,
+      "tag": "JAVA"
+    }
+  ]
+
+  const projectDTO = {
+    title,
+    link,
+    description
+  }
+
+  const formData = new FormData();
+
+  formData.append("projectDto", JSON.stringify(projectDTO));
+  formData.append("file", document.querySelector('input[type=file]').files[0]);
 
   const requestOptions = {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
     },
-    body: JSON.stringify(project),
+    body: formData,
   };
 
+  const params = tags.map((tagObject) => {
+    return { tags: tagObject.tag }
+  })
 
-  fetch('https://sq8-orange-fcamra.onrender.com/swagger-ui/project/add', requestOptions)
+  fetch('https://sq8-orange-fcamra.onrender.com/project/add?' + new URLSearchParams(...params), requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log('Project added successfully:', data);
 
-
-      toggleModal('success-modal', true);
-
-
-      addProjectToBody(data);
+      // toggleModal('add-project-modal', false)
+      // toggleModal('success-modal', true)
     })
     .catch(error => {
       console.error('Error adding project:', error);

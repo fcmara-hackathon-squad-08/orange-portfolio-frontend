@@ -76,17 +76,17 @@
         </div>
 
         <div class="input-container">
-          <md-outlined-text-field placeholder="Titulo" class="label"></md-outlined-text-field>
-          <md-outlined-text-field placeholder="Tags" class="label"></md-outlined-text-field>
-          <md-outlined-text-field placeholder="Link" class="label"></md-outlined-text-field>
-          <md-outlined-text-field type="textarea" rows="2" placeholder="Descrição"
-            class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="title-input" placeholder="Titulo" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="tags-input" placeholder="Tags" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="link-input" placeholder="Link" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="description-input" type="textarea" rows="2" placeholder="Descrição" class="label"
+            value=""></md-outlined-text-field>
         </div>
       </main>
       <footer>
         <label class="subtitle1" onclick="toggleModal('project-preview-modal', true)">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
-          <md-filled-button onclick="submitProject()" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="addProject()" type="button" class="submit-button">SALVAR</md-filled-button>
           <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
