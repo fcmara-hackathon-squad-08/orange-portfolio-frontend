@@ -1,12 +1,3 @@
-const addProjectModal = document.getElementById('add-project-modal');
-
-const selectedImage = document.getElementById('selected-image');
-const submitImageCardContent = document.getElementById('submit-image-card-content');
-
-const previewModal = document.getElementById('project-preview-modal');
-
-const successModal = document.getElementById('success-modal');
-
 function chooseFile() {
   document.getElementById('fileInput').click();
 }
@@ -107,9 +98,6 @@ function addProject() {
     });
 }
 
-
-
-
 /**
  * Verificar se o usuário está autenticado OK
   * Se ele não estiver, mandar ele para /login OK
@@ -204,12 +192,13 @@ function setUserDataOnPage() {
   }
 }
 
-function showProjectDetails(projectCard) {
-  const projectBanner = projectCard.getElementById("project-banner");
-  const projectAvatar = projectCard.getElementById("project-avatar");
-  const projectUserInfo = projectCard.getElementById("project-user-info");
+function showProjectDetails(buttonProject) {
+  const projectCard = buttonProject.parentElement;
 
-  console.log(projectBanner, projectAvatar, projectUserInfo);
+  const projectBanner = projectCard.querySelector("#project-banner");
+  const projectAvatar = projectCard.querySelector("#project-avatar");
+  const projectUserInfo = projectCard.querySelector("#project-user-info");
+
 
 
 }
