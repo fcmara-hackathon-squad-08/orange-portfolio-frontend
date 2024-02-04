@@ -30,9 +30,8 @@ function oberveChangesInSelectedTags(callback) {
 const SelectedTagsObserver = oberveChangesInSelectedTags((currentChildElements) => {
   const tags = currentChildElements.map(chip => { return chip.label });
 
-  // listProjectsFilteredByTags(tags);
+  listProjectsFilteredByTags(tags);
 
-  console.log(tags);
 })
 
 function addTagToMyProjectsSearchBar(mdMenu) {
@@ -48,7 +47,7 @@ function addTagToMyProjectsSearchBar(mdMenu) {
 }
 
 async function listProjectsFilteredByTags(tags) {
-  const apiURL = `https://sq8-orange-fcamra.onrender.com/project/list/tags/user`;
+  const apiURL = `https://sq8-orange-fcamra.onrender.com/project/list/tags/user?`;
   const token = localStorage.getItem('token');
 
   let requestOptions = {
@@ -59,17 +58,29 @@ async function listProjectsFilteredByTags(tags) {
     },
   }
 
-  console.log(tags);
+  const params = tags.map((tag) => {
+    const tags = { tags: tag }
+    return tags;
+  });
 
-  // try {
-  //   const response = await fetch(apiURL, requestOptions);
-  //   const data = await response.json();
+  console.log({ ...params });
 
-  //   return data;
-  // }
-  // catch (err) {
-  //   throw new Error(err);
-  // }
+  fetch(apiURL + new URLSearchParams(...params), requestOptions)
+    .then((response) => {
+      return response.json()
+    })
+    .then((data) => {
+      console.log("Successfully recovered projects:", data);
+      if (!data) {
+        updateProjectDataOnLocalStorage([]);
+        return;
+      }
+      updateProjectDataOnLocalStorage(data);
+      setProjectDataOnPage();
+    })
+    .catch((err) => {
+      throw new Error(err)
+    })
 }
 
 function chooseFile() {
@@ -228,6 +239,10 @@ function setProjectDataOnLocalStorage() {
   })
 }
 
+function updateProjectDataOnLocalStorage(updatedProjects) {
+  localStorage.setItem("projects", JSON.stringify(updatedProjects));
+}
+
 function setUserDataOnLocalStorage() {
   getUserData().then((user) => {
     localStorage.setItem("user", JSON.stringify(user));
@@ -330,7 +345,7 @@ function createProjectPlaceholderOnProjectGrid() {
   const projectsGrid = document.getElementById('projects-grid');
 
   const projectPlaceholder = document.createElement('div');
-  projectPlaceholder.id = `${project.id}-project-card`;
+  projectPlaceholder.id = `project-card-placeholder-id`;
   projectPlaceholder.className = 'item project-card';
   projectPlaceholder.innerHTML = `
     <button id="project-card-placeholder" onclick="toggleModal('add-project-modal', true)" class="hidden">
@@ -349,10 +364,9 @@ function createProjectPlaceholderOnProjectGrid() {
     <div class="item project-skeleton"></div>
   `;
 
-  projectsGrid.appendChild(newProject);
-  projectsGrid.appendChild(projectSkeleton);
+  projectsGrid.append(projectPlaceholder);
+  projectsGrid.innerHTML = `${projectsGrid.innerHTML} ${projectSkeleton}`
 }
-
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
 
@@ -385,10 +399,12 @@ function isAuthenticated() {
     setUserDataOnLocalStorage();
   }
 
-  if (!localStorage.getItem("projects")) {
-    console.log("Project not saved on local storage, saving now.")
-    setProjectDataOnLocalStorage();
-  }
+  // if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
+  //   console.log("Project not saved on local storage, saving now.")
+  //   setProjectDataOnLocalStorage();
+  // }
+
+  setProjectDataOnLocalStorage();
 
   setUserDataOnPage();
   setProjectDataOnPage();
@@ -397,4 +413,3 @@ function isAuthenticated() {
 }
 
 isAuthenticated();
-
