@@ -369,11 +369,15 @@ function createProjectPlaceholderOnProjectGrid() {
 }
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
+  let projectsGrid = document.getElementById("projects-grid");
+
+  projectsGrid.innerHTML = "";
 
   if (projects.length < 1) {
     createProjectPlaceholderOnProjectGrid()
     return;
   }
+
 
   projects.forEach(project => {
     createProjectOnProjectGrid(project);
