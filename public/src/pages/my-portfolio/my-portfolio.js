@@ -410,6 +410,7 @@ function createProjectPlaceholderOnProjectGrid() {
   projectsGrid.append(projectPlaceholder);
   projectsGrid.innerHTML = `${projectsGrid.innerHTML} ${projectSkeleton}`
 }
+
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
   let projectsGrid = document.getElementById("projects-grid");
@@ -446,12 +447,10 @@ function isAuthenticated() {
     setUserDataOnLocalStorage();
   }
 
-  // if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
-  //   console.log("Project not saved on local storage, saving now.")
-  //   setProjectDataOnLocalStorage();
-  // }
-
-  setProjectDataOnLocalStorage();
+  if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
+    console.log("Project not saved on local storage, saving now.")
+    setProjectDataOnLocalStorage();
+  }
 
   setUserDataOnPage();
   setProjectDataOnPage();
