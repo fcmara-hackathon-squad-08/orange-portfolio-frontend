@@ -12,6 +12,29 @@ anchorElementTags.addEventListener('click', () => {
   menuElementTags.open = !menuElementTags.open;
 });
 
+function oberveChangesInSelectedTags(callback) {
+
+  const targetNode = document.getElementById('selected-tags');
+
+  const mutationCallback = function () {
+    callback(Array.from(targetNode.children))
+  }
+
+  const observer = new MutationObserver(mutationCallback);
+
+  observer.observe(targetNode, { childList: true });
+
+  return observer;
+}
+
+const SelectedTagsObserver = oberveChangesInSelectedTags((currentChildElements) => {
+  const tags = currentChildElements.map(chip => { return chip.label });
+
+  // listProjectsFilteredByTags(tags);
+
+  console.log(tags);
+})
+
 function addTagToMyProjectsSearchBar(mdMenu) {
   const headlineDiv = mdMenu.querySelector('[slot="headline"]');
 
@@ -22,6 +45,31 @@ function addTagToMyProjectsSearchBar(mdMenu) {
   const selectedTagsContainer = document.getElementById("selected-tags");
 
   selectedTagsContainer.innerHTML = `${selectedTagsContainer.innerHTML} <md-filter-chip label="${label}" removable></md-filter-chip>`
+}
+
+async function listProjectsFilteredByTags(tags) {
+  const apiURL = `https://sq8-orange-fcamra.onrender.com/project/list/tags/user`;
+  const token = localStorage.getItem('token');
+
+  let requestOptions = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+  }
+
+  console.log(tags);
+
+  // try {
+  //   const response = await fetch(apiURL, requestOptions);
+  //   const data = await response.json();
+
+  //   return data;
+  // }
+  // catch (err) {
+  //   throw new Error(err);
+  // }
 }
 
 function chooseFile() {
