@@ -1,3 +1,8 @@
+const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
+  month: 'numeric',
+  year: '2-digit'
+});
+
 function chooseFile() {
   document.getElementById('fileInput').click();
 }
@@ -192,24 +197,54 @@ function setUserDataOnPage() {
   }
 }
 
-function showProjectDetails(buttonProject) {
-  const projectCard = buttonProject.parentElement;
+function setProjectDataOnProjectPreview(project) {
+  const projectPreviewAvatar = document.getElementById("project-preview-avatar");
+  const projectPreviewUsername = document.getElementById("project-preview-username");
+  const projectPreviewDate = document.getElementById("project-preview-date");
+  const projectPreviewMobileTitle = document.getElementById("project-preview-mobile-title");
+  const projectPreviewWebTitle = document.getElementById("project-preview-web-title");
+  const projectPreviewTags = document.getElementById("project-preview-tags");
+  const projectPreviewBanner = document.getElementById("project-preview-banner");
+  const projectPreviewDescription = document.getElementById("project-preview-description");
+  const projectPreviewLink = document.getElementById("project-preview-link");
 
-  const projectBanner = projectCard.querySelector("#project-banner");
-  const projectAvatar = projectCard.querySelector("#project-avatar");
-  const projectUserInfo = projectCard.querySelector("#project-user-info");
+  projectPreviewAvatar.src = project.user.imageUrl;
 
+  projectPreviewUsername.innerHTML = `${project.user.name} ${project.user.surname}`;
+  projectPreviewDate.innerHTML = dateFormatter.format(new Date(project.updatedAt));
 
+  projectPreviewMobileTitle.innerHTML = project.title;
+  projectPreviewWebTitle.innerHTML = project.title;
 
+  projectPreviewTags.innerHTML =
+    `${project.tags.map(tagObject => `<md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>`).join('')}`
+    ;
+
+  projectPreviewBanner.src = project.imageUrl;
+
+  projectPreviewDescription.innerHTML = project.description;
+  projectPreviewLink.innerHTML = project.link;
+
+}
+
+function showProjectDetailsOnProjectPreview(projectId) {
+  getProjectsData().then((projects) => {
+    const selectedProject = projects.filter(
+      (project) => (project.id == projectId)
+    );
+
+    console.log(...selectedProject);
+
+    setProjectDataOnProjectPreview(selectedProject[0])
+    toggleModal('project-preview-modal', true);
+
+  }).catch((err) => {
+    console.error(err);
+  })
 }
 
 function createProjectOnProjectGrid(project) {
   const projectsGrid = document.getElementById('projects-grid');
-
-  const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
-    month: 'numeric',
-    year: '2-digit'
-  });
 
   const projectDate = new Date(project.updatedAt);
   const formattedDate = dateFormatter.format(projectDate);
@@ -221,7 +256,7 @@ function createProjectOnProjectGrid(project) {
     <md-filled-icon-button class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
-    <button type="button" onclick="showProjectDetails(this)" class="open-project-button">
+    <button type="button" onclick="showProjectDetailsOnProjectPreview(${project.id})" class="open-project-button">
       <img id="project-banner" src="${project.imageUrl}" class="project-banner" />
       <footer>
         <div class="user-info-container">
