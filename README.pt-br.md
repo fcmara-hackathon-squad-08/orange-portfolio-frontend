@@ -34,8 +34,6 @@ O orange portfolio é um web app que permite que seus usuários compartilhem seu
 
 ### Objective
 
-This project was developed as a challenge in the FCAMARA's recruitment process hackathon, which occurred between 01/22/2024 and 02/05/2024.  
-
 Esse projeto foi desenvolvido no hackathon da última etapa do processo seletivo da FCamara, que ocorreu entre 22/01/2024 e 05/02/2024
 
 ## Funcionalidades 🛠✨
