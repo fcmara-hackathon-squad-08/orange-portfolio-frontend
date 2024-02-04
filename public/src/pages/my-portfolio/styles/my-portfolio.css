@@ -94,7 +94,18 @@
   border-style: ridge;
 }
 
-.tags-search-bar-container .select-tags-menu {}
+.tags-search-bar-container .select-tags-menu {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.select-tags-menu md-icon {
+  align-self: center;
+}
 
 .projects-grid {
   display: grid;
