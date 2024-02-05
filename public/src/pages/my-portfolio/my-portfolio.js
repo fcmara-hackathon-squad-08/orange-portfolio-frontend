@@ -268,11 +268,27 @@ function setUserDataOnPage() {
   }
 }
 
-function setProjectDataOnAddProjectPreview() {
-  const title = document.getElementById("title-input").value;
-  const tags = document.getElementById("tags-input").value;
-  const link = document.getElementById("link-input").value;
-  const description = document.getElementById("description-input").value;
+function setProjectDataOnAddProjectPreview(mode) {
+  let title;
+  let tags;
+  let link;
+  let description;
+  let bannerImage;
+
+  if (mode == 'edit') {
+    title = document.getElementById("edit-title-input").value;
+    tags = document.getElementById("edit-tags-input").value;
+    link = document.getElementById("edit-link-input").value;
+    description = document.getElementById("edit-description-input").value;
+    bannerImage = document.getElementById("edit-selected-image")
+  }
+  else {
+    title = document.getElementById("title-input").value;
+    tags = document.getElementById("tags-input").value;
+    link = document.getElementById("link-input").value;
+    description = document.getElementById("description-input").value;
+    bannerImage = selectedImage;
+  }
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -295,11 +311,12 @@ function setProjectDataOnAddProjectPreview() {
   projectPreviewMobileTitle.innerHTML = title;
   projectPreviewWebTitle.innerHTML = title;
 
-  projectPreviewTags.innerHTML =
-    `<md-suggestion-chip label="UX" aria-label="UX"></md-suggestion-chip>`
-    ;
+  tags = tags.split(",");
 
-  projectPreviewBanner.src = selectedImage.src;
+  projectPreviewTags.innerHTML =
+    tags.map(tag => `<md-suggestion-chip label="${tag}" aria-label="${tag}"></md-suggestion-chip>`).join('');
+
+  projectPreviewBanner.src = bannerImage.src;
 
   projectPreviewDescription.innerHTML = description;
   projectPreviewLink.innerHTML = link;
@@ -338,6 +355,29 @@ function setProjectDataOnProjectPreview(project) {
 
 }
 
+function setProjectDataOnEditProjectPreview(projectData) {
+  const titleInput = document.getElementById("edit-title-input");
+  const tagsInput = document.getElementById("edit-tags-input");
+  const linkInput = document.getElementById("edit-link-input");
+  const descriptionInput = document.getElementById("edit-description-input");
+  const editSubmitImageCard = document.getElementById("edit-selected-image");
+
+  titleInput.value = projectData.title;
+
+  const tags = projectData.tags.map((tagObject) => {
+    return tagObject.tag;
+  }).join(",");
+
+  tagsInput.value = tags;
+
+  linkInput.value = projectData.link;
+
+  editSubmitImageCard.src = projectData.imageUrl;
+
+  descriptionInput.value = projectData.description;
+
+}
+
 async function getProjectWithId(projectId) {
   try {
     const projects = await getProjectsData();
@@ -366,15 +406,22 @@ function showProjectDetailsOnProjectPreview(projectId) {
   })
 }
 
-function editProject(id) {
-
+function editProject(projectId) {
   /**
    * Retrieve project data with id
    * Set data in EditProjectModal
    * Implement edit Project feature
    * Update project-grid
    */
-  console.log(`edited project with id: ${id}`);
+  getProjectWithId(projectId).then((selectedProject) => {
+    console.log(...selectedProject);
+
+    setProjectDataOnEditProjectPreview(selectedProject[0])
+    toggleModal('edit-project-modal', true);
+
+  }).catch((err) => {
+    console.error(err);
+  })
 }
 
 function deleteProject(id) {

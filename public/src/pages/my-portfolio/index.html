@@ -163,31 +163,24 @@
                 onchange="uploadImage(this)" />
             </div>
             <div class="submit-image-card">
-              <div id="submit-image-card-content" class="submit-image-card-content">
-                <img src="../../../static/images/filter.svg" class="filter-icon">
-                <div>
-                  <p class="body-text2">Compartilhe seu talento com milhares de pessoas</p>
-                </div>
-              </div>
-              <img src="" id="selected-image" class="selected-image" />
-
+              <img src="" id="edit-selected-image" class="selected-image" />
             </div>
           </button>
         </div>
 
         <div class="input-container">
-          <md-outlined-text-field id="title-input" placeholder="Titulo" class="label" value=""></md-outlined-text-field>
-          <md-outlined-text-field id="tags-input" placeholder="Tags" class="label" value=""></md-outlined-text-field>
-          <md-outlined-text-field id="link-input" placeholder="Link" class="label" value=""></md-outlined-text-field>
-          <md-outlined-text-field id="description-input" type="textarea" rows="2" placeholder="Descrição" class="label"
-            value=""></md-outlined-text-field>
+          <md-outlined-text-field id="edit-title-input" placeholder="Titulo" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-tags-input" placeholder="Tags" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-link-input" placeholder="Link" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-description-input" type="textarea" rows="2" placeholder="Descrição"
+            class="label"></md-outlined-text-field>
         </div>
       </main>
       <footer>
-        <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview()">Visualizar publicação</label>
+        <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview('edit')">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
           <md-filled-button onclick="addProject()" type="button" class="submit-button">SALVAR</md-filled-button>
-          <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
+          <md-filled-button onclick="toggleModal('edit-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
       </footer>
