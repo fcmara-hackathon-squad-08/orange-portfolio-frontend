@@ -24,13 +24,28 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
 
   <title>Meus projetos</title>
+
+
+  <!-- NavBar -->
+  <script src="../../components/NavigationHeader.js"></script>
+
+  <!-- Material design imports -->
+  <script src="../../../../index.js"></script>
+  <script src="../../../../bundle.js"></script>
 </head>
 
 <body>
   <navigation-header></navigation-header>
   <main class="container">
     <div class="profile-card">
-      <img id="user-image" src="../../../static/images/avatar.png">
+      <button class="update-avatar-button" onclick="chooseFile('fileInput')">
+        <md-ripple class="unbounded"></md-ripple>
+        <div style="height:0px;overflow:hidden">
+          <input type="file" id="avatarFileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
+            onchange="updateAvatar(this)" />
+        </div>
+        <img id="user-image" src="../../../static/images/avatar.png">
+      </button>
       <section class="profile-info">
         <h5 id="user-name">Camila Soares</h5>
         <p class="subtitle1">Brasil</p>
@@ -209,11 +224,11 @@
     </section>
   </md-dialog>
 
-  <!-- Confirm Delete modal -->
+  <!-- Confirm modal -->
   <md-dialog id="confirm-modal">
     <section slot="content">
-      <h5 id="modal-message">Deseja excluir?</h5>
-      <p class="body-text1">
+      <h5 id="modal-title">Deseja excluir?</h5>
+      <p class="body-text1" id="modal-confirm-message">
         Se você prosseguir irá excluir o projeto do seu portfólio
       </p>
       <footer slot="actions">
@@ -231,12 +246,6 @@
 
   <script src="./my-portfolio.js"></script>
 
-  <!-- NavBar -->
-  <script src="../../components/NavigationHeader.js"></script>
-
-  <!-- Material design imports -->
-  <script src="../../../../index.js"></script>
-  <script src="../../../../bundle.js"></script>
 </body>
 
 </html>

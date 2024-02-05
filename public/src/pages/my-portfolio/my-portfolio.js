@@ -61,14 +61,13 @@ async function listProjectsFilteredByTags(tags) {
     },
   }
 
-  const params = tags.map((tag) => {
-    const tags = { tags: tag }
-    return tags;
+  let params = new URLSearchParams();
+
+  tags.forEach(tag => {
+    params.append('tags', tag)
   });
 
-  console.log({ ...params });
-
-  fetch(apiURL + new URLSearchParams(...params), requestOptions)
+  fetch(apiURL + new URLSearchParams(params), requestOptions)
     .then((response) => {
       return response.json()
     })
@@ -88,6 +87,48 @@ async function listProjectsFilteredByTags(tags) {
 
 function chooseFile() {
   document.getElementById('fileInput').click();
+}
+
+// function updateAvatar(input) {
+//   const oldProfilePic = document.getElementById("user-image");
+
+//   const token = localStorage.getItem("token");
+
+//   const projectDTO = {
+//     country: "brasil"
+//   }
+
+//   const formData = new FormData();
+
+//   formData.append("projectDto", JSON.stringify(projectDTO));
+//   formData.append("file", document.querySelector('input[type=file]').files[0]);
+
+//   const requestOptions = {
+//     method: 'PUT',
+//     headers: {
+//       'Authorization': `Bearer ${token}`,
+//     },
+//     body: formData,
+//   };
+
+//   const params = new URLSearchParams();
+
+//   fetch(`https://sq8-orange-fcamra.onrender.com/user/me` + new URLSearchParams(params), requestOptions)
+//     .then(response => response.json())
+//     .then(data => {
+//       setProjectDataOnLocalStorage();
+//       toggleModal('edit-project-modal', false)
+//       toggleModal('success-modal', true, "Edição concluída com sucesso!")
+//       listProjectsFilteredByTags([])
+//     })
+//     .catch(error => {
+//       console.error('Error adding project:', error);
+
+//     });
+// }
+
+async function updateAvatar() {
+
 }
 
 function hideSubmitImageCardContent() {
@@ -138,11 +179,11 @@ function addProject() {
   const token = localStorage.getItem("token");
 
   const title = document.getElementById("title-input").value;
-  const tagsInput = document.getElementById("tags-input");
+  const tagsInput = document.getElementById("tags-input").value;
   const link = document.getElementById("link-input").value;
   const description = document.getElementById("description-input").value;
 
-  const tags = tagsInput.join(",");
+  const tags = tagsInput.split(",");
 
   const projectDTO = {
     title,
@@ -154,7 +195,9 @@ function addProject() {
   const formData = new FormData();
 
   formData.append("projectDto", JSON.stringify(projectDTO));
-  formData.append("file", document.querySelector('input[type=file]').files[0]);
+  formData.append("file", fileInput.files[0]);
+
+  console.log(selectedImage);
 
   const requestOptions = {
     method: 'POST',
@@ -164,11 +207,13 @@ function addProject() {
     body: formData,
   };
 
-  const params = tags.map((tagObject) => {
-    return { tags: tagObject.tag }
-  })
+  let params = new URLSearchParams();
 
-  fetch('https://sq8-orange-fcamra.onrender.com/project/add?' + new URLSearchParams(...params), requestOptions)
+  tags.forEach(tag => {
+    params.append('tags', tag)
+  });
+
+  fetch('https://sq8-orange-fcamra.onrender.com/project/add?' + new URLSearchParams(params), requestOptions)
     .then(response => response.json())
     .then(data => {
       console.log('Project added successfully:', data);
@@ -233,24 +278,33 @@ async function getProjectsData() {
 
 }
 
-function setProjectDataOnLocalStorage() {
-  getProjectsData().then((projects) => {
+async function setProjectDataOnLocalStorage() {
+  try {
+    const projects = await getProjectsData();
+
     localStorage.setItem("projects", JSON.stringify(projects));
-  }).catch((err) => {
+  }
+  catch (err) {
     console.error(err);
-  })
+  }
 }
 
 function updateProjectDataOnLocalStorage(updatedProjects) {
   localStorage.setItem("projects", JSON.stringify(updatedProjects));
 }
 
-function setUserDataOnLocalStorage() {
-  getUserData().then((user) => {
+async function setUserDataOnLocalStorage() {
+  try {
+    const user = await getUserData();
+    console.log("456")
+
     localStorage.setItem("user", JSON.stringify(user));
-  }).catch((err) => {
+
+  } catch (err) {
     console.error(err);
-  })
+
+  }
+
 }
 
 function setUserDataOnPage() {
@@ -426,7 +480,7 @@ function editProject() {
   const formData = new FormData();
 
   formData.append("projectDto", JSON.stringify(projectDTO));
-  formData.append("file", document.querySelector('input[type=file]').files[0]);
+  formData.append("file", fileInput.files[0]);
 
   const requestOptions = {
     method: 'PUT',
@@ -436,15 +490,18 @@ function editProject() {
     body: formData,
   };
 
-  const params = new URLSearchParams();
+  let params = new URLSearchParams();
 
   tags.forEach(tag => {
     params.append('tags', tag)
   });
 
+  console.log(params);
+
   fetch(`https://sq8-orange-fcamra.onrender.com/project/${editProjectId}?` + new URLSearchParams(params), requestOptions)
     .then(response => response.json())
     .then(data => {
+      console.log(data);
       setProjectDataOnLocalStorage();
       toggleModal('edit-project-modal', false)
       toggleModal('success-modal', true, "Edição concluída com sucesso!")
@@ -559,26 +616,28 @@ async function getTags() {
     throw new Error(err);
   }
 }
-function loadValidTagsInSearchMenu() {
+
+async function loadValidTagsInSearchMenu() {
   const menu = document.getElementById("usage-menu-tags");
 
-  getTags()
-    .then((tags) => {
-      tags.forEach((tagObject) => {
-        const mdMenuItem = `
-        <md-menu-item onclick="addTagToMyProjectsSearchBar(this)">
-            <div slot="headline">
-              <md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>
-            </div>
-        </md-menu-item>
-        `;
+  try {
+    const tags = await getTags();
 
-        menu.innerHTML = `${menu.innerHTML} ${mdMenuItem}`;
-      })
+    tags.forEach((tagObject) => {
+      const mdMenuItem = `
+      <md-menu-item onclick="addTagToMyProjectsSearchBar(this)">
+          <div slot="headline">
+            <md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>
+          </div>
+      </md-menu-item>
+      `;
+
+      menu.innerHTML = `${menu.innerHTML} ${mdMenuItem}`;
     })
-    .catch((err) => {
-      console.log(err)
-    })
+  }
+  catch (err) {
+    console.error(err);
+  }
 }
 
 function createProjectPlaceholderOnProjectGrid() {
@@ -625,31 +684,34 @@ function setProjectDataOnPage() {
   });
 }
 
-function isAuthenticated() {
+async function isAuthenticated() {
   const token = localStorage.getItem('token');
+  const user = localStorage.getItem('user');
+  const projects = localStorage.getItem("projects");
+
   if (!token) {
     window.location.href = '../login/index.html';
   }
 
-  if (!localStorage.getItem('user')) {
+  if (!user) {
     console.log("User not saved on local storage, saving now.");
-    setUserDataOnLocalStorage();
+    await setUserDataOnLocalStorage();
   }
 
-  if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
+  if (!projects || projects.length < 1) {
     console.log("Project not saved on local storage, saving now.")
-    setProjectDataOnLocalStorage();
+    await setProjectDataOnLocalStorage();
   }
 
+  await loadValidTagsInSearchMenu()
   setUserDataOnPage();
   setProjectDataOnPage();
-  loadValidTagsInSearchMenu();
-
 
   console.log("User is authenticated!");
 }
 
 function logout() {
+  // Backend route to actually cancel the token didn't work on the frontend. And we didn't have time to implement it.
   localStorage.removeItem('token');
   localStorage.removeItem('user');
   localStorage.removeItem('projects');
