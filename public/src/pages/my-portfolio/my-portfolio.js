@@ -98,8 +98,14 @@ function showSubmitImageCardContent() {
   submitImageCardContent.classList.remove("hidden");
 }
 
-function toggleModal(modalId, state) {
+function toggleModal(modalId, state, message) {
   const modal = document.getElementById(modalId);
+
+  if (message != undefined && modalId == "success-modal") {
+    let modalTitle = document.getElementById("modal-message");
+
+    modalTitle.innerText = message;
+  }
 
   if (!modal) {
     console.error(`Couldn't find modal with id ${modalId}`);
@@ -121,6 +127,7 @@ function uploadImage(input) {
 
     reader.onload = (e) => {
       selectedImage.src = e.target.result;
+      document.getElementById("edit-selected-image").src = e.target.result
     };
 
     reader.readAsDataURL(input.files[0]);
@@ -131,25 +138,17 @@ function addProject() {
   const token = localStorage.getItem("token");
 
   const title = document.getElementById("title-input").value;
-  // const tagsInput = document.getElementById("tags-input");
+  const tagsInput = document.getElementById("tags-input");
   const link = document.getElementById("link-input").value;
   const description = document.getElementById("description-input").value;
 
-  const tags = [
-    {
-      "id": 1,
-      "tag": "HTML"
-    },
-    {
-      "id": 3,
-      "tag": "JAVA"
-    }
-  ]
+  const tags = tagsInput.join(",");
 
   const projectDTO = {
     title,
     link,
-    description
+    description,
+    tags,
   }
 
   const formData = new FormData();
@@ -405,14 +404,66 @@ function showProjectDetailsOnProjectPreview(projectId) {
     console.error(err);
   })
 }
+let editProjectId;
 
-function editProject(projectId) {
+function editProject() {
+  const token = localStorage.getItem("token");
+
+  const title = document.getElementById("edit-title-input").value;
+  const tagsInput = document.getElementById("edit-tags-input").value;
+  const link = document.getElementById("edit-link-input").value;
+  const description = document.getElementById("edit-description-input").value;
+
+  const tags = tagsInput.split(",");
+
+  const projectDTO = {
+    title,
+    link,
+    description,
+  }
+
+  const formData = new FormData();
+
+  formData.append("projectDto", JSON.stringify(projectDTO));
+  formData.append("file", document.querySelector('input[type=file]').files[0]);
+
+  const requestOptions = {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+    body: formData,
+  };
+
+  const params = new URLSearchParams();
+
+  tags.forEach(tag => {
+    params.append('tags', tag)
+  });
+
+  fetch(`https://sq8-orange-fcamra.onrender.com/project/${editProjectId}?` + new URLSearchParams(params), requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      setProjectDataOnLocalStorage();
+      toggleModal('edit-project-modal', false)
+      toggleModal('success-modal', true, "Edição concluída com sucesso!")
+      listProjectsFilteredByTags([])
+    })
+    .catch(error => {
+      console.error('Error adding project:', error);
+
+    });
+}
+
+function openEditProjectModal(projectId) {
   /**
    * Retrieve project data with id
    * Set data in EditProjectModal
    * Implement edit Project feature
    * Update project-grid
    */
+  editProjectId = projectId;
+
   getProjectWithId(projectId).then((selectedProject) => {
     console.log(...selectedProject);
 
@@ -443,7 +494,7 @@ function createProjectOnProjectGrid(project) {
   newProject.className = 'item project-card';
   newProject.innerHTML = `
     <header>
-      <md-filled-icon-button onclick=editProject(${project.id}) class="edit-project-button">
+      <md-filled-icon-button onclick=openEditProjectModal(${project.id}) class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
     <md-filled-icon-button onclick=deleteProject(${project.id}) class="delete-project-button">

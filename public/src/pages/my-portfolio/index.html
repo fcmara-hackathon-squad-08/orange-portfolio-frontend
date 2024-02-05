@@ -179,7 +179,7 @@
       <footer>
         <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview('edit')">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
-          <md-filled-button onclick="addProject()" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="editProject()" type="button" class="submit-button">SALVAR</md-filled-button>
           <md-filled-button onclick="toggleModal('edit-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
@@ -235,7 +235,7 @@
   <!-- Success Modal -->
   <md-dialog id="success-modal">
     <section slot="content">
-      <h5>Projeto adicionado com sucesso!</h5>
+      <h5 id="modal-message">Projeto adicionado com sucesso!</h5>
       <div class="done-icon-container" aria-label="done icon">
         <md-icon>
           done
