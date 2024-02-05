@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./styles/project-preview-modal.css">
   <link rel="stylesheet" href="./styles/add-project-modal.css">
   <link rel="stylesheet" href="./styles/success-modal.css">
+  <link rel="stylesheet" href="./styles/confirm-modal.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
 
@@ -245,6 +246,26 @@
         onclick="toggleModal('success-modal', false)">
         VOLTAR PARA PROJETOS
       </md-filled-button>
+    </section>
+  </md-dialog>
+
+  <!-- Confirm Delete modal -->
+  <md-dialog id="confirm-modal">
+    <section slot="content">
+      <h5 id="modal-message">Deseja excluir?</h5>
+      <p class="body-text1">
+        Se você prosseguir irá excluir o projeto do seu portfólio
+      </p>
+      <footer slot="actions">
+        <md-filled-button id="confirm-button" class="submit-button" aria-label="Voltar para projetos"
+          onclick="deleteProject()">
+          Excluir
+        </md-filled-button>
+        <md-filled-button id="cancel-button" class="disabled-button" aria-label="Voltar para projetos"
+          onclick="toggleModal('confirm-modal', false)">
+          CANCELAR
+        </md-filled-button>
+      </footer>
     </section>
   </md-dialog>
 

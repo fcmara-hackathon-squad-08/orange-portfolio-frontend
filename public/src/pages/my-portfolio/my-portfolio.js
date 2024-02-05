@@ -475,14 +475,38 @@ function openEditProjectModal(projectId) {
   })
 }
 
-function deleteProject(id) {
+function openConfirmDeleteProjectModal(id) {
   /**
    * Open delete confirmation modal
    * If user confirms, delete project
    * Update project-grid
    */
-  console.log(`deleted project with id: ${id}`);
+  toggleModal('confirm-modal', true);
+  editProjectId = id;
 }
+
+function deleteProject() {
+  const token = localStorage.getItem("token");
+
+  const requestOptions = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+
+  fetch(`https://sq8-orange-fcamra.onrender.com/project/${editProjectId}`, requestOptions)
+    .then(response => {
+      setProjectDataOnLocalStorage();
+      toggleModal('confirm-modal', false)
+      toggleModal('success-modal', true, "Projeto deletado com sucesso!")
+      listProjectsFilteredByTags([])
+    })
+    .catch(error => {
+      console.error('Error adding project:', error);
+    });
+}
+
 function createProjectOnProjectGrid(project) {
   const projectsGrid = document.getElementById('projects-grid');
 
@@ -497,7 +521,7 @@ function createProjectOnProjectGrid(project) {
       <md-filled-icon-button onclick=openEditProjectModal(${project.id}) class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
-    <md-filled-icon-button onclick=deleteProject(${project.id}) class="delete-project-button">
+    <md-filled-icon-button onclick=openConfirmDeleteProjectModal(${project.id}) class="delete-project-button">
       <md-icon>delete</md-icon>
     </md-filled-icon-button>
     </header>
