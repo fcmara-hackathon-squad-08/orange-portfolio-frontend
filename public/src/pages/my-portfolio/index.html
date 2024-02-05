@@ -146,6 +146,54 @@
     </section>
   </md-dialog>
 
+  <!-- Edit Project Modal -->
+  <md-dialog id="edit-project-modal">
+    <h5 slot="headline">Editar projeto</h5>
+
+    <section slot="content" id="form-id" method="dialog" class="add-project-card">
+      <main>
+        <div class="subtitle-button-container">
+          <div class="text-">
+            <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
+          </div>
+
+          <button type="button" onclick="chooseFile()">
+            <div style="height:0px;overflow:hidden">
+              <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
+                onchange="uploadImage(this)" />
+            </div>
+            <div class="submit-image-card">
+              <div id="submit-image-card-content" class="submit-image-card-content">
+                <img src="../../../static/images/filter.svg" class="filter-icon">
+                <div>
+                  <p class="body-text2">Compartilhe seu talento com milhares de pessoas</p>
+                </div>
+              </div>
+              <img src="" id="selected-image" class="selected-image" />
+
+            </div>
+          </button>
+        </div>
+
+        <div class="input-container">
+          <md-outlined-text-field id="title-input" placeholder="Titulo" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="tags-input" placeholder="Tags" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="link-input" placeholder="Link" class="label" value=""></md-outlined-text-field>
+          <md-outlined-text-field id="description-input" type="textarea" rows="2" placeholder="Descrição" class="label"
+            value=""></md-outlined-text-field>
+        </div>
+      </main>
+      <footer>
+        <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview()">Visualizar publicação</label>
+        <div slot="actions" class="buttons-container">
+          <md-filled-button onclick="addProject()" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
+            class="disabled-button">CANCELAR</md-filled-button>
+        </div>
+      </footer>
+    </section>
+  </md-dialog>
+
   <!-- Projet Preview Modal -->
   <md-dialog id="project-preview-modal">
     <div slot="content" class="project-preview">
