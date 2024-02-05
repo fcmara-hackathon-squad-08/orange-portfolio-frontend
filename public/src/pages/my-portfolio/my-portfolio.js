@@ -338,12 +338,24 @@ function setProjectDataOnProjectPreview(project) {
 
 }
 
-function showProjectDetailsOnProjectPreview(projectId) {
-  getProjectsData().then((projects) => {
+async function getProjectWithId(projectId) {
+  try {
+    const projects = await getProjectsData();
+
     const selectedProject = projects.filter(
       (project) => (project.id == projectId)
-    );
+    )
 
+    return selectedProject;
+  }
+  catch (err) {
+    throw new Error(err);
+  }
+
+}
+
+function showProjectDetailsOnProjectPreview(projectId) {
+  getProjectWithId(projectId).then((selectedProject) => {
     console.log(...selectedProject);
 
     setProjectDataOnProjectPreview(selectedProject[0])
@@ -354,6 +366,25 @@ function showProjectDetailsOnProjectPreview(projectId) {
   })
 }
 
+function editProject(id) {
+
+  /**
+   * Retrieve project data with id
+   * Set data in EditProjectModal
+   * Implement edit Project feature
+   * Update project-grid
+   */
+  console.log(`edited project with id: ${id}`);
+}
+
+function deleteProject(id) {
+  /**
+   * Open delete confirmation modal
+   * If user confirms, delete project
+   * Update project-grid
+   */
+  console.log(`deleted project with id: ${id}`);
+}
 function createProjectOnProjectGrid(project) {
   const projectsGrid = document.getElementById('projects-grid');
 
@@ -365,10 +396,10 @@ function createProjectOnProjectGrid(project) {
   newProject.className = 'item project-card';
   newProject.innerHTML = `
     <header>
-      <md-filled-icon-button class="edit-project-button">
+      <md-filled-icon-button onclick=editProject(${project.id}) class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
-    <md-filled-icon-button class="delete-project-button">
+    <md-filled-icon-button onclick=deleteProject(${project.id}) class="delete-project-button">
       <md-icon>delete</md-icon>
     </md-filled-icon-button>
     </header>
