@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./styles/project-preview-modal.css">
   <link rel="stylesheet" href="./styles/add-project-modal.css">
   <link rel="stylesheet" href="./styles/success-modal.css">
+  <link rel="stylesheet" href="./styles/confirm-modal.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
 
@@ -93,6 +94,7 @@
         </md-filled-tonal-icon-button>
       </div>
       <div id="projects-grid" class="projects-grid">
+
       </div>
     </article>
   </main>
@@ -135,10 +137,51 @@
         </div>
       </main>
       <footer>
-        <label class="subtitle1" onclick="toggleModal('project-preview-modal', true)">Visualizar publicação</label>
+        <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview()">Visualizar publicação</label>
         <div slot="actions" class="buttons-container">
           <md-filled-button onclick="addProject()" type="button" class="submit-button">SALVAR</md-filled-button>
           <md-filled-button onclick="toggleModal('add-project-modal', false)" type="button"
+            class="disabled-button">CANCELAR</md-filled-button>
+        </div>
+      </footer>
+    </section>
+  </md-dialog>
+
+  <!-- Edit Project Modal -->
+  <md-dialog id="edit-project-modal">
+    <h5 slot="headline">Editar projeto</h5>
+
+    <section slot="content" id="form-id" method="dialog" class="add-project-card">
+      <main>
+        <div class="subtitle-button-container">
+          <div class="text-">
+            <p class="subtitle1">Selecione o conteúdo que você deseja fazer upload</p>
+          </div>
+
+          <button type="button" onclick="chooseFile()">
+            <div style="height:0px;overflow:hidden">
+              <input type="file" id="fileInput" name="fileInput" accept="image/jpeg, image/png image/gif"
+                onchange="uploadImage(this)" />
+            </div>
+            <div class="submit-image-card">
+              <img src="" id="edit-selected-image" class="selected-image" />
+            </div>
+          </button>
+        </div>
+
+        <div class="input-container">
+          <md-outlined-text-field id="edit-title-input" placeholder="Titulo" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-tags-input" placeholder="Tags" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-link-input" placeholder="Link" class="label"></md-outlined-text-field>
+          <md-outlined-text-field id="edit-description-input" type="textarea" rows="2" placeholder="Descrição"
+            class="label"></md-outlined-text-field>
+        </div>
+      </main>
+      <footer>
+        <label class="subtitle1" onclick="setProjectDataOnAddProjectPreview('edit')">Visualizar publicação</label>
+        <div slot="actions" class="buttons-container">
+          <md-filled-button onclick="editProject()" type="button" class="submit-button">SALVAR</md-filled-button>
+          <md-filled-button onclick="toggleModal('edit-project-modal', false)" type="button"
             class="disabled-button">CANCELAR</md-filled-button>
         </div>
       </footer>
@@ -193,7 +236,7 @@
   <!-- Success Modal -->
   <md-dialog id="success-modal">
     <section slot="content">
-      <h5>Projeto adicionado com sucesso!</h5>
+      <h5 id="modal-message">Projeto adicionado com sucesso!</h5>
       <div class="done-icon-container" aria-label="done icon">
         <md-icon>
           done
@@ -203,6 +246,26 @@
         onclick="toggleModal('success-modal', false)">
         VOLTAR PARA PROJETOS
       </md-filled-button>
+    </section>
+  </md-dialog>
+
+  <!-- Confirm Delete modal -->
+  <md-dialog id="confirm-modal">
+    <section slot="content">
+      <h5 id="modal-message">Deseja excluir?</h5>
+      <p class="body-text1">
+        Se você prosseguir irá excluir o projeto do seu portfólio
+      </p>
+      <footer slot="actions">
+        <md-filled-button id="confirm-button" class="submit-button" aria-label="Voltar para projetos"
+          onclick="deleteProject()">
+          Excluir
+        </md-filled-button>
+        <md-filled-button id="cancel-button" class="disabled-button" aria-label="Voltar para projetos"
+          onclick="toggleModal('confirm-modal', false)">
+          CANCELAR
+        </md-filled-button>
+      </footer>
     </section>
   </md-dialog>
 

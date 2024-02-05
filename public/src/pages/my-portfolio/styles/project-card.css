@@ -19,11 +19,15 @@
   margin-bottom: 24px;
 }
 
+.project-card header {
+  align-self: flex-end;
+}
+
 .project-card .edit-project-button {
   align-self: flex-end;
   position: relative;
 
-  top: 36px;
+  top: 40px;
   right: 8px;
 
   --md-filled-icon-button-container-width: 28px;
@@ -33,10 +37,30 @@
   --md-sys-color-primary: var(--color-secondary-70);
 }
 
+.project-card .delete-project-button md-icon {
+  color: var(#fefefe);
+  font-variation-settings: 'FILL' 1;
+}
+
+.project-card .delete-project-button {
+  align-self: flex-end;
+  position: relative;
+
+  top: 40px;
+  right: 8px;
+
+  --md-filled-icon-button-container-width: 28px;
+  --md-filled-icon-button-container-height: 28px;
+  --md-filled-icon-button-icon-size: 24px;
+  --md-filled-icon-button-container-shape: 100px;
+  --md-sys-color-primary: var(--color-error-90);
+}
+
 .project-card .edit-project-button md-icon {
   color: var(--color-neutral-120);
   font-variation-settings: 'FILL' 1;
 }
+
 
 .project-card .open-project-button {
   border: none;

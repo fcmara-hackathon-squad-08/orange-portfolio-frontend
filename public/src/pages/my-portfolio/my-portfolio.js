@@ -3,6 +3,9 @@ const dateFormatter = new Intl.DateTimeFormat('pt-BR', {
   year: '2-digit'
 });
 
+const selectedImage = document.getElementById('selected-image');
+const submitImageCardContent = document.getElementById('submit-image-card-content');
+
 /** Code to make search for tags bar works */
 const anchorElementTags = document.getElementById('select-tags-menu');
 
@@ -95,8 +98,14 @@ function showSubmitImageCardContent() {
   submitImageCardContent.classList.remove("hidden");
 }
 
-function toggleModal(modalId, state) {
+function toggleModal(modalId, state, message) {
   const modal = document.getElementById(modalId);
+
+  if (message != undefined && modalId == "success-modal") {
+    let modalTitle = document.getElementById("modal-message");
+
+    modalTitle.innerText = message;
+  }
 
   if (!modal) {
     console.error(`Couldn't find modal with id ${modalId}`);
@@ -118,6 +127,7 @@ function uploadImage(input) {
 
     reader.onload = (e) => {
       selectedImage.src = e.target.result;
+      document.getElementById("edit-selected-image").src = e.target.result
     };
 
     reader.readAsDataURL(input.files[0]);
@@ -128,25 +138,17 @@ function addProject() {
   const token = localStorage.getItem("token");
 
   const title = document.getElementById("title-input").value;
-  // const tagsInput = document.getElementById("tags-input");
+  const tagsInput = document.getElementById("tags-input");
   const link = document.getElementById("link-input").value;
   const description = document.getElementById("description-input").value;
 
-  const tags = [
-    {
-      "id": 1,
-      "tag": "HTML"
-    },
-    {
-      "id": 3,
-      "tag": "JAVA"
-    }
-  ]
+  const tags = tagsInput.join(",");
 
   const projectDTO = {
     title,
     link,
-    description
+    description,
+    tags,
   }
 
   const formData = new FormData();
@@ -265,6 +267,63 @@ function setUserDataOnPage() {
   }
 }
 
+function setProjectDataOnAddProjectPreview(mode) {
+  let title;
+  let tags;
+  let link;
+  let description;
+  let bannerImage;
+
+  if (mode == 'edit') {
+    title = document.getElementById("edit-title-input").value;
+    tags = document.getElementById("edit-tags-input").value;
+    link = document.getElementById("edit-link-input").value;
+    description = document.getElementById("edit-description-input").value;
+    bannerImage = document.getElementById("edit-selected-image")
+  }
+  else {
+    title = document.getElementById("title-input").value;
+    tags = document.getElementById("tags-input").value;
+    link = document.getElementById("link-input").value;
+    description = document.getElementById("description-input").value;
+    bannerImage = selectedImage;
+  }
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const projectPreviewAvatar = document.getElementById("project-preview-avatar");
+  const projectPreviewUsername = document.getElementById("project-preview-username");
+  const projectPreviewDate = document.getElementById("project-preview-date");
+  const projectPreviewMobileTitle = document.getElementById("project-preview-mobile-title");
+  const projectPreviewWebTitle = document.getElementById("project-preview-web-title");
+  const projectPreviewTags = document.getElementById("project-preview-tags");
+  const projectPreviewBanner = document.getElementById("project-preview-banner");
+  const projectPreviewDescription = document.getElementById("project-preview-description");
+  const projectPreviewLink = document.getElementById("project-preview-link");
+
+  projectPreviewAvatar.src = user.imageUrl;
+
+  projectPreviewUsername.innerHTML = `${user.name} ${user.surname}`;
+
+  projectPreviewDate.innerHTML = dateFormatter.format(new Date());
+
+  projectPreviewMobileTitle.innerHTML = title;
+  projectPreviewWebTitle.innerHTML = title;
+
+  tags = tags.split(",");
+
+  projectPreviewTags.innerHTML =
+    tags.map(tag => `<md-suggestion-chip label="${tag}" aria-label="${tag}"></md-suggestion-chip>`).join('');
+
+  projectPreviewBanner.src = bannerImage.src;
+
+  projectPreviewDescription.innerHTML = description;
+  projectPreviewLink.innerHTML = link;
+
+  toggleModal('project-preview-modal', true);
+
+}
+
 function setProjectDataOnProjectPreview(project) {
   const projectPreviewAvatar = document.getElementById("project-preview-avatar");
   const projectPreviewUsername = document.getElementById("project-preview-username");
@@ -295,12 +354,47 @@ function setProjectDataOnProjectPreview(project) {
 
 }
 
-function showProjectDetailsOnProjectPreview(projectId) {
-  getProjectsData().then((projects) => {
+function setProjectDataOnEditProjectPreview(projectData) {
+  const titleInput = document.getElementById("edit-title-input");
+  const tagsInput = document.getElementById("edit-tags-input");
+  const linkInput = document.getElementById("edit-link-input");
+  const descriptionInput = document.getElementById("edit-description-input");
+  const editSubmitImageCard = document.getElementById("edit-selected-image");
+
+  titleInput.value = projectData.title;
+
+  const tags = projectData.tags.map((tagObject) => {
+    return tagObject.tag;
+  }).join(",");
+
+  tagsInput.value = tags;
+
+  linkInput.value = projectData.link;
+
+  editSubmitImageCard.src = projectData.imageUrl;
+
+  descriptionInput.value = projectData.description;
+
+}
+
+async function getProjectWithId(projectId) {
+  try {
+    const projects = await getProjectsData();
+
     const selectedProject = projects.filter(
       (project) => (project.id == projectId)
-    );
+    )
 
+    return selectedProject;
+  }
+  catch (err) {
+    throw new Error(err);
+  }
+
+}
+
+function showProjectDetailsOnProjectPreview(projectId) {
+  getProjectWithId(projectId).then((selectedProject) => {
     console.log(...selectedProject);
 
     setProjectDataOnProjectPreview(selectedProject[0])
@@ -309,6 +403,97 @@ function showProjectDetailsOnProjectPreview(projectId) {
   }).catch((err) => {
     console.error(err);
   })
+}
+let editProjectId;
+
+function editProject() {
+  const token = localStorage.getItem("token");
+
+  const title = document.getElementById("edit-title-input").value;
+  const tagsInput = document.getElementById("edit-tags-input").value;
+  const link = document.getElementById("edit-link-input").value;
+  const description = document.getElementById("edit-description-input").value;
+
+  const tags = tagsInput.split(",");
+
+  const projectDTO = {
+    title,
+    link,
+    description,
+  }
+
+  const formData = new FormData();
+
+  formData.append("projectDto", JSON.stringify(projectDTO));
+  formData.append("file", document.querySelector('input[type=file]').files[0]);
+
+  const requestOptions = {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+    body: formData,
+  };
+
+  const params = new URLSearchParams();
+
+  tags.forEach(tag => {
+    params.append('tags', tag)
+  });
+
+  fetch(`https://sq8-orange-fcamra.onrender.com/project/${editProjectId}?` + new URLSearchParams(params), requestOptions)
+    .then(response => response.json())
+    .then(data => {
+      setProjectDataOnLocalStorage();
+      toggleModal('edit-project-modal', false)
+      toggleModal('success-modal', true, "Edição concluída com sucesso!")
+      listProjectsFilteredByTags([])
+    })
+    .catch(error => {
+      console.error('Error adding project:', error);
+
+    });
+}
+
+function openEditProjectModal(projectId) {
+  editProjectId = projectId;
+
+  getProjectWithId(projectId).then((selectedProject) => {
+    console.log(...selectedProject);
+
+    setProjectDataOnEditProjectPreview(selectedProject[0])
+    toggleModal('edit-project-modal', true);
+
+  }).catch((err) => {
+    console.error(err);
+  })
+}
+
+function openConfirmDeleteProjectModal(id) {
+  toggleModal('confirm-modal', true);
+  editProjectId = id;
+}
+
+function deleteProject() {
+  const token = localStorage.getItem("token");
+
+  const requestOptions = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+
+  fetch(`https://sq8-orange-fcamra.onrender.com/project/${editProjectId}`, requestOptions)
+    .then(response => {
+      setProjectDataOnLocalStorage();
+      toggleModal('confirm-modal', false)
+      toggleModal('success-modal', true, "Projeto deletado com sucesso!")
+      listProjectsFilteredByTags([])
+    })
+    .catch(error => {
+      console.error('Error adding project:', error);
+    });
 }
 
 function createProjectOnProjectGrid(project) {
@@ -321,9 +506,14 @@ function createProjectOnProjectGrid(project) {
   newProject.id = `${project.id}-project-card`;
   newProject.className = 'item project-card';
   newProject.innerHTML = `
-    <md-filled-icon-button class="edit-project-button">
+    <header>
+      <md-filled-icon-button onclick=openEditProjectModal(${project.id}) class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
+    <md-filled-icon-button onclick=openConfirmDeleteProjectModal(${project.id}) class="delete-project-button">
+      <md-icon>delete</md-icon>
+    </md-filled-icon-button>
+    </header>
     <button type="button" onclick="showProjectDetailsOnProjectPreview(${project.id})" class="open-project-button">
       <img id="project-banner" src="${project.imageUrl}" class="project-banner" />
       <footer>
@@ -367,6 +557,7 @@ function createProjectPlaceholderOnProjectGrid() {
   projectsGrid.append(projectPlaceholder);
   projectsGrid.innerHTML = `${projectsGrid.innerHTML} ${projectSkeleton}`
 }
+
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
   let projectsGrid = document.getElementById("projects-grid");
@@ -385,33 +576,24 @@ function setProjectDataOnPage() {
 }
 
 function isAuthenticated() {
-  // Check if the user is authenticated 
   const token = localStorage.getItem('token');
   if (!token) {
-    // User is not authenticated, redirect to login page 
     window.location.href = '../login/index.html';
   }
-
-  /**
-   * Se os dados do usuário não estão inseridos ainda, buscar na API
-   * Salvar dados no localStorage
-   * Definir dados na página.
-   */
 
   if (!localStorage.getItem('user')) {
     console.log("User not saved on local storage, saving now.");
     setUserDataOnLocalStorage();
   }
 
-  // if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
-  //   console.log("Project not saved on local storage, saving now.")
-  //   setProjectDataOnLocalStorage();
-  // }
-
-  setProjectDataOnLocalStorage();
+  if (!localStorage.getItem("projects") || localStorage.getItem("projects").length < 1) {
+    console.log("Project not saved on local storage, saving now.")
+    setProjectDataOnLocalStorage();
+  }
 
   setUserDataOnPage();
   setProjectDataOnPage();
+
 
   console.log("User is authenticated!");
 }

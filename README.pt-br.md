@@ -17,6 +17,7 @@ por utilizar apenas essas ferramentas.
 - HTML
 - CSS
 - JS
+- [MaterialDesign](https://github.com/material-components/material-web)
 
 ## Sumário 🛰
 
@@ -25,7 +26,6 @@ por utilizar apenas essas ferramentas.
 - [Equipe 👨‍💻](#equipe-)
 - [Contato 💼](#contato-)
 
-
 ## Sobre 📖
 
 ### Descrição
@@ -33,8 +33,6 @@ por utilizar apenas essas ferramentas.
 O orange portfolio é um web app que permite que seus usuários compartilhem seus projetos online, assim como visualizar projetos de outras pessoas.
 
 ### Objective
-
-This project was developed as a challenge in the FCAMARA's recruitment process hackathon, which occurred between 01/22/2024 and 02/05/2024.  
 
 Esse projeto foi desenvolvido no hackathon da última etapa do processo seletivo da FCamara, que ocorreu entre 22/01/2024 e 05/02/2024
 
@@ -57,13 +55,9 @@ Lista de funcionalidades planejadas:
 | :---: |:---:|
 | [![Kauã](https://github.com/stelianok.png)](https://github.com/stelianok)   | [![Thiago](https://github.com/Thimachal.png)](https://github.com/Thimachal)
 
-| <a href="https://github.com/EricklisCruz" target="_blank">**Ericklis Cruz**</a> | <a href="https://github.com/eidersin" target="_blank">**Wanderson Teixeira**</a>
+| <a href="https://github.com/EricklisCruz" target="_blank">**Ericklis Cruz**</a> | <a href="https://github.com/alanvargas04" target="_blank">**Alan Vargas Silva**</a>
 | :---: |:---:|
-| [![Ericklis](https://github.com/EricklisCruz.png)](https://github.com/EricklisCruz)   | [![Wanderson](https://github.com/eidersin.png)](https://github.com/eidersin)
-
-<a href="https://github.com/alanvargas04" target="_blank">**Alan Vargas Silva**</a>
-
-[![Wanderson](https://github.com/alanvargas04.png)](https://github.com/alanvargas04)
+| [![Ericklis](https://github.com/EricklisCruz.png)](https://github.com/EricklisCruz)   | [![Alan](https://github.com/alanvargas04.png)](https://github.com/alanvargas04)
 
 ---
 
@@ -94,14 +88,6 @@ E-mail: erickliscruz@gmail.com
 Github: [Ericklis Cruz](erickliscruz@gmail.com)
 
 ### Colaborador 4
-
-LinkedIn: [Wanderson Teixeira](https://www.linkedin.com/in/kauã-steliano-107620181/)
-
-E-mail: dersonts@gmail.com
-
-Github: [Wanderson Teixeira](https://github.com/eidersin)
-
-### Colaborador 5
 
 LinkedIn: [Alan Vargas Silva](https://www.linkedin.com/in/alan-vargas-37b09b297/)
 

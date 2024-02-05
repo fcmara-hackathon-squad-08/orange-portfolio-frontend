@@ -16,14 +16,13 @@ We decided against using a framework like react, since not all of us had experie
 - HTML
 - CSS
 - JS
-
+- [MaterialDesign](https://github.com/material-components/material-web) 
 ## Table of Contents 🛰
 
 - [About 📖](#about-)
 - [Features 🛠✨](#features-)
 - [Team 👨‍💻](#team-)
 - [Contact 💼](#contact-)
-
 
 ## About 📖
 
@@ -38,14 +37,13 @@ This project was developed as a challenge in the FCAMARA's recruitment process h
 
 ## Features 🛠✨
 
-List of currently planned features: 
+List of features: 
 
 - Users can authenticate with Google or by signing up with our API.
 - Users can post, edit and delete their projects.
 - Users can see other people's projects.
 - Users can search projects by filtering them by name or tags.
 - Fully responsive UI
-- Acessibility features area also available
 ---
 
 ## Team 👨‍💻
@@ -54,13 +52,9 @@ List of currently planned features:
 | :---: |:---:|
 | [![Kauã](https://github.com/stelianok.png)](https://github.com/stelianok)   | [![Thiago](https://github.com/Thimachal.png)](https://github.com/Thimachal)
 
-| <a href="https://github.com/EricklisCruz" target="_blank">**Ericklis Cruz**</a> | <a href="https://github.com/eidersin" target="_blank">**Wanderson Teixeira**</a>
+| <a href="https://github.com/EricklisCruz" target="_blank">**Ericklis Cruz**</a> | <a href="https://github.com/alanvargas04" target="_blank">**Alan Vargas Silva**</a>
 | :---: |:---:|
-| [![Ericklis](https://github.com/EricklisCruz.png)](https://github.com/EricklisCruz)   | [![Wanderson](https://github.com/eidersin.png)](https://github.com/eidersin)
-
-<a href="https://github.com/alanvargas04" target="_blank">**Alan Vargas Silva**</a>
-
-[![Wanderson](https://github.com/alanvargas04.png)](https://github.com/alanvargas04)
+| [![Ericklis](https://github.com/EricklisCruz.png)](https://github.com/EricklisCruz)   | [![Alan](https://github.com/alanvargas04.png)](https://github.com/alanvargas04)
 
 ---
 
@@ -91,15 +85,6 @@ E-mail: erickliscruz@gmail.com
 Github: [Ericklis Cruz](erickliscruz@gmail.com)
 
 ### collaborator 4
-
-LinkedIn: [Wanderson Teixeira](https://www.linkedin.com/in/kauã-steliano-107620181/)
-
-E-mail: dersonts@gmail.com
-
-Github: [Wanderson Teixeira](https://github.com/eidersin)
-
-
-### collaborator 5
 
 LinkedIn: [Alan Vargas Silva](https://www.linkedin.com/in/alan-vargas-37b09b297/)
 
