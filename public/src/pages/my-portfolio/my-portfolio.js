@@ -404,6 +404,7 @@ function showProjectDetailsOnProjectPreview(projectId) {
     console.error(err);
   })
 }
+
 let editProjectId;
 
 function editProject() {
@@ -531,6 +532,55 @@ function createProjectOnProjectGrid(project) {
   projectsGrid.appendChild(newProject);
 }
 
+async function getTags() {
+  const token = localStorage.getItem("token");
+
+  const baseUrl = "https://sq8-orange-fcamra.onrender.com/tag";
+
+  const requestOptions = {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const response = await fetch(baseUrl, requestOptions);
+
+    if (!response.ok) {
+      throw new Error(`API error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data;
+
+  } catch (err) {
+    throw new Error(err);
+  }
+}
+function loadValidTagsInSearchMenu() {
+  const menu = document.getElementById("usage-menu-tags");
+
+  getTags()
+    .then((tags) => {
+      tags.forEach((tagObject) => {
+        const mdMenuItem = `
+        <md-menu-item onclick="addTagToMyProjectsSearchBar(this)">
+            <div slot="headline">
+              <md-suggestion-chip label="${tagObject.tag}" aria-label="${tagObject.tag}"></md-suggestion-chip>
+            </div>
+        </md-menu-item>
+        `;
+
+        menu.innerHTML = `${menu.innerHTML} ${mdMenuItem}`;
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
 function createProjectPlaceholderOnProjectGrid() {
   const projectsGrid = document.getElementById('projects-grid');
 
@@ -593,6 +643,7 @@ function isAuthenticated() {
 
   setUserDataOnPage();
   setProjectDataOnPage();
+  loadValidTagsInSearchMenu();
 
 
   console.log("User is authenticated!");
