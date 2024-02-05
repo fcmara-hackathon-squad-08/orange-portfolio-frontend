@@ -649,4 +649,13 @@ function isAuthenticated() {
   console.log("User is authenticated!");
 }
 
+function logout() {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  localStorage.removeItem('projects');
+
+  window.location.href = '../login/index.html';
+
+}
+
 isAuthenticated();
