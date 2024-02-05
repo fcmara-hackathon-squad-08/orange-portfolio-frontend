@@ -364,9 +364,14 @@ function createProjectOnProjectGrid(project) {
   newProject.id = `${project.id}-project-card`;
   newProject.className = 'item project-card';
   newProject.innerHTML = `
-    <md-filled-icon-button class="edit-project-button">
+    <header>
+      <md-filled-icon-button class="edit-project-button">
       <md-icon>edit</md-icon>
     </md-filled-icon-button>
+    <md-filled-icon-button class="delete-project-button">
+      <md-icon>delete</md-icon>
+    </md-filled-icon-button>
+    </header>
     <button type="button" onclick="showProjectDetailsOnProjectPreview(${project.id})" class="open-project-button">
       <img id="project-banner" src="${project.imageUrl}" class="project-banner" />
       <footer>
@@ -430,6 +435,7 @@ function setProjectDataOnPage() {
 
 function isAuthenticated() {
   // Check if the user is authenticated 
+
   const token = localStorage.getItem('token');
   if (!token) {
     // User is not authenticated, redirect to login page 
@@ -454,6 +460,7 @@ function isAuthenticated() {
 
   setUserDataOnPage();
   setProjectDataOnPage();
+
 
   console.log("User is authenticated!");
 }
