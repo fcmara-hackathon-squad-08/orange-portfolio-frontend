@@ -456,12 +456,6 @@ function editProject() {
 }
 
 function openEditProjectModal(projectId) {
-  /**
-   * Retrieve project data with id
-   * Set data in EditProjectModal
-   * Implement edit Project feature
-   * Update project-grid
-   */
   editProjectId = projectId;
 
   getProjectWithId(projectId).then((selectedProject) => {
@@ -476,11 +470,6 @@ function openEditProjectModal(projectId) {
 }
 
 function openConfirmDeleteProjectModal(id) {
-  /**
-   * Open delete confirmation modal
-   * If user confirms, delete project
-   * Update project-grid
-   */
   toggleModal('confirm-modal', true);
   editProjectId = id;
 }
@@ -587,19 +576,10 @@ function setProjectDataOnPage() {
 }
 
 function isAuthenticated() {
-  // Check if the user is authenticated 
-
   const token = localStorage.getItem('token');
   if (!token) {
-    // User is not authenticated, redirect to login page 
     window.location.href = '../login/index.html';
   }
-
-  /**
-   * Se os dados do usuário não estão inseridos ainda, buscar na API
-   * Salvar dados no localStorage
-   * Definir dados na página.
-   */
 
   if (!localStorage.getItem('user')) {
     console.log("User not saved on local storage, saving now.");
