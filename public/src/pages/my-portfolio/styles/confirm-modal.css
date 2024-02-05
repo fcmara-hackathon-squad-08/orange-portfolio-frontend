@@ -1,0 +1,52 @@
+#confirm-modal {
+  background-color: var(--color-neutral-60);
+
+  width: 80vw;
+  height: 80vh;
+
+  max-width: 421px;
+  max-height: 242px;
+}
+
+#confirm-modal section {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  margin-top: 40px;
+}
+
+#confirm-modal section h5 {
+  color: var(--color-neutral-110, #515255);
+  text-align: center;
+
+  margin: 0px 42px;
+
+
+}
+
+#confirm-modal section p {
+  color: var(--color-neutral-110, #515255);
+  margin: 32px 48px;
+}
+
+#confirm-modal footer {
+  display: flex;
+  flex-direction: row;
+
+  margin-left: 42px;
+
+  gap: 16px;
+
+}
+
+#confirm-modal section .submit-button {}
+
+#confirm-modal section .disabled-button {}
+
+
+.done-icon md-icon {
+  --md-icon-font: 'Material Symbols Rounded';
+}

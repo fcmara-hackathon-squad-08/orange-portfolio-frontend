@@ -17,13 +17,39 @@
   justify-content: center;
 }
 
+.update-avatar-button {
+  border: none;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100%;
+
+  width: 122px;
+  height: 122px;
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+  position: relative;
+
+  margin-right: 42px;
+
+}
+
+.update-avatar-button md-ripple.unbounded {
+  border-radius: 50%;
+  inset: unset;
+  height: 150px;
+  width: 150px;
+}
+
 .profile-card img {
   border-radius: 100%;
 
   width: 122px;
   height: 122px;
 
-  margin-right: 42px;
 }
 
 .profile-info {
@@ -70,6 +96,32 @@
   min-width: 314px;
 
   margin-bottom: 40px;
+}
+
+.projects-container .tags-search-bar-container {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 12px;
+
+  width: 80vw;
+  height: 56px;
+
+  max-width: 513px;
+  min-width: 314px;
+
+  margin-bottom: 40px;
+
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.23);
+  border-style: ridge;
+}
+
+.select-tags-menu md-icon {
+  align-self: center;
+  text-align: center;
 }
 
 .projects-grid {
@@ -127,13 +179,22 @@
     gap: 16px;
 
     padding-bottom: 40px;
+
+    margin-top: 40px;
   }
 
-  .profile-card img {
+  .profile-card .update-avatar-button {
     margin: 0px 119px;
+    margin-top: 16px;
   }
 
   .profile-card .profile-info p {
     margin: 8px 0px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .profile-card .update-avatar-button {
+    margin-top: 42px;
   }
 }
