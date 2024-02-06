@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="../../themes.css">
 
   <link rel="stylesheet" href="./styles/discover.css">
+  <link rel="stylesheet" href="../my-portfolio/styles/project-preview-modal.css">
+  <link rel="stylesheet" href="../my-portfolio/styles/project-card.css">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded" rel="stylesheet">
 
@@ -26,275 +28,75 @@
 
 <body>
   <navigation-header></navigation-header>
-  <div class="container">
-    <div class="header">
+  <main class="container">
+    <div class="header-title-container">
       <h4>Junte-se à comunidade de inovação, inspiração e descobertas, transformando experiências em conexões
         inesquecíveis</h4>
     </div>
+    <article class="projects-container">
+      <h6>Meus projetos</h6>
+      <div class="tags-search-bar-container">
+        <md-chip-set id="selected-tags">
+        </md-chip-set>
 
-    <div class="input-tags">
-      <md-outlined-text-field label="Buscar tags" class="label"></md-outlined-text-field>
-    </div>
-
-
-
-    <div class="card-project">
-      <button type="button" aria-label="Abrir Projeto 1" onclick="openModal('modal-window')">
-        <img src="../../../static/images/project_01.png" alt="Projeto 1 - Descrição do projeto" />
-
-        <footer>
-          <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_02.svg" alt="Avatar de Bianca Martin">
-            <p>Bianca Martin • 02/24</p>
+        <md-filled-tonal-icon-button id="select-tags-menu">
+          <md-icon>expand_more</md-icon>
+          <div id="usage-anchor-tag-menu">
+            <md-menu id="usage-menu-tags" anchor="usage-anchor-tag-menu">
+            </md-menu>
           </div>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </footer>
-      </button>
+        </md-filled-tonal-icon-button>
+      </div>
+      <div id="projects-grid" class="projects-grid">
 
-      <button type="button" aria-label="Abrir Projeto 2"  onclick="openModal('modal-window-02')">
-        <img src="../../../static/images/project_02.png" alt="My Project" alt="Projeto 2 - Descrição do projeto" />
+      </div>
+    </article>
+  </main>
 
-        <footer>
-          <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_03.svg" alt="Avatar de Enzo Gabriel">
-            <p>Enzo Gabriel • 12/23</p>
-          </div>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </footer>
-      </button>
-
-      <button type="button" aria-label="Abrir Projeto 3"  onclick="openModal('modal-window-03')">
-        <img src="../../../static/images/project_03.png" alt="My Project" alt="Projeto 3 - Descrição do projeto" />
-        <footer>
-          <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_04.svg" alt="Avatar de Alice Alexandra">
-            <p>Alice Alexandra • 12/23</p>
-          </div>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </footer>
-      </button>
-      </button>
-
-      <button type="button" aria-label="Abrir Projeto 4"  onclick="openModal('modal-window-04')">
-        <img src="../../../static/images/project_04.png" alt="My Project" alt="Projeto 4 - Descrição do projeto" />
-        <footer>
-          <div class="container-card">
-            <img class="avatar2" src="../../../static/images/avatar_05.svg" alt="Avatar de Carolina Valentim">
-            <p>Carolina Valentim • 12/23</p>
-          </div>
-          <chip-set class="tag-list">
-            <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-            <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-          </chip-set>
-        </footer>
-      </button>
-      </button>
-    </div>
-
-    <div class="modal-window" id="modal-window">
-      <div slot="content" class="modal-view">
-
-        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
-          <md-icon>close</md-icon>
-        </md-filled-icon-button>
-
-        <div class="project-preview-content">
-
+  <!-- Projet Preview Modal -->
+  <md-dialog id="project-preview-modal">
+    <div slot="content" class="project-preview">
+      <md-filled-icon-button onclick="toggleModal('project-preview-modal', false)" class="close-button">
+        <md-icon>close</md-icon>
+      </md-filled-icon-button>
+      <div class="project-preview-content">
+        <h5 id="project-preview-mobile-title" class="mobile-title">Ecommerce One Page</h5>
+        <div class="reverse-column-in-mobile">
           <header>
             <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_02.svg" alt="Avatar de Bianca Martin">
-
+              <img id="project-preview-avatar" src="../../../static/images/avatar.png">
               <section>
-                <h6>Bianca Martin</h6>
-                <p>02/24</p>
-              </section>
-
-            </div>
-
-            <h5>Ecommerce One Page</h5>
-
-            <div class="tags-container">
-              <ul>
-                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-              </ul>
-            </div>
-          </header>
-
-          <img src="../../../static/images/project_01.png" class="banner" alt="Projeto 1 - Descrição do projeto" />
-
-          <article>
-            <p>
-              Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
-              modelo
-              de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
-              primeiro template de e-commerce.
-            </p>
-            <br />
-            <p class="subtitle">
-              Download<br />
-              <a href="https://gumroad.com/products/wxCSL">
-                https://gumroad.com/products/wxCSL
-              </a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-window" id="modal-window-02">
-      <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
-          <md-icon>close</md-icon>
-        </md-filled-icon-button>
-
-        <div class="project-preview-content">
-
-          <header>
-            <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_03.svg" alt="Avatar de Enzo Gabriel">
-
-              <section>
-                <h6>Enzo Gabriel</h6>
-                <p>12/23</p>
+                <p id="project-preview-username" class="subtitle1">Camila Soares</h6>
+                <p id="project-preview-date" class="body-text1">12/12</p>
               </section>
             </div>
+            <h5 id="project-preview-web-title" class="web-title">Ecommerce One Page</h5>
+            <chip-set id="project-preview-tags" class="tag-list">
 
-            <h5>Ecommerce One Page</h5>
-
-            <div class="tags-container">
-              <ul>
-                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-              </ul>
-            </div>
+            </chip-set>
           </header>
-
-          <img src="../../../static/images/project_02.png" class="banner" alt="Projeto 2 - Descrição do projeto" />
-
-          <article>
-            <p>
-              Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
-              modelo
-              de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
-              primeiro template de e-commerce.
-            </p>
-            <br />
-            <p class="subtitle">Download
-              <br />
-
-              <a href="https://gumroad.com/products/wxCSL">
-                https://gumroad.com/products/wxCSL
-              </a>
-            </p>
+          <div class="banner-container">
+            <img id="project-preview-banner" src="../../../static/images/img_landingpage.png" class="banner" />
+          </div>
         </div>
-      </div>
+        <article>
+          <p id="project-preview-description" class="body-text1">
+            Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
+            modelo
+            de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
+            primeiro template de e-commerce.
+          </p>
+          <br />
+          <p class="subtitle1">
+            Download<br />
+            <a id="project-preview-link" class="body-text2" href="https://gumroad.com/products/wxCSL">
+              https://gumroad.com/products/wxCSL
+            </a>
+          </p>
+        </article>
+      </div class="project-preview-content">
     </div>
-
-    <div class="modal-window" id="modal-window-03" >
-      <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
-          <md-icon>close</md-icon>
-        </md-filled-icon-button>
-        <div class="project-preview-content">
-          <header>
-            <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_04.svg" alt="Avatar de Alice Alexandra">
-
-              <section>
-                <h6>Alice Alexandra</h6>
-                <p>12/23</p>
-              </section>
-            </div>
-
-            <h5>Ecommerce One Page</h5>
-
-            <div class="tags-container">
-              <ul>
-                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-              </ul>
-            </div>
-          </header>
-
-          <img src="../../../static/images/project_03.png" class="banner" alt="Projeto 3 - Descrição do projeto" />
-
-          <article>
-            <p>
-              Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
-              modelo
-              de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
-              primeiro template de e-commerce.
-            </p>
-            <br />
-            <p class="subtitle">Download
-              <br />
-
-              <a href="https://gumroad.com/products/wxCSL">
-                https://gumroad.com/products/wxCSL
-              </a>
-            </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal-window" id="modal-window-04">
-      <div class="modal-view">
-        <md-filled-icon-button class="close-modal" id="close-modal" aria-label="Fechar modal">
-          <md-icon>close</md-icon>
-        </md-filled-icon-button>
-        <div class="project-preview-content">
-          <header>
-            <div class="user-info-container">
-              <img class="avatar" src="../../../static/images/avatar_05.svg" alt="Avatar de Carolina Valentim">
-
-              <section>
-                <h6>Carolina Valentim</h6>
-                <p>12/23</p>
-              </section>
-            </div>
-
-            <h5>Ecommerce One Page</h5>
-
-            <div class="tags-container">
-              <ul>
-                <md-suggestion-chip alwaysfocused label="UX" aria-label="UX"></md-suggestion-chip>
-                <md-suggestion-chip label="WEB" aria-label="WEB"></md-suggestion-chip>
-              </ul>
-            </div>
-          </header>
-
-          <img src="../../../static/images/project_04.png" class="banner" alt="Projeto 4 - Descrição do projeto" />
-
-          <article>
-            <p>
-              Temos o prazer de compartilhar com vocês uma variação da nosso primeiro recurso gratuito, Monoceros. É um
-              modelo
-              de uma página para mostrar seus produtos. Tentamos redesenhar uma versão mais B2C e minimalista do nosso
-              primeiro template de e-commerce.
-            </p>
-            <br />
-            <p class="subtitle">Download
-              <br />
-              <a href="https://gumroad.com/products/wxCSL">
-                https://gumroad.com/products/wxCSL
-              </a>
-            </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
+  </md-dialog>
 
 
   <script src="./discover.js"></script>
