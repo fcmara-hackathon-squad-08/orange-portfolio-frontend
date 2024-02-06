@@ -89,48 +89,6 @@ function chooseFile() {
   document.getElementById('fileInput').click();
 }
 
-// function updateAvatar(input) {
-//   const oldProfilePic = document.getElementById("user-image");
-
-//   const token = localStorage.getItem("token");
-
-//   const projectDTO = {
-//     country: "brasil"
-//   }
-
-//   const formData = new FormData();
-
-//   formData.append("projectDto", JSON.stringify(projectDTO));
-//   formData.append("file", document.querySelector('input[type=file]').files[0]);
-
-//   const requestOptions = {
-//     method: 'PUT',
-//     headers: {
-//       'Authorization': `Bearer ${token}`,
-//     },
-//     body: formData,
-//   };
-
-//   const params = new URLSearchParams();
-
-//   fetch(`https://sq8-orange-fcamra.onrender.com/user/me` + new URLSearchParams(params), requestOptions)
-//     .then(response => response.json())
-//     .then(data => {
-//       setProjectDataOnLocalStorage();
-//       toggleModal('edit-project-modal', false)
-//       toggleModal('success-modal', true, "Edição concluída com sucesso!")
-//       listProjectsFilteredByTags([])
-//     })
-//     .catch(error => {
-//       console.error('Error adding project:', error);
-
-//     });
-// }
-
-async function updateAvatar() {
-
-}
-
 function hideSubmitImageCardContent() {
   submitImageCardContent.classList.add("hidden");
 }
@@ -640,33 +598,6 @@ async function loadValidTagsInSearchMenu() {
   }
 }
 
-function createProjectPlaceholderOnProjectGrid() {
-  const projectsGrid = document.getElementById('projects-grid');
-
-  const projectPlaceholder = document.createElement('div');
-  projectPlaceholder.id = `project-card-placeholder-id`;
-  projectPlaceholder.className = 'item project-card';
-  projectPlaceholder.innerHTML = `
-    <button id="project-card-placeholder" onclick="toggleModal('add-project-modal', true)" class="hidden">
-      <div class="item project-card-placeholder">
-        <img src="../../../static/images/filter.svg" class="filter-icon">
-        <div>
-          <p class="title">Adicione seu primeiro projeto</p>
-          <p class="description">Compartilhe seu talento com milhares de pessoas</p>
-        </div>
-      </div>
-  </button>
-  `;
-
-  const projectSkeleton = `
-    <div class="item project-skeleton"></div>
-    <div class="item project-skeleton"></div>
-  `;
-
-  projectsGrid.append(projectPlaceholder);
-  projectsGrid.innerHTML = `${projectsGrid.innerHTML} ${projectSkeleton}`
-}
-
 function setProjectDataOnPage() {
   const projects = JSON.parse(localStorage.getItem("projects"));
   let projectsGrid = document.getElementById("projects-grid");
@@ -674,7 +605,6 @@ function setProjectDataOnPage() {
   projectsGrid.innerHTML = "";
 
   if (projects.length < 1) {
-    createProjectPlaceholderOnProjectGrid()
     return;
   }
 
