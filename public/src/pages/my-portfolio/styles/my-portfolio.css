@@ -17,39 +17,13 @@
   justify-content: center;
 }
 
-.update-avatar-button {
-  border: none;
-
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 100%;
-
-  width: 122px;
-  height: 122px;
-
-  display: flex;
-  place-content: center;
-  place-items: center;
-  position: relative;
-
-  margin-right: 42px;
-
-}
-
-.update-avatar-button md-ripple.unbounded {
-  border-radius: 50%;
-  inset: unset;
-  height: 150px;
-  width: 150px;
-}
-
 .profile-card img {
   border-radius: 100%;
 
   width: 122px;
   height: 122px;
 
+  margin-right: 42px;
 }
 
 .profile-info {
@@ -58,6 +32,7 @@
   justify-content: space-between;
   height: 100%;
 }
+
 
 .profile-info h5 {
   color: var(--color-neutral-120)
@@ -183,18 +158,11 @@
     margin-top: 40px;
   }
 
-  .profile-card .update-avatar-button {
+  .profile-card img {
     margin: 0px 119px;
-    margin-top: 16px;
   }
 
   .profile-card .profile-info p {
     margin: 8px 0px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .profile-card .update-avatar-button {
-    margin-top: 42px;
   }
 }
