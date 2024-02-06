@@ -98,6 +98,10 @@ function createProjectOnProjectGrid(project) {
   projectsGrid.appendChild(newProject);
 }
 
+function updateProjectDataOnLocalStorage(updatedProjects) {
+  localStorage.setItem("projects-other", JSON.stringify(updatedProjects));
+}
+
 async function getProjectWithId(projectId) {
   try {
     const projects = await getProjectsData();
@@ -230,8 +234,11 @@ async function listProjectsFilteredByTags(tags) {
       return response.json()
     })
     .then((data) => {
-      console.log("Successfully recovered projects:", data);
-
+      if (!data) {
+        updateProjectDataOnLocalStorage([]);
+        return;
+      }
+      updateProjectDataOnLocalStorage(data);
       setProjectDataOnPage();
     })
     .catch((err) => {
@@ -264,29 +271,43 @@ async function getProjectsData() {
 }
 
 function setProjectDataOnPage() {
-  getProjectsData().then((projects) => {
-    let projectsGrid = document.getElementById("projects-grid");
+  const projects = JSON.parse(localStorage.getItem("projects-other"));
+  let projectsGrid = document.getElementById("projects-grid");
 
-    projectsGrid.innerHTML = "";
+  projectsGrid.innerHTML = "";
 
-    if (projects.length < 1) {
-      createProjectPlaceholderOnProjectGrid()
-      return;
-    }
+  if (projects.length < 1) {
+    createProjectPlaceholderOnProjectGrid()
+    return;
+  }
 
+  projects.forEach(project => {
+    createProjectOnProjectGrid(project);
+  });
+}
 
-    projects.forEach(project => {
-      createProjectOnProjectGrid(project);
-    });
-  })
+async function setProjectDataOnLocalStorage() {
+  try {
+    const projects = await getProjectsData();
 
+    localStorage.setItem("projects-other", JSON.stringify(projects));
+  }
+  catch (err) {
+    console.error(err);
+  }
 }
 
 async function isAuthenticated() {
   const token = localStorage.getItem('token');
+  const projects = localStorage.getItem('projects-other');
 
   if (!token) {
     window.location.href = '../login/index.html';
+  }
+
+  if (!projects || projects.length < 1) {
+    console.log("Project not saved on local storage, saving now.")
+    await setProjectDataOnLocalStorage();
   }
 
   await loadValidTagsInSearchMenu()
