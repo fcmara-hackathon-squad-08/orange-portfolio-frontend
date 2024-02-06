@@ -1,31 +1,29 @@
-.header-title-container h4 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 34px;
-  line-height: 34px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.25px;
-  position: absolute;
-  width: 744px;
-  height: 102px;
-  left: calc(50% - 744px/2);
-  top: 185px;
-  color: var(--color-principal-90);
-
-}
-
 .container {
   display: flex;
 
   flex-direction: column;
 
   justify-content: space-around;
-  align-items: space-between;
+  align-items: center;
 
   height: calc(100vh - 73px);
+}
+
+.header-title-container {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-left: 24px;
+
+}
+
+.header-title-container h4 {
+  color: var(--color-principal-90);
+
+  max-width: 744px;
 }
 
 .projects-container {
@@ -146,7 +144,7 @@
 }
 
 @media screen and (max-width: 375px) {
-  .profile-card .update-avatar-button {
-    margin-top: 42px;
+  .header-title-container {
+    margin-top: 60px;
   }
 }
